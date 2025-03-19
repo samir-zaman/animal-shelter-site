@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Animals from "./pages/Animals"
+import "./server"
 
 function App() {
   return (
@@ -11,11 +13,13 @@ function App() {
         <Link className="site-logo" to="/">Furry Futures</Link>
         <nav>
           <Link to="/about">About</Link>
+          <Link to="/animals">Animals</Link>
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        {<Route path="/animals" element={<Animals />} />}
       </Routes>
     </BrowserRouter>
   )

@@ -16,8 +16,9 @@ createServer({
     },
 
     routes() {
-        this.namespace = "api"
+        this.namespace = "api" //all requests should start with api.
 
+        //the following handles get requests to api/animals
         this.get("/animals", (schema, request) => {
             return schema.animals.all()
         })
