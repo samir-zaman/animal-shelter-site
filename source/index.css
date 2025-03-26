@@ -143,3 +143,14 @@ header a:hover {
     color: white;
     border-radius: 10px;
 } 
+
+/*** ANIMALS PAGE ***/
+.animal-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.animal-tile img {
+    max-width: 100%;
+}

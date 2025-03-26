@@ -3,23 +3,32 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Animals from "./pages/Animals"
+import Animals from "./pages/Animals/Animals"
 import "./server"
+import AnimalDetail from './pages/Animals/AnimalDetail';
+import Layout from "./components/Layout"
+import Dashboard from "./pages/FosterParents/Dashboard";
+import Income from "./pages/FosterParents/Income";
+import Reviews from "./pages/FosterParents/Reviews";
+import FosterParentLayout from './components/FosterParentLayout';
+
 
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Link className="site-logo" to="/">Furry Futures</Link>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/animals">Animals</Link>
-        </nav>
-      </header>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {<Route path="/animals" element={<Animals />} />}
+        <Route path="/" element={<Layout />} >
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="animals" element={<Animals />} />
+            <Route path="animals/:id" element={<AnimalDetail />} />
+
+            <Route path="foster-parent" element={<FosterParentLayout />} >
+                <Route index element={<Dashboard/>} />
+                <Route path="income" element={<Income />} />
+                <Route path="reviews" element={<Reviews />} />
+            </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   )
