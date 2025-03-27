@@ -11,7 +11,7 @@ export default function FosterParentLayout() {
             </nav>
             <Outlet />
         </>
-    )d
+    )
 }
 
 
