@@ -1,15 +1,19 @@
 import React from 'react'
-import ReactDom from 'react-dom/client'
 import {Link} from 'react-router-dom'
 
 export default function Header(){
+    const activeStyle = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "purple"
+    }
     return (
         <header>
         <Link className="site-logo" to="/">Furry Futures</Link>
         <nav>
-          <Link to="/about">About</Link>
-          <Link to="/animals">Animals</Link>
-          <Link to="/foster-parent">Foster Parents</Link>
+          <NavLink to="/about">About</Link>
+          <NavLink to="/animals">Animals</Link>
+          <NavLink to="/foster-parent">Foster Parents</Link>
         </nav>
       </header>
     )
