@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 
 export default function Header(){
     const activeStyle = {
@@ -11,9 +11,24 @@ export default function Header(){
         <header>
         <Link className="site-logo" to="/">Furry Futures</Link>
         <nav>
-          <NavLink to="/about">About</Link>
-          <NavLink to="/animals">Animals</Link>
-          <NavLink to="/foster-parent">Foster Parents</Link>
+            <NavLink 
+                to="/about"
+                style={({isActive}) => isActive ? activeStyle : null}
+            >
+                About
+            </NavLink>
+            <NavLink 
+                to="/animals"
+                style={({isActive}) => isActive ? activeStyle : null}
+            >
+                Animals
+            </NavLink>
+            <NavLink 
+                to="/foster-parent"
+                style={({isActive}) => isActive ? activeStyle : null}
+            >
+                Foster Parents
+            </NavLink>
         </nav>
       </header>
     )

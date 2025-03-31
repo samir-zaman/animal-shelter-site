@@ -17,7 +17,7 @@ export default function Animals() {
             to={`/animals/${animal.id}`} 
             aria-label = {`View details for ${animal.name}`}
             >
-                <img src={animal.imageUrl} />
+                <img src={animal.imageUrl} alt={`Photo of ${animal.name}`}/>
                 <div className="animal-info">
                     <h3>{animal.name}</h3>
                     <p>${animal.price}<span>/day</span></p>

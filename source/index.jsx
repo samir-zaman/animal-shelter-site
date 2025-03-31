@@ -9,6 +9,8 @@ import AnimalDetail from './pages/Animals/AnimalDetail';
 import Layout from "./components/Layout"
 import Dashboard from "./pages/FosterParents/Dashboard";
 import Income from "./pages/FosterParents/Income";
+import Adoptees from "./pages/FosterParents/Adoptees"
+import AdopteeDetails from "./pages/FosterParents/AdopteeDetails"
 import Reviews from "./pages/FosterParents/Reviews";
 import FosterParentLayout from './components/FosterParentLayout';
 
@@ -26,6 +28,8 @@ function App() {
             <Route path="foster-parent" element={<FosterParentLayout />} >
                 <Route index element={<Dashboard/>} />
                 <Route path="income" element={<Income />} />
+                <Route path="adoptees" element={<Adoptees />} />
+                <Route path="adoptees/:id" element={<AdopteeDetails />}/>
                 <Route path="reviews" element={<Reviews />} />
             </Route>
         </Route>
