@@ -16,7 +16,7 @@ export default function Adoptees() {
             key={adoptee.id}
         >
             <div>
-                <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} />
+                <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} width={150}/>
                 <div>
                     <h3>{adoptee.name}</h3>
                     <p>${adoptee.price}/day</p>

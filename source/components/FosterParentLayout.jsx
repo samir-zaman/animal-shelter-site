@@ -11,7 +11,7 @@ export default function FosterParentLayout() {
         <>
             <nav>
                 <NavLink 
-                    to="/foster-parent"
+                    to="." //relative link, terminal syntax representing the "current" path, which we set to "foster-parent" for this file in index.jsx
                     end
                     style={({isActive}) => isActive ? activeStyle : null}
                 >
@@ -19,21 +19,21 @@ export default function FosterParentLayout() {
                 </NavLink>
     
                 <NavLink 
-                    to="/foster-parent/income"
+                    to="income" //relative link, links to /foster-parent/income
                     style={({isActive}) => isActive ? activeStyle : null}
                 >
                     Income
                 </NavLink>
 
                 <NavLink 
-                    to="/foster-parent/adoptees"
+                    to="adoptees" //relative link
                     style={({isActive}) => isActive ? activeStyle : null}
                 >
                     Adoptees
                 </NavLink>
 
                 <NavLink 
-                    to="/foster-parent/reviews"
+                    to="reviews" //relative link
                     style={({isActive}) => isActive ? activeStyle : null}
                 >
                     Reviews

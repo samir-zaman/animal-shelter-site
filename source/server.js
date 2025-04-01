@@ -39,7 +39,7 @@ createServer({
 
         this.get("/foster-parent/adoptees/:id", (schema, request) => {
             const id = request.params.id
-            return schema.animals.where({id, fosterParentId:"01"})
+            return schema.animals.findBy({id, fosterParentId:"01"})
         })
     }
-})
+}) 
