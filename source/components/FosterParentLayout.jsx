@@ -39,7 +39,7 @@ export default function FosterParentLayout() {
                     Reviews
                 </NavLink>
             </nav>
-            <Outlet />
+            <Outlet/>
         </>
     )
 }
