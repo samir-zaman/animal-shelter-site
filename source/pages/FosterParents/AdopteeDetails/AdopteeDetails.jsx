@@ -25,7 +25,7 @@ export default function AdopteeDetails() {
                 <Link 
                     to=".."
                     relative="path" //this prop tells the computer to take us back one "path" (e.g. from /foster-parent/adoptees/:id to /foster-parent/adoptees) instead of back one route (which would be the adoptees/:id route back to the parent foster-parent route)
-                >Back to all adoptees</Link>
+                >&larr; Back to all adoptees</Link>
                 <img src={adoptee.imageUrl} width={150} />
                 <h2>{adoptee.name}</h2>
                 <p>{adoptee.price}</p>

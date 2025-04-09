@@ -9,6 +9,12 @@ html, body {
     font-family: "Inter", sans-serif;
 }
 
+a {
+    text-decoration: unset;
+    color: unset;
+}
+
+/* 
 body::-webkit-scrollbar {
   display: none;
 }
@@ -17,6 +23,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+*/
 
 header {
     height: 110px;
@@ -64,14 +71,14 @@ header a:hover {
 
 /*** HOME PAGE ***/
 .home-container {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./assets/images/home-hero.jpg") no-repeat center 15% / cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 30%), url("./assets/images/home-hero.jpg") no-repeat center 15% / cover;
     background-size: cover;
-    min-height: 350px;
+    min-height: 550px;
     color: white;
-    padding: 45px 23px;
+    padding: 45px 3em;
 }
 
 .home-container h1 {
@@ -153,6 +160,11 @@ header a:hover {
 
 .animal-tile img {
     max-width: 100%;
+}
+
+.animal-type.selected {
+    background-color: black;
+    color: white;
 }
 
 /*** ADOPTEE DETAILS PAGE ***/
