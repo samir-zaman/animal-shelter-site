@@ -25,6 +25,12 @@ body {
 }
 */
 
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     height: 110px;
     display: flex;
@@ -69,6 +75,18 @@ header a:hover {
     transform: translate(1px, 1px);
 }
 
+footer {
+    background-color: #161616;
+    color: #AAAAAA;
+    height: 74px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    font-weight: 500;
+}
+
 /*** HOME PAGE ***/
 .home-container {
     display: flex;
@@ -78,7 +96,7 @@ header a:hover {
     background-size: cover;
     min-height: 550px;
     color: white;
-    padding: 45px 3em;
+    padding: 45px 1.75em;
 }
 
 .home-container h1 {
@@ -93,12 +111,13 @@ header a:hover {
 
 .home-container a {
     display: inline-block;
+    align-self: center;
     text-align: center;
     text-decoration: none;
     background-color: #FF8C38;
     border: none;
-    width: 100%;
-    margin-top: 27px;
+    width: 50%;
+    margin-top: 4em;
     padding-block: .75rem;
     color: white;
     font-weight: 700;
@@ -115,6 +134,7 @@ header a:hover {
 /*** ABOUT PAGE ***/
 .about-hero-image {
     max-width: 100%;
+    max-height: 20em;
 }
 
 .about-page-content {
@@ -152,19 +172,50 @@ header a:hover {
 } 
 
 /*** ANIMALS PAGE ***/
+.animal-list-container{
+    padding-inline: 1.5em;
+    padding-bottom: 2em;
+}
+
+.animal-list-container img{
+    border-radius: 5px;
+}
+
 .animal-list {
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
 }
 
+.animal-list-filter-buttons {
+    display: flex; 
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.animal-list-filter-buttons button{
+    margin-right:1em;
+    font-size: 1em;
+    padding: .5em 1em;
+    cursor: pointer;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animal-type{
+    padding: 0.3em 0.6em;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+}
+
+
 .animal-tile img {
     max-width: 100%;
 }
 
-.animal-type.selected {
-    background-color: black;
-    color: white;
-}
+
 
 /*** ADOPTEE DETAILS PAGE ***/

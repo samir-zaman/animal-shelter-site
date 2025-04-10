@@ -50,7 +50,7 @@ export default function Animals() {
     return(
         <div className="animal-list-container">
             <h1>Meet our animals</h1>
-            <div classname="animal-list-filter-buttons">
+            <div className="animal-list-filter-buttons">
             <button
                     onClick={() => handleFilterChange("type", "cuddly")}
                     className={
