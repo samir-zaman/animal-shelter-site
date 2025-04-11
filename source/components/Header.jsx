@@ -1,16 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {NavLink, Link} from 'react-router-dom'
 
 export default function Header(){
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
     const activeStyle = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "purple"
     }
+
+    function toggleMenu() {
+        setIsMenuOpen(prev => !prev)
+    }
+
     return (
         <header>
         <Link className="site-logo" to="/">Furry Futures</Link>
-        <nav>
+
+        <button className="mobile-menu-toggle" onClick={toggleMenu}>
+                ☰
+        </button>
+
+        <nav className={`mobile-menu${isMenuOpen ? "open" : ""}`}>
             <NavLink 
                 to="/about"
                 style={({isActive}) => isActive ? activeStyle : null}

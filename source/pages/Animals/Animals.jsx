@@ -29,7 +29,7 @@ export default function Animals() {
                 <img src={animal.imageUrl} alt={`Photo of ${animal.name}`}/>
                 <div className="animal-info">
                     <h3>{animal.name}</h3>
-                    <p>${animal.price}<span>/day</span></p>
+                    <p>{animal.age} years old</p>
                 </div>
                 <i className={`animal-type ${animal.type} selected`}>{animal.type}</i>
             </Link>

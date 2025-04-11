@@ -9,7 +9,7 @@ export default function FosterParentLayout() {
     }
     return(
         <>
-            <nav>
+            <nav className="portal-nav">
                 <NavLink 
                     to="." //relative link, terminal syntax representing the "current" path, which we set to "foster-parent" for this file in index.jsx
                     end

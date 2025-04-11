@@ -8,6 +8,7 @@ export default function About() {
             <img src={aboutImg} className="about-hero-image" />
             <div className="about-page-content">
                 <h1>Every rescue shelter has a story - here's ours.</h1>
+                <h2>Who we are</h2>
                 <p>Our mission is to match every pet with the perfect forever home. We rescue, rehabilitate, and rehome—so you can adopt with confidence and give a furry friend their happily ever after. 🐾</p>
                 <p>Our team is made up of passionate animal lovers who know firsthand the joy of giving rescues a second chance.</p>
             </div>

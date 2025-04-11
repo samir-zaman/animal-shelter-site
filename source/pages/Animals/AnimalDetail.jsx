@@ -18,7 +18,7 @@ export default function AnimalDetail() {
                     <img src={animal.imageUrl} />
                     <i>{animal.type}</i>
                     <h2>{animal.name}</h2>
-                    <p>${animal.price}</p>
+                    <p>{animal.age} years old</p>
                     <p>{animal.description}</p>
                     <button>Adopt this cutie</button>
                 </>

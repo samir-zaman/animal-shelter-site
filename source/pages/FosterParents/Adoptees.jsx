@@ -15,11 +15,11 @@ export default function Adoptees() {
             to={`/foster-parent/adoptees/${adoptee.id}`}
             key={adoptee.id}
         >
-            <div>
-                <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} width={150}/>
-                <div>
+            <div className="adoptees-tile">
+                <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} width={200}/>
+                <div className='adoptees-tile-text'>
                     <h3>{adoptee.name}</h3>
-                    <p>${adoptee.price}/day</p>
+                    <p>{adoptee.age} years old</p>
                 </div>
             </div>
         </Link>
@@ -27,7 +27,7 @@ export default function Adoptees() {
 
 
     return(
-        <section>
+        <section className="adoptees-wrapper">
             <h1>Your foster animals</h1>
             <div>
                 {
