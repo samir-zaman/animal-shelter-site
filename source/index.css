@@ -14,11 +14,11 @@ a {
     color: unset;
 }
 
-/* 
+
 body::-webkit-scrollbar {
   display: none;
 }
-
+/*
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -58,6 +58,25 @@ header a:hover {
     color: #161616;
     text-decoration: underline;
 }
+
+.donate-button{
+    background-color: red;
+    border-radius: 1em;
+    color: white;
+    margin-right: 1em;
+    padding: 0.75em 1em;
+
+}
+
+.donate-button:hover {
+    display: inline-block;
+    text-decoration: unset;
+    color: white;
+    background-color: rgb(239, 122, 26);
+    transform: scale(1.02);
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
 
 /* mobile menu */
 .mobile-menu-toggle {
@@ -164,8 +183,12 @@ footer {
 
 /*** ABOUT PAGE ***/
 .about-hero-image {
-    max-width: 100%;
-    max-height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 30%), url("./assets/images/about-hero.jpg") no-repeat center 15% / cover;
+    background-size: cover;
+    min-height: 430px;
 }
 
 .about-page-content {

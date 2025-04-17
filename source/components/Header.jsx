@@ -22,7 +22,7 @@ export default function Header(){
                 ☰
         </button>
 
-        <nav className={`mobile-menu${isMenuOpen ? "open" : ""}`}>
+        <nav className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
             <NavLink 
                 to="/about"
                 style={({isActive}) => isActive ? activeStyle : null}
@@ -40,6 +40,12 @@ export default function Header(){
                 style={({isActive}) => isActive ? activeStyle : null}
             >
                 Foster Parents
+            </NavLink>
+            <NavLink
+                to="/donate"
+                className="donate-button"
+            >
+                Donate
             </NavLink>
         </nav>
       </header>
