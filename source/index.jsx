@@ -6,7 +6,7 @@ import About from "./pages/About"
 import Animals from "./pages/Animals/Animals"
 import "./server"
 import AnimalDetail from './pages/Animals/AnimalDetail';
-import Donate from "./pages/Donate"
+import Donate from "./pages/Donation/Donate"
 import Layout from "./components/Layout"
 import Dashboard from "./pages/FosterParents/Dashboard";
 import Income from "./pages/FosterParents/Income";
