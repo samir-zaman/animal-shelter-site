@@ -4,18 +4,19 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const stripePromise = loadStripe('pk_test_51REzCLQB66owRwDgF1Vj8rsbnUd7tHd4U5QYDUTqTuDViUk9HbUW1IAjQ35VEwrMFTiO6o4ELToyYJkmncBc5rhq003pLwRgEg'); // publishable stripe key
 
-const presetAmounts = [10, 25, 50, 100];
+const presetAmounts = [20, 30, 40, 50, 100];
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
 
   const [isMonthly, setIsMonthly] = useState(true);
-  const [selectedAmount, setSelectedAmount] = useState(25);
+  const [selectedAmount, setSelectedAmount] = useState(20);
   const [customAmount, setCustomAmount] = useState('');
   const [status, setStatus] = useState(null);
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     zip: '',
   });
@@ -57,22 +58,20 @@ export default function CheckoutForm() {
 
   return (
     <form className="donation-form" onSubmit={handleSubmit}>
-      <h2 className="form-title">Support Wildlife</h2>
-
-      <div className="frequency-toggle">
+      <div className="frequency-toggle-container">
         <button
           type="button"
           className={isMonthly ? 'active' : ''}
           onClick={() => setIsMonthly(true)}
         >
-          Monthly
+          Give monthly 
         </button>
         <button
           type="button"
           className={!isMonthly ? 'active' : ''}
           onClick={() => setIsMonthly(false)}
         >
-          One-Time
+          Give once
         </button>
       </div>
 
@@ -87,34 +86,47 @@ export default function CheckoutForm() {
             ${amt}
           </button>
         ))}
-        <button
-          type="button"
-          className={selectedAmount === 'custom' ? 'active' : ''}
-          onClick={() => handleAmountClick('custom')}
-        >
-          Other
-        </button>
+        {/*Other Amount input field*/}
+        <div className="dollar-input-container">
+            <span className="dollar-sign">$</span>
+            <input
+            className="other-amount-input"
+            type="number"
+            placeholder="Other amount"
+            value={customAmount}
+            onChange={(e) => {
+                setCustomAmount(e.target.value)
+                setSelectedAmount("custom")}}
+            max="50000"
+            onInvalid={(e) => e.target.setCustomValidity('Maximum donation amount is $50,000')}
+            onInput={(e) => e.target.setCustomValidity('')} // reset message when typing
+            />
+        </div>
       </div>
 
-      {selectedAmount === 'custom' && (
-        <input
-          className="input"
-          type="number"
-          placeholder="Enter amount"
-          value={customAmount}
-          onChange={(e) => setCustomAmount(e.target.value)}
-        />
-      )}
+      <div className="border"></div>
 
       <input
         className="input"
         type="text"
         name="name"
-        placeholder="Full Name"
-        value={formData.name}
+        placeholder="First name"
+        value={formData.firstName}
         onChange={handleInputChange}
         required
       />
+
+    <input
+        className="input"
+        type="text"
+        name="name"
+        placeholder="Last name"
+        value={formData.lastName}
+        onChange={handleInputChange}
+        required
+      />
+
+      
 
       <input
         className="input"
@@ -139,8 +151,8 @@ export default function CheckoutForm() {
         <CardElement />
       </div>
 
-      <button className="submit-button" type="submit" disabled={!stripe}>
-        Donate ${getFinalAmount()} {isMonthly ? '/ month' : ''}
+      <button className="donation-submit-button" type="submit" disabled={!stripe}>
+        Donate ${Intl.NumberFormat("en-US").format(getFinalAmount())} {isMonthly ? 'monthly' : ''}
       </button>
 
       {status && <div className="status-message">{status}</div>}

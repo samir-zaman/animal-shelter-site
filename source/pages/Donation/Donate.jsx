@@ -11,6 +11,10 @@ export default function Donate() {
             <section className="donate-content-container">
                 <h1>Donate to Furry Futures</h1>
                 <img src="../assets/images/donate-hero.jpg" />
+                <h2>Make a difference.</h2>
+                <p>At Furry Futures, we are committed to the welfare and dignity of every animal that comes through our doors. Too many animals are abandoned, mistreated, or left without proper care. While this shelter is part of a demonstration, the need it represents is urgent and real. Shelters across the country operate under constant pressure—limited funding, rising medical costs, and overcrowded facilities. <span>Donations are what make it possible to keep going.</span></p>
+
+                <p>When you give, you’re not just offering charity—you’re providing the essentials: medical treatment, safe housing, nutritious food, and the resources needed to prepare these animals for adoption into responsible, loving homes. <span>Your support helps ensure that no animal is forgotten or left behind. </span> Every contribution is a step toward a more compassionate, humane future.</p>
             </section>
             <section className="donate-form-container">
                 <Elements stripe={stripePromise}>

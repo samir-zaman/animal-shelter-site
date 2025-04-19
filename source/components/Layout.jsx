@@ -7,10 +7,12 @@ export default function Layout(){
     return(
         <>
             <div className="site-wrapper">
-                <Header/>
-                <Outlet/>
+                <main>
+                    <Header/>
+                    <Outlet/>
+                </main>
+                <Footer />
             </div>
-            <Footer />
         </>
     )
 }

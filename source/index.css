@@ -27,9 +27,14 @@ body {
 
 .site-wrapper {
     min-height: 100vh;
-    max-width: 1400px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+}
+
+.site-wrapper main {
+    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -346,15 +351,40 @@ footer {
     display: flex;
     justify-content: space-between;
     padding-inline: 1.5em;
+    margin-top: 3em;
 }
 
 .donate-content-container{
-    width: 50%;
-    margin-right: 2em;
+    width: 60%;
+    padding-right: 2em;
+}
+
+.donate-content-container h1{
+    font-size: 3em;
+    color: rgb(1, 81, 60);
+    margin: 0 auto 0.25em;
+    font-weight: 900;
 }
 
 .donate-content-container img{
     width: 100%;
+    border-radius: 1em;
+    margin-bottom: 3em;
+}
+
+.donate-content-container h2{
+    font-size: 2em;
+    margin: 0;
+    color: rgb(1, 81, 60);
+}
+
+.donate-content-container p{
+    font-size: 1.25em;
+    line-height: 1.33;
+}
+
+.donate-content-container p span{
+    font-weight: bold;
 }
 
 .donation-form {
@@ -362,53 +392,97 @@ footer {
     border: 1px solid #ccc;
     border-radius: 1em;
     background-color: #e9e4d8;
+    max-width: 500px;
   }
   
-.form-title {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #333;
-}
-  
-.frequency-toggle {
+.frequency-toggle-container {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1em;
+    gap: 1em;
 }
   
-.frequency-toggle button {
-    padding: 8px 16px;
+.frequency-toggle-container button {
+    flex: 1;
+    padding: 0.75em 1.5em;
     border: none;
     background: #ccc;
     color: white;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 1.5em;
+    margin-bottom: 1rem;
 }
   
-.frequency-toggle button.active {
-    background: red;
+.frequency-toggle-container button.active {
+    background: rgb(1, 81, 60);
 }
   
 .amount-options {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
-    margin-bottom: 1rem;
+    margin-bottom: 2em;
 }
   
 .amount-options button {
-    flex: 1 1 30%;
+    flex: 0 0 30%;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: white;
     cursor: pointer;
+    font-size: 1.25em;
 }
   
 .amount-options button.active {
-    border: 2px solid red;
+    border: 2px solid rgb(1, 81, 60);;
     background-color: #e0f2f1;
+}
+
+.dollar-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+}
+
+.dollar-input-container:focus-within{
+    border: 2px solid rgb(1, 81, 60);;
+    background-color: #e0f2f1;
+}
+
+.dollar-input-container input:focus{
+    background-color: #e0f2f1;
+}
+  
+.dollar-sign {
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.other-amount-input{
+    border: none;
+    outline: none;
+    font-size: 1.25em;
+}
+
+.other-amount-input::-webkit-inner-spin-button,
+.other-amount-input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.other-amount-input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.border{
+    border-left:1px solid #e2e2e2;
 }
   
 .input {
@@ -416,26 +490,30 @@ footer {
     padding: 8px;
     margin-bottom: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 1em;
+    padding: 1em;
+    margin-bottom: 1.5em;
 }
   
 .card-element-wrapper {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-bottom: 1rem;
     background-color: white;
 }
   
-.submit-button {
+.donation-submit-button {
     width: 100%;
     padding: 12px;
-    background-color: rgb(255, 115, 115);
+    background-color: rgb(1, 81, 60);;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
+    font-size: 1.5em;
 }
   
 .submit-button:disabled {
