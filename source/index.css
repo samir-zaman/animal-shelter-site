@@ -277,10 +277,30 @@ footer {
     max-width: 100%;
 }
 
+/*** ANIMAL DETAILS PAGE ***/
+.animal-details-wrapper{
+    background-color: rgba(2, 72, 45, 0.709);
+    color: white;
+    padding: 2em;
+    margin: 1em 1.25em;
+    border-radius: 5px;
+}
 
+.animal-details-hero{
+    display: flex;
+}
 
-/*** ADOPTEE DETAILS PAGE ***/
+.animal-details-hero div{
+    padding-inline: 2em;
+}
 
+.animal-details-hero img{
+    border-radius: 5px;
+}
+
+.animal-details-hero div h2{
+    margin-top: 0
+}
 
 /*** FOSTER PARENTS PORTAL ***/
 .portal-nav{
@@ -327,7 +347,7 @@ footer {
 
 .adoptee-details-wrapper{
     background-color: rgb(233, 215, 215);
-    padding: 1.25em 2em;
+    padding: 2em;
     margin: 1em 1.25em;
     border-radius: 5px;
 }
@@ -336,8 +356,16 @@ footer {
     display: flex;
 }
 
+.adoptee-details-hero img{
+    border-radius: 5px;
+}
+
 .adoptee-details-hero div{
     padding-inline: 1.25em;
+}
+
+.adoptee-details-hero h2{
+    margin-top: 0;
 }
 
 .adoptee-details-wrapper a{

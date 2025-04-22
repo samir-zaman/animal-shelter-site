@@ -12,13 +12,17 @@ export default function AnimalDetail() {
     }, [params.id])
 
     return(
-            <div className="animal-detail-container">
+            <div className="animal-details-wrapper">
                 {animal ? (
                 <>
-                    <img src={animal.imageUrl} />
-                    <i>{animal.type}</i>
-                    <h2>{animal.name}</h2>
-                    <p>{animal.age} years old</p>
+                    <section className="animal-details-hero">
+                        <img src={animal.imageUrl} width={450} />
+                        <div>
+                            <h2>{animal.name}</h2>
+                            <p>{animal.age} years old</p>
+                            <i>{animal.type}</i>
+                        </div>
+                    </section>
                     <p>{animal.description}</p>
                     <button>Adopt this cutie</button>
                 </>

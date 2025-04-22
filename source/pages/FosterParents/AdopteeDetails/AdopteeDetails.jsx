@@ -29,20 +29,27 @@ export default function AdopteeDetails() {
             </Link>
             <div className="adoptee-details-wrapper">
                 <section className="adoptee-details-hero">
-                    <img src={adoptee.imageUrl} width={150} />
+                    <img src={adoptee.imageUrl} width={300} />
                     <div>
                         <h2>{adoptee.name}</h2>
                         <p>{adoptee.age} years old</p>
                         <i>{adoptee.type}</i>
                     </div>
                 </section>
-                <nav className="adoptee-details-nav">
+                <nav>
                     <NavLink 
                         to="."
                         end
                         style={({isActive}) => isActive ? activeStyle : null}
                     >
                         Bio
+                    </NavLink>
+                    <NavLink 
+                        to="hobbies"
+                        end
+                        style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Hobbies
                     </NavLink>
                     <NavLink 
                         to="health"
