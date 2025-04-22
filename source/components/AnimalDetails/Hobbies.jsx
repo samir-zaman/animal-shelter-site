@@ -2,11 +2,11 @@ import React from 'react'
 import { useOutletContext } from 'react-router-dom'
 
 export default function Bio() {
-    const {adoptee} = useOutletContext()
+    const {animal} = useOutletContext()
     return(
         <>
-            <h1>Bio</h1>
-            <p>{adoptee.bio}</p>
+            <h1>Hobbies go here</h1>
+            <p>{animal.bio}</p>
         </>
     )
 }

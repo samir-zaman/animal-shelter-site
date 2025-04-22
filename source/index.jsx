@@ -10,10 +10,11 @@ import Donate from "./pages/Donation/Donate"
 import Layout from "./components/Layout"
 import Dashboard from "./pages/FosterParents/Dashboard";
 import Income from "./pages/FosterParents/Income";
-import Adoptees from "./pages/FosterParents/Adoptees"
-import AdopteeDetails from "./pages/FosterParents/AdopteeDetails/AdopteeDetails"
-import Health from "./pages/FosterParents/AdopteeDetails/Health"
-import Bio from "./pages/FosterParents/AdopteeDetails/Bio"
+import Adoptees from "./pages/FosterParents/Adoptees/Adoptees"
+import AdopteeDetails from "./pages/FosterParents/Adoptees/AdopteeDetails"
+import Health from "./components/AnimalDetails/Health"
+import Hobbies from "./components/AnimalDetails/Hobbies"
+import Bio from "./components/AnimalDetails/Bio"
 import Reviews from "./pages/FosterParents/Reviews";
 import FosterParentLayout from './components/FosterParentLayout';
 
@@ -26,7 +27,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="animals" element={<Animals />} />
-            <Route path="animals/:id" element={<AnimalDetail />} />
+            <Route path="animals/:id" element={<AnimalDetail />}>
+                <Route index element={<Bio />}/>
+                <Route path="health" element={<Health/>} />
+                <Route path="hobbies" element={<Hobbies/>} />
+            </Route>
             <Route path="donate" element={<Donate />} />
 
             <Route path="foster-parent" element={<FosterParentLayout />} >
@@ -36,6 +41,7 @@ function App() {
                 <Route path="adoptees/:id" element={<AdopteeDetails />}>
                   <Route index element={<Bio />}/>
                   <Route path="health" element={<Health/>} />
+                  <Route path="hobbies" element={<Hobbies/>} />
                 </Route>
                 <Route path="reviews" element={<Reviews />} />
             </Route>

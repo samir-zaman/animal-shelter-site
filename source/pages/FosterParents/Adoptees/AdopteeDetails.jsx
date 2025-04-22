@@ -2,16 +2,14 @@ import React from "react"
 import { Link, useParams, Outlet, NavLink } from "react-router-dom"
 
 export default function AdopteeDetails() {
-    const [adoptee, setAdoptee] = React.useState([])
+    const [animal, setAnimal] = React.useState([])
     const params = useParams()
 
     React.useEffect(() => {
         fetch(`/api/foster-parent/adoptees/${params.id}`)
             .then(res => res.json())
-            .then(data => setAdoptee(data.animals))
+            .then(data => setAnimal(data.animals))
     }, [params.id])
-
-    console.log(adoptee)
 
     const activeStyle = {
         fontWeight: "bold",
@@ -29,11 +27,11 @@ export default function AdopteeDetails() {
             </Link>
             <div className="adoptee-details-wrapper">
                 <section className="adoptee-details-hero">
-                    <img src={adoptee.imageUrl} width={300} />
+                    <img src={animal.imageUrl} width={300} />
                     <div>
-                        <h2>{adoptee.name}</h2>
-                        <p>{adoptee.age} years old</p>
-                        <i>{adoptee.type}</i>
+                        <h2>{animal.name}</h2>
+                        <p>{animal.age} years old</p>
+                        <i>{animal.type}</i>
                     </div>
                 </section>
                 <nav>
@@ -58,7 +56,7 @@ export default function AdopteeDetails() {
                         Health
                     </NavLink>
                 </nav>
-                <Outlet context={{adoptee}}/>
+                <Outlet context={{animal}}/>
             </div>
         </>
     )

@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams, Outlet, NavLink } from "react-router-dom"
 
 export default function AnimalDetail() {
     const params = useParams();
@@ -10,6 +10,12 @@ export default function AnimalDetail() {
             .then(res => res.json())
             .then(data => setAnimal(data.animals))
     }, [params.id])
+
+    const activeStyle = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "purple"
+    }
 
     return(
             <div className="animal-details-wrapper">
@@ -23,8 +29,23 @@ export default function AnimalDetail() {
                             <i>{animal.type}</i>
                         </div>
                     </section>
-                    <p>{animal.description}</p>
-                    <button>Adopt this cutie</button>
+                    <nav>
+                        <NavLink 
+                            to="."
+                            end
+                            style={({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Bio
+                        </NavLink>
+                        <NavLink 
+                            to="pics"
+                            style={({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Pictures
+                        </NavLink>
+                    </nav>
+                <Outlet context={{animal}}/>
+                <button>Adopt this cutie</button>
                 </>
             ) : <h2>Loading...</h2>}
             </div>
