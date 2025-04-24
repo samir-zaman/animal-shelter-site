@@ -25,6 +25,20 @@ body {
 }
 */
 
+.icon{
+   height: 2.5rem;
+   margin-right: 1em;
+}
+
+.health-stat-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1em;
+    padding-inline: 0.5em;
+    font-weight: bolder;
+}
+
 .site-wrapper {
     min-height: 100vh;
     display: flex;
@@ -342,11 +356,13 @@ footer {
 }
 
 #adoptee-details-back-button{
-    margin: 2.5em 0 0 1.25em;
+    display: block;
+    margin-left: 1.25em;
+    padding-top: 2em;
 }
 
 .adoptee-details-wrapper{
-    background-color: rgb(233, 215, 215);
+    background-color: rgba(55, 53, 53, 0.29);
     padding: 2em;
     margin: 1em 1.25em;
     border-radius: 5px;
@@ -371,6 +387,10 @@ footer {
 .adoptee-details-wrapper a{
     display: inline-block;
     padding: 1.5em 1em 0 0;
+}
+
+.outlet-container{
+    background-color: #ff416c;
 }
 
 

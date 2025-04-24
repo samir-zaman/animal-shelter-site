@@ -40,7 +40,7 @@ export default function AdopteeDetails() {
                         end
                         style={({isActive}) => isActive ? activeStyle : null}
                     >
-                        Bio
+                        Health
                     </NavLink>
                     <NavLink 
                         to="hobbies"
@@ -49,14 +49,8 @@ export default function AdopteeDetails() {
                     >
                         Hobbies
                     </NavLink>
-                    <NavLink 
-                        to="health"
-                        style={({isActive}) => isActive ? activeStyle : null}
-                    >
-                        Health
-                    </NavLink>
                 </nav>
-                <Outlet context={{animal}}/>
+                <Outlet context={{animal}} className="outlet-container"/>
             </div>
         </>
     )

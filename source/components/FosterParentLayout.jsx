@@ -17,13 +17,6 @@ export default function FosterParentLayout() {
                 >
                     Dashboard
                 </NavLink>
-    
-                <NavLink 
-                    to="income" //relative link, links to /foster-parent/income
-                    style={({isActive}) => isActive ? activeStyle : null}
-                >
-                    Income
-                </NavLink>
 
                 <NavLink 
                     to="adoptees" //relative link
@@ -32,12 +25,6 @@ export default function FosterParentLayout() {
                     Adoptees
                 </NavLink>
 
-                <NavLink 
-                    to="reviews" //relative link
-                    style={({isActive}) => isActive ? activeStyle : null}
-                >
-                    Reviews
-                </NavLink>
             </nav>
             <Outlet/>
         </>
