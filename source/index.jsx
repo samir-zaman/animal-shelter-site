@@ -15,6 +15,7 @@ import Health from "./components/AnimalDetails/Health"
 import Hobbies from "./components/AnimalDetails/Hobbies"
 import Bio from "./components/AnimalDetails/Bio"
 import FosterParentLayout from './components/FosterParentLayout';
+import Login from './pages/FosterParents/Login'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                 <Route path="hobbies" element={<Hobbies/>} />
             </Route>
             <Route path="donate" element={<Donate />} />
+            <Route path="login" element={<Login />} />
 
             <Route path="foster-parent" element={<FosterParentLayout />} >
                 <Route index element={<Dashboard/>} />
