@@ -1,46 +1,39 @@
-import React, { useState } from "react";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import {auth} from "../../components/Firebase"
+import React, {useState} from 'react';
+import {Outlet} from 'react-router-dom';
 
 export default function Login() {
-  const [email, setEmail] = useState("demo@furryfutures.org");
-  const [password, setPassword] = useState("password123");
-
-  const handleSignIn = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('');
+    const [authenticated, setAuthenticated] = useState(
+      localStorage.getItem('isAuthenticated') === 'true'
+    );
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (email === 'foster@furryfutures.org' && password === 'password') {
+        setAuthenticated(true);
+        localStorage.setItem('isAuthenticated', 'true');
+      } else {
+        alert('Incorrect password');
+      }
+    };
     
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log('signed in user', user);
-      })
-      .catch((error) => {
-        console.error('Error code:', error.code);
-        console.error('Error message:', error.message);
-        console.error('Full error:', error);
-      });
-  }
-
-  return (
-    <form onSubmit={handleSignIn}>
-      <div>
-        <label>Email:</label>
-        <input
-          type="email"
+    return authenticated ? (
+      <Outlet />) :
+    (
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="email" 
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter password"
         />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input
-          type="password"
+        <input 
+          type="password" 
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter password"
         />
-      </div>
-      <button type="submit">Log In</button>
-    </form>
-  );
+        <button type="submit">Access Site</button>
+      </form>
+    );
 }

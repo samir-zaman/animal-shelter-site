@@ -47,7 +47,6 @@ export default function Header(){
             >
                 Donate
             </NavLink>
-            <NavLink to="/login">Login</NavLink>
         </nav>
       </header>
     )

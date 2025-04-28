@@ -22,6 +22,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path="/" element={<Layout />} >
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
@@ -34,15 +35,18 @@ function App() {
             <Route path="donate" element={<Donate />} />
             <Route path="login" element={<Login />} />
 
-            <Route path="foster-parent" element={<FosterParentLayout />} >
-                <Route index element={<Dashboard/>} />
-                <Route path="adoptees" element={<Adoptees />} />
-                <Route path="adoptees/:id" element={<AdopteeDetails />}>
-                  <Route index element={<Health />}/>
-                  <Route path="hobbies" element={<Hobbies/>} />
-                </Route>
+            <Route path="foster-parent" element={<Login />}>
+              <Route element={<FosterParentLayout />} >
+                  <Route index element={<Dashboard/>} />
+                  <Route path="adoptees" element={<Adoptees />} />
+                  <Route path="adoptees/:id" element={<AdopteeDetails />}>
+                    <Route index element={<Health />}/>
+                    <Route path="hobbies" element={<Hobbies/>} />
+                  </Route>
+              </Route>
             </Route>
         </Route>
+
       </Routes>
     </BrowserRouter>
   )
