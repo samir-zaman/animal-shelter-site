@@ -33,7 +33,6 @@ function App() {
                 <Route path="hobbies" element={<Hobbies/>} />
             </Route>
             <Route path="donate" element={<Donate />} />
-            <Route path="login" element={<Login />} />
 
             <Route path="foster-parent" element={<Login />}>
               <Route element={<FosterParentLayout />} >

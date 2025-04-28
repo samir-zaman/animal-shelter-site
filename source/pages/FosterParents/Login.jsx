@@ -2,16 +2,16 @@ import React, {useState} from 'react';
 import {Outlet} from 'react-router-dom';
 
 export default function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('foster@furryfutures.org')
+    const [password, setPassword] = useState('password');
     const [authenticated, setAuthenticated] = useState(
-      localStorage.getItem('isAuthenticated') === 'true'
+      localStorage.getItem('authenticated') === 'true'
     );
     const handleSubmit = (e) => {
       e.preventDefault();
       if (email === 'foster@furryfutures.org' && password === 'password') {
         setAuthenticated(true);
-        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem('authenticated', 'true');
       } else {
         alert('Incorrect password');
       }
@@ -35,5 +35,6 @@ export default function Login() {
         />
         <button type="submit">Access Site</button>
       </form>
+      <p>foster@furryfutures.org</p>
     );
 }

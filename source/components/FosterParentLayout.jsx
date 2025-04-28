@@ -1,12 +1,20 @@
 import React from 'react'
-import {NavLink, Outlet} from 'react-router-dom'
+import {useNavigate, NavLink, Outlet} from 'react-router-dom'
 
 export default function FosterParentLayout() {
+    const navigate = useNavigate()
+
     const activeStyle = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "purple"
     }
+
+    const handleLogout = () => {
+        localStorage.setItem('authenticated', 'false');
+        navigate("..");
+      };
+
     return(
         <>
             <nav className="portal-nav">
@@ -24,7 +32,9 @@ export default function FosterParentLayout() {
                 >
                     Adoptees
                 </NavLink>
-
+                <button onClick={handleLogout}>
+                    Logout
+                </button>
             </nav>
             <Outlet/>
         </>
