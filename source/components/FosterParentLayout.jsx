@@ -2,7 +2,7 @@ import React from 'react'
 import {useNavigate, NavLink, Outlet} from 'react-router-dom'
 
 export default function FosterParentLayout() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const activeStyle = {
         fontWeight: "bold",

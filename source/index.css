@@ -5,7 +5,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #FFF7ED;
+    background-color: #FAF9F6;
     font-family: "Inter", sans-serif;
 }
 
@@ -317,6 +317,81 @@ footer {
 }
 
 /*** FOSTER PARENTS PORTAL ***/
+/*login page*/
+.login-page-container{
+    display: flex;
+    /*border: solid red;*/
+    flex-grow: 1;
+    height: 50vh;
+}
+
+.login-page-left, .login-page-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.login-page-left{
+    padding-left: 8em;
+}
+
+.login-page-left h1{
+    font-size: 4em;
+    line-height: 0;
+    color: rgb(1, 81, 60)
+}
+
+.login-page-right{
+    align-items: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(1, 81, 60);
+    background-color: white;
+    padding: 8em 5em;
+    border-radius: 1em;
+    box-shadow: 1em 1em rgb(1, 81, 60);
+}
+
+.login-form h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    font-size: 2em;
+    color: rgb(1, 81, 60);
+}
+
+.login-form label{
+    display: block;
+    color: rgb(1, 81, 60);
+    font-weight: bold;
+}
+
+.login-form input{
+    display: block;
+    margin-bottom: 2em;
+    border-radius: 2px;
+    font-size: 1em;
+    color: rgb(1, 81, 60);
+    border: solid rgb(1, 81, 60);
+    width: 30em;
+    padding: 0.25em;
+}
+
+.login-form button{
+    font-size: 1em;
+    width: 33%;
+    padding: 0.5em;
+    background-color: rgb(1, 81, 60);
+    color: white;
+    border-radius: 1em;
+    border: none;
+}
+
+/*foster parents portal*/
 .portal-nav{
     display: flex;
     margin-bottom: 0.5em;
@@ -555,7 +630,7 @@ footer {
 .donation-submit-button {
     width: 100%;
     padding: 12px;
-    background-color: rgb(1, 81, 60);;
+    background-color: rgb(1, 81, 60);
     color: white;
     border: none;
     border-radius: 6px;
