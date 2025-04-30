@@ -7,7 +7,7 @@ export default function Header(){
     const activeStyle = {
         fontWeight: "bold",
         textDecoration: "underline",
-        color: "purple"
+        color: "#510116",
     }
 
     function toggleMenu() {

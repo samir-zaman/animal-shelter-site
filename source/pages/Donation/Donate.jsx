@@ -7,9 +7,10 @@ const stripePromise = loadStripe('pk_test_51REzCLQB66owRwDgF1Vj8rsbnUd7tHd4U5QYD
 
 export default function Donate() {
     return (
-        <div className="donate-page-wrapper">
+        <>
+        <h1 className="donate-page-header">Donate to Furry Futures</h1>
+        <main className="donate-page-wrapper">
             <section className="donate-content-container">
-                <h1>Donate to Furry Futures</h1>
                 <img src="../assets/images/donate-hero.jpg" />
                 <h2>Make a difference.</h2>
                 <p>At Furry Futures, we are committed to the welfare and dignity of every animal that comes through our doors. Too many animals are abandoned, mistreated, or left without proper care. While this shelter is part of a demonstration, the need it represents is urgent and real. Shelters across the country operate under constant pressure—limited funding, rising medical costs, and overcrowded facilities. <span>Donations are what make it possible to keep going.</span></p>
@@ -21,6 +22,7 @@ export default function Donate() {
                     <CheckoutForm />
                 </Elements>
             </section>
-        </div>
+        </main>
+        </>
     )
 }
