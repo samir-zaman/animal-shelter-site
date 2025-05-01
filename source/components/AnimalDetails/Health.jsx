@@ -5,7 +5,6 @@ export default function Health() {
     const{animal} = useOutletContext()
     return(
         <>
-            <h1>Health Stats</h1>
             <div className="health-stat-container">
                 <img className="icon" src={"../../assets/icons/vaccine.png"} alt="Syringe icon" />
                 <p>{animal.vaccines}</p>

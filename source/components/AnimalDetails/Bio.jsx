@@ -5,8 +5,10 @@ export default function Bio() {
     const {animal} = useOutletContext()
     return(
         <>
-            <h1>Bio</h1>
-            <p>{animal.bio}</p>
+            <p>Name: {animal.name}</p>
+            <p>Age: {animal.age}</p>
+            <p>Type: {animal.type}</p>
+            <p>Bio: {animal.bio}</p>
         </>
     )
 }

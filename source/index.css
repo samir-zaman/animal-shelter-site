@@ -290,28 +290,87 @@ footer {
 }
 
 /*** ANIMAL DETAILS PAGE ***/
+/*Option 1*/
+/*
 .animal-details-wrapper{
-    background-color: rgba(2, 72, 45, 0.709);
+    display: flex;
+    justify-content: start;
+    gap: 3em;
+    background-color: rgb(1, 81, 60);
     color: white;
-    padding: 2em;
+    padding: 5em 2.5em;
     margin: 1em 1.25em;
     border-radius: 5px;
-}
-
-.animal-details-hero{
-    display: flex;
-}
-
-.animal-details-hero div{
-    padding-inline: 2em;
 }
 
 .animal-details-hero img{
     border-radius: 5px;
 }
 
-.animal-details-hero div h2{
-    margin-top: 0
+.animal-details-info nav{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.animal-details-info nav a{
+    margin-right: 0.5em;
+}
+
+.animal-details-info button{
+    font-size: 1em;
+    background-color: rgb(150, 143, 44);
+    border: none;
+    border-radius: 1em;
+    color: white;
+    padding: 0.5em;
+}
+*/
+
+/*Option 2*/
+
+.animal-details-wrapper{
+    display: flex;
+    justify-content: start;
+    gap: 3em;
+    color: rgb(1, 81, 60);
+    padding: 2.5em 2.5em;
+    margin: 1em 2em;
+    border: 2px solid rgb(1, 81, 60);
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 1em 1em rgb(1, 81, 60);
+}
+
+.animal-details-header{
+    flex-direction: row;
+    font-size: 2em;
+}
+
+.animal-details-hero img{
+    border-radius: 5px;
+    border: 1px solid rgb(1, 81, 60);
+    border-radius: 1em;
+}
+
+.animal-details-info nav{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    /*border-bottom: 0.1em solid rgb(1, 81, 60);*/
+}
+
+.animal-details-info nav a{
+    margin-right: 2.5em;
+}
+
+.animal-details-info button{
+    font-size: 1em;
+    background-color: rgb(1, 81, 60);
+    border: none;
+    border-radius: 1em;
+    color: white;
+    padding: 0.5em;
 }
 
 /*** FOSTER PARENTS PORTAL ***/
@@ -481,7 +540,7 @@ footer {
 }
 
 .donate-page-header{
-    
+
     font-size: 3em;
     color: rgb(1, 81, 60);
     margin: 0 auto 0.25em;

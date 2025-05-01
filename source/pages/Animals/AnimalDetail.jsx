@@ -12,40 +12,39 @@ export default function AnimalDetail() {
     }, [params.id])
 
     const activeStyle = {
+        fontSize: "1.1em",
         fontWeight: "bold",
-        textDecoration: "underline",
-        color: "purple"
+        color: "#510116",
+        borderBottom: "5px solid #510116"
     }
 
     return(
             <div className="animal-details-wrapper">
                 {animal ? (
                 <>
+                    <h1 className="animal-details-header">Meet {animal.name}</h1>
                     <section className="animal-details-hero">
                         <img src={animal.imageUrl} width={450} />
-                        <div>
-                            <h2>{animal.name}</h2>
-                            <p>{animal.age} years old</p>
-                            <i>{animal.type}</i>
-                        </div>
                     </section>
-                    <nav>
-                        <NavLink 
-                            to="."
-                            end
-                            style={({isActive}) => isActive ? activeStyle : null}
-                        >
-                            Bio
-                        </NavLink>
-                        <NavLink 
-                            to="pics"
-                            style={({isActive}) => isActive ? activeStyle : null}
-                        >
-                            Pictures
-                        </NavLink>
-                    </nav>
-                <Outlet context={{animal}}/>
-                <button>Adopt this cutie</button>
+                    <section className="animal-details-info">
+                        <nav>
+                            <NavLink 
+                                to="."
+                                end
+                                style={({isActive}) => isActive ? activeStyle : null}
+                            >
+                                Bio
+                            </NavLink>
+                            <NavLink 
+                                to="health"
+                                style={({isActive}) => isActive ? activeStyle : null}
+                            >
+                                Pictures
+                            </NavLink>
+                        </nav>
+                        <Outlet context={{animal}}/>
+                        <button>Adopt this cutie</button>
+                    </section>
                 </>
             ) : <h2>Loading...</h2>}
             </div>
