@@ -130,12 +130,9 @@ header a:hover {
 .link-button {
     display: inline-block;
     text-align: center;
-    text-decoration: none;
     border: none;
     padding: .75rem 1.375rem;
-    color: initial;
     font-weight: 700;
-    border-radius: 5px;
     cursor: pointer;
     transition: transform .1s ease-in-out;
 }
@@ -157,7 +154,13 @@ footer {
 }
 
 /*** HOME PAGE ***/
-.home-container {
+.home-page-wrapper h1{
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-family: Georgia;
+    line-height: 1.2;
+}
+
+.home-hero-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -168,17 +171,11 @@ footer {
     padding: 45px 1.75em;
 }
 
-.home-container h1 {
-    font-weight: 700;
-    font-size: 2.25rem;
-    line-height: 42px;
-}
-
-.home-container p {
+.home-hero-container p {
     line-height: 24px;
 }
 
-.home-container a {
+.home-hero-container a {
     display: inline-block;
     align-self: center;
     text-align: center;
@@ -195,10 +192,71 @@ footer {
     transition: transform .1s ease-in-out;
 }
 
-.home-container a:hover {
+.home-hero-container a:hover {
     transform: translate(1px, 1px);
 }
 
+.home-about-container{
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-about-container p{
+    font-size: 1.25em;
+    font-weight: 100;
+}
+
+.home-about-container a{
+    border: 1px solid rgb(167, 21, 21);
+    color: rgb(167, 21, 21);
+    font-weight: 600;
+}
+
+.home-spotlight{
+    display: flex;
+}
+
+.home-spotlight-left{
+    background-color: #1A517B;
+    color: white;
+    padding: 4em 8em;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.home-spotlight-left p{
+    font-size: 1.15em;
+    font-weight: 200;
+    line-height: 1.5;
+}
+
+.home-spotlight-left a{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.home-spotlight-divider{
+  display: block;
+  margin: 2em auto 2em 0;
+  border-style: solid;
+  border-width: 3px;
+  width: 12em;
+  color: white;
+}
+
+.home-spotlight img {
+    width: 50%; /* Make image take exactly half */
+    height: 100%; /* Make image fill full height */
+    object-fit: cover; /* This is key - maintains aspect ratio while filling space */
+    object-position: center; /* Centers the image in its container */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    display: block; /* Removes any default inline spacing */
+  }
 
 /*** ABOUT PAGE ***/
 .about-hero-image {
@@ -394,8 +452,8 @@ footer {
 
 .login-page-left h1{
     font-size: 4em;
-    line-height: 0;
-    color: rgb(1, 81, 60)
+    color: rgb(1, 81, 60);
+    margin-bottom: 0;
 }
 
 .login-page-right{
