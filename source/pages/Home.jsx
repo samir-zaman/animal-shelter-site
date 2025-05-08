@@ -9,6 +9,23 @@ export default function Home() {
                 <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
                 <Link className="link-button" to="animals">Find your new best friend</Link>
             </section>
+            <section className="home-stats-container">
+                <h2>Adoption Statistics</h2>
+                <div className="home-stats-flex-wrapper">
+                    <div>
+                        <div>30%</div>
+                        <div>adoption stat</div>
+                    </div>
+                    <div>
+                        <div>2 weeks</div>
+                        <div>adoption stat</div>
+                    </div>
+                    <div>
+                        <div>100%</div>
+                        <div>adoption stat</div>
+                    </div>
+                </div>
+            </section>
             <section className="home-about-container">
                 <h1>Caring for animals since 2025</h1>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
