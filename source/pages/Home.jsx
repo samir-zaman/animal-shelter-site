@@ -9,27 +9,39 @@ export default function Home() {
                 <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
                 <Link className="link-button" to="animals">Find your new best friend</Link>
             </section>
-            <section className="home-stats-container">
-                <h2>Adoption Statistics</h2>
-                <div className="home-stats-flex-wrapper">
-                    <div>
-                        <div>30%</div>
-                        <div>adoption stat</div>
-                    </div>
-                    <div>
-                        <div>2 weeks</div>
-                        <div>adoption stat</div>
-                    </div>
-                    <div>
-                        <div>100%</div>
-                        <div>adoption stat</div>
-                    </div>
-                </div>
-            </section>
             <section className="home-about-container">
                 <h1>Caring for animals since 2025</h1>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
                 <Link className="link-button">LEARN MORE</Link>
+            </section>
+            <section className="home-stats-container">
+                <h2>2024 U.S. Adoption Statistics</h2>
+                <div className="home-stats-flex-wrapper">
+                    <div>
+                        <div>607k</div>
+                        <div>animals euthanized</div>
+                    </div>
+                    <div>
+                        <div>5 years</div>
+                        <div>average shelter stay</div>
+                    </div>
+                    <div>
+                        <div>5.8M</div>
+                        <div>animals admitted to shelters</div>
+                    </div>
+                </div>
+            </section>
+            <section className="home-donation-container">
+                <div className="home-donation-flex-wrapper">
+                    <div>
+                        <img src="../../assets/icons/give.png"></img>
+                    </div>
+                    <div>
+                        <h1>Support Our Mission</h1>
+                        <p>Your contribution helps cover food, housing, and veterinary costs for all animals under our care.</p>
+                        <Link>Donate &gt;</Link>
+                    </div>
+                </div>
             </section>
             <section className="home-spotlight">
                 <div className="home-spotlight-left">

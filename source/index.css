@@ -14,6 +14,10 @@ a {
     color: unset;
 }
 
+h1, h2 {
+    font-family: Georgia;
+}
+
 
 body::-webkit-scrollbar {
   display: none;
@@ -60,11 +64,12 @@ header {
 }
 
 .site-logo {
-    color: #785911;
+    color: #01513C;
     margin-right: auto;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 25px;
+    text-shadow: 3px 3px pink;
 }
 
 header a {
@@ -180,7 +185,7 @@ footer {
     align-self: center;
     text-align: center;
     text-decoration: none;
-    background-color: #468457;
+    background-color: #96A547;
     border: none;
     width: 50%;
     max-width: 400px;
@@ -195,6 +200,26 @@ footer {
 
 .home-hero-container a:hover {
     transform: translate(1px, 1px);
+}
+
+.home-about-container{
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-about-container p{
+    font-size: 1.25em;
+    font-weight: 100;
+}
+
+.home-about-container a{
+    border: 1px solid rgb(167, 21, 21);
+    color: rgb(167, 21, 21);
+    font-weight: 600;
 }
 
 @media (min-width: 1024px){
@@ -245,25 +270,51 @@ footer {
     font-size: 4rem;
     line-height: 5rem;
 }
-
-.home-about-container{
+/*
+.home-donation-container{
     text-align: center;
     padding-top: 5em;
     padding-bottom: 5em;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 1000px;
 }
 
-.home-about-container p{
+.home-donation-container p{
     font-size: 1.25em;
     font-weight: 100;
 }
 
-.home-about-container a{
-    border: 1px solid rgb(167, 21, 21);
-    color: rgb(167, 21, 21);
+.home-donation-container a{
+    border: 1px solid #a71515;
+    color: #a71515;
     font-weight: 600;
+}
+*/
+
+.home-donation-container a{
+    color: rgb(167, 21, 21);
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+}
+
+@media (min-width:1024px){
+    .home-donation-flex-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding-top: 5em;
+        padding-bottom: 5em;
+        margin: 0 auto;
+        max-width: 1000px;
+        gap: 1em
+    }
+
+    .home-donation-flex-wrapper > div:first-child img {
+        height: 8em;
+    }
 }
 
 .home-spotlight{
@@ -399,13 +450,13 @@ footer {
 
 /*** ANIMAL DETAILS PAGE ***/
 /*Option 1*/
-/*
+
 .animal-details-wrapper{
     display: flex;
     justify-content: start;
     gap: 3em;
-    background-color: rgb(1, 81, 60);
-    color: white;
+    background-color: rgb(252, 209, 216);
+    color: rgb(255, 255, 255);
     padding: 5em 2.5em;
     margin: 1em 1.25em;
     border-radius: 5px;
@@ -415,14 +466,29 @@ footer {
     border-radius: 5px;
 }
 
-.animal-details-info nav{
+.animal-details-info {
+    max-width: 750px;
+}
+
+.animal-details-info h1 {
+    margin-top: 0;
     font-size: 2em;
+    text-shadow: 3px 3px rgb(1, 81, 60);
+}
+
+.animal-details-info nav{
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 1em;
 }
 
 .animal-details-info nav a{
     margin-right: 0.5em;
+}
+
+.animal-details-info p {
+    line-height: 1.5;
+    font-size: 1.2em;
 }
 
 .animal-details-info button{
@@ -432,11 +498,12 @@ footer {
     border-radius: 1em;
     color: white;
     padding: 0.5em;
+    box-shadow: 5px 5px rgb(1, 81, 60);
 }
-*/
+
 
 /*Option 2*/
-
+/*
 .animal-details-wrapper{
     display: flex;
     justify-content: start;
@@ -465,7 +532,7 @@ footer {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 1em;
-    /*border-bottom: 0.1em solid rgb(1, 81, 60);*/
+    border-bottom: 0.1em solid rgb(1, 81, 60);
 }
 
 .animal-details-info nav a{
@@ -480,7 +547,7 @@ footer {
     color: white;
     padding: 0.5em;
 }
-
+*/
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
 .login-page-container{

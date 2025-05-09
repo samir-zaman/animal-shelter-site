@@ -12,21 +12,21 @@ export default function AnimalDetail() {
     }, [params.id])
 
     const activeStyle = {
-        fontSize: "1.1em",
+        fontSize: "1.5em",
         fontWeight: "bold",
-        color: "#510116",
-        borderBottom: "5px solid #510116"
+        color: "rgb(1, 81, 60)",
+        borderBottom: "5px solid rgb(1, 81, 60)"
     }
 
     return(
             <div className="animal-details-wrapper">
                 {animal ? (
                 <>
-                    <h1 className="animal-details-header">Meet {animal.name}</h1>
                     <section className="animal-details-hero">
-                        <img src={animal.imageUrl} width={450} />
+                        <img src={animal.imageUrl} width={600} />
                     </section>
                     <section className="animal-details-info">
+                    <h1 className="animal-details-header">Meet {animal.name}</h1>
                         <nav>
                             <NavLink 
                                 to="."
@@ -43,7 +43,7 @@ export default function AnimalDetail() {
                             </NavLink>
                         </nav>
                         <Outlet context={{animal}}/>
-                        <button>Adopt this cutie</button>
+                        <button>Meet me</button>
                     </section>
                 </>
             ) : <h2>Loading...</h2>}
