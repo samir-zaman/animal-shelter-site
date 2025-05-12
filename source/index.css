@@ -415,9 +415,14 @@ footer {
 
 .animal-list {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-flow: dense;
 }
+
+
+
+
 
 .animal-list-filter-buttons {
     display: flex; 
@@ -459,11 +464,11 @@ footer {
     color: rgb(255, 255, 255);
     padding: 5em 2.5em;
     margin: 1em 1.25em;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .animal-details-hero img{
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .animal-details-info {
