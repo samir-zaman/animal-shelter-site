@@ -1,8 +1,13 @@
 import React from "react"
-import aboutImg from "../assets/images/about-hero.jpg"
 import { Link } from "react-router-dom"
+import EmblaCarousel from '../components/EmblaCarousel/EmblaCarousel'
+
+const OPTIONS = { loop: true }
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 export default function About() {
+    
     return (
         <div className="about-page-container">
             <picture className="about-hero-image"></picture>
@@ -16,6 +21,7 @@ export default function About() {
                 <h2>Your new best friend is waiting.<br /> Start your rescue story now.</h2>
                 <Link className="link-button" to="/animals">Find your rescue</Link>
             </div>
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
         </div>
     );
 }
