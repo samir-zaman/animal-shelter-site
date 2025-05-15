@@ -164,18 +164,19 @@ footer {
 .footer-media-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Adjust this value to control spacing */
+    gap: 2em; /* Adjust this value to control spacing */
 }
 
 .footer-donate-button {
-    background-color: orange;
+    background-color: white;
     border-radius: 1em;
-    color: white;
+    color: black;
     font-size: 1.5em;
     font-weight: bold;
     padding: 0.5em 0.5em;
-    box-shadow: 10px 7px white;
+    box-shadow: 10px 7px orange;
     align-self: center;
+    max-width: 110px;
 }
 
 #footer-logo{
@@ -187,6 +188,7 @@ footer {
     display: block;
     font-weight: bold;
     font-size: 1.2em;
+    margin-bottom: 0.25em;
 }
 
 #footer-newsletter-form input,
@@ -196,6 +198,7 @@ footer {
     box-sizing: border-box;
     vertical-align: middle;
 }
+
 
 #footer-newsletter-form input {
     border: 5px solid orange;
@@ -210,11 +213,43 @@ footer {
     padding: 0 15px; /* optional for spacing inside button */
 }
 
-@media (min-width: 1024px){
-    
+.social-media-icon {
+    margin-right: 1em;
 }
 
-@media
+.footer-contact-info-container h3{
+    color: orange;
+    text-shadow: 1px 1px white;
+}
+
+@media (min-width: 1024px){
+    footer{
+        display: grid;
+        gap: .5em;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-media-container {
+        text-align: left;        
+    }
+
+    .footer-donate-button {
+        align-self: unset;
+    }    
+
+    .footer-logo-container {
+        display: flex;
+        justify-content: center; /* center horizontally */
+        align-self: start;
+    }
+
+    .footer-contact-info-container{
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        align-self: start;
+    }
+}
 
 /*** HOME PAGE ***/
 .home-page-wrapper h1{

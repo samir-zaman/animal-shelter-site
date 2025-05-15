@@ -24,7 +24,7 @@ export default function Footer() {
         <footer>
             <div className="footer-media-container">
                 <form onSubmit={handleSubmit} id="footer-newsletter-form">
-                    <label htmlFor="newsletter">Sign up for our newsletter</label><br />
+                    <label htmlFor="newsletter">Sign up for our newsletter</label>
                     <input 
                         id="newsletter"
                         type="email"
@@ -40,6 +40,7 @@ export default function Footer() {
                         <Link 
                         to= {social.url}
                         aria-label = {social.name}
+                        className='social-media-icon'
                         >
                             <img src={social.icon} />
                         </Link>
@@ -50,6 +51,7 @@ export default function Footer() {
                 <p><span className="site-logo" id="footer-logo">Furry Futures</span> &#169; 2025</p>
             </div>
             <div className='footer-contact-info-container'>
+                <h3>Contact Information</h3>
                 <p>123 Mission St, San Francisco CA 94114</p>
                 <p>&#40;123&#41;456-7890</p>
                 <p>contact@furryfutures.org</p>
