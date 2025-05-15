@@ -1,39 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import facebookIcon from '../../source/assets/icons/SocialMedia/facebook.png';
 import instagramIcon from '../../source/assets/icons/SocialMedia/instagram.png';
 import twitterIcon from '../../source/assets/icons/SocialMedia/twitter.png';
 
 export default function Footer() {
+    const [email, setEmail] = useState('');
+
     const socialLinks = [
         { name: 'Facebook', icon: facebookIcon, url: 'https://facebook.com' },
         { name: 'Instagram', icon: instagramIcon, url: 'https://instagram.com' },
         { name: 'Twitter', icon: twitterIcon, url: 'https://twitter.com' }
       ];
 
+    /*newsletter signup is UI only. I'm including the state variable and
+    handleSubmit function to demonstrate proper React implementation practices*/   
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setEmail('');
+    };
+
     return(
         <footer>
-            <div className='footer-top-row'>
-                <section>
-                    <label htmlFor="newsletter">Signup for our newsletter</label>
+            <div className="footer-media-container">
+                <form onSubmit={handleSubmit} id="footer-newsletter-form">
+                    <label htmlFor="newsletter">Sign up for our newsletter</label><br />
                     <input 
-                    id="newsletter"
-                    type="email"
-                    placeholder="Enter your email"
+                        id="newsletter"
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
-                    <button>Donate</button>
-                </section>
-                <section>
-                    <h1 className='site-logo'>Furry Futures</h1>
-                </section>
-                <section>
-                    <p>123 Mission St, San Francisco CA 94114</p>
-                    <p>&#40;123&#41;456-7890</p>
-                    <p>contact@furryfutures.org</p>
-                    <p>Hours: 6am - 10pm, every day</p>
-                </section>
-            </div>
-            <div className='footer-bottom-row'>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <button className="footer-donate-button">Donate</button>
+                <div className='social-media-icons'>
                     {socialLinks.map((social) => (
                         <Link 
                         to= {social.url}
@@ -42,6 +44,16 @@ export default function Footer() {
                             <img src={social.icon} />
                         </Link>
                     ))}
+                </div>
+            </div>
+            <div className='footer-logo-container'>
+                <p><span className="site-logo" id="footer-logo">Furry Futures</span> &#169; 2025</p>
+            </div>
+            <div className='footer-contact-info-container'>
+                <p>123 Mission St, San Francisco CA 94114</p>
+                <p>&#40;123&#41;456-7890</p>
+                <p>contact@furryfutures.org</p>
+                <p>Hours: 6am - 10pm, every day</p>
             </div>
         </footer>
     )

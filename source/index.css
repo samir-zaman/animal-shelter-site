@@ -29,6 +29,10 @@ body {
 }
 */
 
+button{
+    border: none;
+}
+
 .icon{
    height: 2.5rem;
    margin-right: 1em;
@@ -84,16 +88,15 @@ header a:hover {
     color: rgb(1, 81, 60);
 }
 
-.donate-button{
+.header-donate-button{
     background-color: #468457;
     border-radius: 1em;
     color: white;
     margin-right: 1em;
     padding: 0.75em 1em;
-
 }
 
-.donate-button:hover {
+.header-donate-button:hover {
     display: inline-block;
     text-decoration: unset;
     color: white;
@@ -146,10 +149,72 @@ header a:hover {
     transform: translate(1px, 1px);
 }
 
+/*** FOOTER ***/
+
 footer {
     background-color: rgb(1, 81, 60);
     color: white;
+    display: flex;
+    flex-direction: column; /* stacks child elements vertically */
+    align-items: center;     /* centers child elements horizontally */
+    text-align: center;      /* centers inline text content */
+    padding: 2rem;
 }
+
+.footer-media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust this value to control spacing */
+}
+
+.footer-donate-button {
+    background-color: orange;
+    border-radius: 1em;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.5em 0.5em;
+    box-shadow: 10px 7px white;
+    align-self: center;
+}
+
+#footer-logo{
+    color: white;
+    text-shadow: 3px 3px orange;
+}
+
+#footer-newsletter-form label{
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#footer-newsletter-form input,
+#footer-newsletter-form button {
+    height: 40px; 
+    font-size: 1em;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+#footer-newsletter-form input {
+    border: 5px solid orange;
+    color: rgb(1, 81, 60);
+}
+
+#footer-newsletter-form button {
+    background-color: orange;
+    color: white;
+    border: none; /* to avoid different heights from default button borders */
+    cursor: pointer;
+    padding: 0 15px; /* optional for spacing inside button */
+}
+
+@media (min-width: 1024px){
+    
+}
+
+@media
 
 /*** HOME PAGE ***/
 .home-page-wrapper h1{
