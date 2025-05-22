@@ -34,7 +34,6 @@ export default function Footer() {
                     />
                     <button type="submit">Subscribe</button>
                 </form>
-                <button className="footer-donate-button">Donate</button>
                 <div className='social-media-icons'>
                     {socialLinks.map((social) => (
                         <Link 
@@ -46,6 +45,7 @@ export default function Footer() {
                         </Link>
                     ))}
                 </div>
+                <button className="footer-donate-button">Donate</button>
             </div>
             <div className='footer-logo-container'>
                 <p><span className="site-logo" id="footer-logo">Furry Futures</span> &#169; 2025</p>
