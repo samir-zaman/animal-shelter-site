@@ -1,40 +1,65 @@
+@font-face {
+    font-family: 'Instrument Serif';
+    src: url('./assets/Fonts/InstrumentSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'Instrument Serif';
+    src: url('./assets/Fonts/InstrumentSerif-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }  
+
+@font-face {
+    font-family: 'Zen Kaku Gothic New';
+    src: url('./assets/Fonts/ZenKakuGothicNew-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Magic Retro';
+    src: url('./assets/Fonts/Magic Retro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+    
+  
+
 * {
     box-sizing: border-box;
 }
 
 :root{
-    --dark-green: hsl(164, 98, 16);
-    --light-green: hsl(97, 18, 81);
-    --orange: hsl(27, 97, 65);
-    --brown: hsl(15, 27, 37);
-    --bright-purple: hsl(241, 30, 65);
-    --muddy-purple: hsl(284, 16, 66);
+    --dark-green: hsl(164, 98%, 16%);
+    --light-green: hsl(97, 18%, 81%);
+    --orange: hsl(27, 97%, 65%);
+    --brown: hsl(15, 27%, 37%);
+    --bright-purple: hsl(241, 30%, 65%);
+    --muddy-purple: hsl(284, 16%, 66%);
+
+    --ff1: 'Instrument Serif';
+    --ff2: 'Zen Kaku Gothic New';
+    --ff3: 'Magic Retro';
     
-    --ff: "";
-    --ff2: "";
-    --p: 1rem/1.5em var(--ff);
-    --h1: 600 3rem/1.2em var(--ff2);
+    --h1: 600 clamp(2rem, 5vw, 3rem)/1.2 var(--ff1);
+    --p: 400 1.1rem/normal var(--ff2);
+    --logo: 600 clamp(1rem, 2.5vw, 3rem)/1.2 var(--ff3);
 }
 
-@font-face {
-    font-family: 'Roboto Mono';
-    src: url('./assets/icons/Roboto_Mono/static/RobotoMono-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto Mono';
-    src: url('./assets/icons/Roboto_Mono/static/RobotoMono-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: italic;
-}
 
 html, body {
     margin: 0;
     padding: 0;
     background-color: #FAF9F6;
-    font-family: 'Roboto Mono', monospace;
+    font: var(--p);
+}
+
+h1 {
+    font: var(--h1);
+    letter-spacing: 1px;
 }
 
 a {
@@ -92,12 +117,10 @@ header {
 }
 
 .site-logo {
-    color: #01513C;
+    color: var(--dark-green);
     margin-right: auto;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 25px;
-    text-shadow: 3px 3px pink;
+    font: var(--logo);
+    text-shadow: 3px 3px var(--muddy-purple);
 }
 
 header a {
@@ -176,7 +199,7 @@ header a:hover {
 /*** FOOTER ***/
 
 footer {
-    background-color: rgb(1, 81, 60);
+    background-color: var(--light-green);
     color: white;
     display: flex;
     flex-direction: column; /* stacks child elements vertically */
@@ -276,11 +299,6 @@ footer {
 }
 
 /*** HOME PAGE ***/
-.home-page-wrapper h1{
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    line-height: 1.2;
-}
-
 .home-hero-container {
     display: flex;
     flex-direction: column;
@@ -325,11 +343,6 @@ footer {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.home-about-container p{
-    font-size: 1.25em;
-    font-weight: 100;
 }
 
 .home-about-container a{
