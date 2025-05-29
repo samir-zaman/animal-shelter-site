@@ -25,6 +25,13 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Bright';
+    src: url('./assets/Fonts/Bright DEMO.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
     
   
 
@@ -35,6 +42,7 @@
 :root{
     --dark-green: hsl(164, 98%, 16%);
     --light-green: hsl(97, 18%, 81%);
+    --light-green-accent: hsl(97, 18%, 40%);
     --orange: hsl(27, 97%, 65%);
     --brown: hsl(15, 27%, 37%);
     --bright-purple: hsl(241, 30%, 65%);
@@ -43,10 +51,13 @@
     --ff1: 'Instrument Serif';
     --ff2: 'Zen Kaku Gothic New';
     --ff3: 'Magic Retro';
+    --ff4: 'Bright';
     
-    --h1: 600 clamp(2rem, 5vw, 3rem)/1.2 var(--ff1);
+    --h1: 600 clamp(2rem, 5vw, 2.5rem)/1.2 sans-serif;
+    --hero-h1: 600 clamp(3rem, 5vw, 5rem)/1.2 sans-serif;
     --p: 400 1.1rem/normal var(--ff2);
     --logo: 600 clamp(1rem, 2.5vw, 3rem)/1.2 var(--ff3);
+    --nav: 400 clamp(1.25rem, 2vw, 1.75rem)/1.2 var(--ff4);
 }
 
 
@@ -55,6 +66,8 @@ html, body {
     padding: 0;
     background-color: #FAF9F6;
     font: var(--p);
+    background-color: var(--light-green);
+    color: var(--light-green-accent)
 }
 
 h1 {
@@ -62,9 +75,33 @@ h1 {
     letter-spacing: 1px;
 }
 
+.hero-h1 {
+    font: var(--hero-h1);
+}
+
 a {
     text-decoration: unset;
     color: unset;
+}
+
+button, a {
+    cursor: pointer;
+    border: none;
+}
+
+.big-button{
+    background-color: var(--dark-green);
+    border-radius: 1em;
+    color: white;
+    padding: 0.5em 0.5em;
+    font: var(--nav);
+}
+
+.big-button:hover {
+    display: inline-block;
+    text-decoration: unset;
+    color: white;
+    background-color: #66529A;
 }
 
 
@@ -78,9 +115,6 @@ body {
 }
 */
 
-button{
-    border: none;
-}
 
 .icon{
    height: 2.5rem;
@@ -114,6 +148,7 @@ header {
     display: flex;
     align-items: center;
     padding-block: 10px;
+    margin-bottom: 3rem;
 }
 
 .site-logo {
@@ -126,7 +161,7 @@ header {
 header a {
     text-decoration: none;
     color: rgb(1, 81, 60);
-    font-weight: 600;
+    font: var(--nav);
     padding: 5px 20px;
 }
 
@@ -135,20 +170,8 @@ header a:hover {
     color: rgb(1, 81, 60);
 }
 
-.header-donate-button{
-    background-color: #468457;
-    border-radius: 1em;
-    color: white;
+header nav {
     margin-right: 1em;
-    padding: 0.75em 1em;
-}
-
-.header-donate-button:hover {
-    display: inline-block;
-    text-decoration: unset;
-    color: white;
-    background-color: #66529A;
-    transform: scale(1.02);
 }
 
 
@@ -185,7 +208,7 @@ header a:hover {
 .link-button {
     display: inline-block;
     text-align: center;
-    border: none;
+     
     padding: .75rem 1.375rem;
     font-weight: 700;
     cursor: pointer;
@@ -255,7 +278,6 @@ footer {
 #footer-newsletter-form button {
     background-color: orange;
     color: white;
-    border: none; /* to avoid different heights from default button borders */
     cursor: pointer;
     padding: 0 15px; /* optional for spacing inside button */
 }
@@ -301,40 +323,42 @@ footer {
 /*** HOME PAGE ***/
 .home-hero-container {
     display: flex;
+}
+
+.hero-text {
+    flex: 1;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 30%), url("./assets/images/home-hero.jpg") no-repeat center 15% / cover;
-    background-size: cover;
-    min-height: 550px;
-    color: white;
-    padding: 45px 1.75em;
+    padding: 3rem 2rem;
+    align-items: flex-start;
+    color: var(--light-green-accent);
 }
 
-.home-hero-container p {
-    line-height: 24px;
+.hero-h1-highlight {
+    color: var(--bright-purple)
 }
 
-.home-hero-container a {
-    display: inline-block;
+.hero-text .big-button {
     align-self: center;
-    text-align: center;
-    text-decoration: none;
-    background-color: #96A547;
-    border: none;
-    width: 50%;
-    max-width: 400px;
-    margin-top: 4em;
-    padding-block: .75rem;
-    color: white;
-    font-weight: 700;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform .1s ease-in-out;
+    background-color: var(--bright-purple);
+    margin-top: 0.5em;
 }
 
-.home-hero-container a:hover {
-    transform: translate(1px, 1px);
+.hero-text .big-button:hover {
+    background-color: var(--light-green-accent);
 }
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .home-about-container{
     text-align: center;
@@ -567,7 +591,7 @@ footer {
     padding: 0.3em 0.6em;
     font-style: normal;
     font-weight: 500;
-    border: none;
+     
     border-radius: 5px;
     background-color: #FFEAD0;
     color: #4D4D4D;
@@ -624,7 +648,7 @@ footer {
 .animal-details-info button{
     font-size: 1em;
     background-color: rgb(150, 143, 44);
-    border: none;
+     
     border-radius: 1em;
     color: white;
     padding: 0.5em;
@@ -672,7 +696,7 @@ footer {
 .animal-details-info button{
     font-size: 1em;
     background-color: rgb(1, 81, 60);
-    border: none;
+     
     border-radius: 1em;
     color: white;
     padding: 0.5em;
@@ -749,7 +773,7 @@ footer {
     background-color: rgb(1, 81, 60);
     color: white;
     border-radius: 1em;
-    border: none;
+     
 }
 
 /*foster parents portal*/
@@ -892,7 +916,7 @@ footer {
 .frequency-toggle-container button {
     flex: 1;
     padding: 0.75em 1.5em;
-    border: none;
+     
     background: #ccc;
     color: white;
     border-radius: 6px;
@@ -953,7 +977,7 @@ footer {
 }
 
 .other-amount-input{
-    border: none;
+     
     outline: none;
     font-size: 1.25em;
 }
@@ -995,7 +1019,7 @@ footer {
     padding: 12px;
     background-color: rgb(1, 81, 60);
     color: white;
-    border: none;
+     
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;

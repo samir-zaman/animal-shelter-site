@@ -1,13 +1,23 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import heroImage from '/assets/images/home-hero.jpg';
+
 
 export default function Home() {
     return (
         <div className="home-page-wrapper">
             <section className="home-hero-container">
-                <h1>Every tail deserves a tomorrow.</h1>
-                <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
-                <Link className="link-button" to="animals">Find your new best friend</Link>
+                <div className="hero-text">
+                    <h1 className="hero-h1">
+                        Every tail deserves a  
+                        <span className="hero-h1-highlight"> tomorrow.</span>
+                    </h1>
+                    <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
+                    <Link className="big-button" to="animals">Find your new best friend</Link>
+                </div>
+                <div className="hero-image">
+                    <img src={heroImage} alt="Foster puppy being petted" />
+                </div>
             </section>
             <section className="home-about-container">
                 <h1>Caring for animals since 2025</h1>

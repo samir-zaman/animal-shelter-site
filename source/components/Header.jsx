@@ -43,7 +43,7 @@ export default function Header(){
             </NavLink>
             <NavLink
                 to="/donate"
-                className="header-donate-button"
+                className="big-button"
             >
                 Donate
             </NavLink>
