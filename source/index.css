@@ -40,15 +40,18 @@
 }
 
 :root {
-    --light-green: hsl(97, 18%, 81%);
-    --medium-green: hsl(97, 18%, 40%);
-    --dark-green: hsl(164, 98%, 16%);
+    --green-light: hsl(97, 18%, 81%);
+    --green-medium: hsl(97, 18%, 40%);
+    --green-dark: hsl(164, 98%, 16%);
     --orange: hsl(27, 97%, 65%);
-    --brown: hsl(15, 27%, 37%);
+    --orange-light: hsl(27, 97%, 70%);
+    --brown: hsl(15, 27%, 20%);
     --purple: hsl(241, 30%, 65%);
     --purple-light: hsl(241, 30%, 88%);
     --purple-muddy: hsl(284, 16%, 66%);
     --red: hsl(11, 100%, 35%);
+    --white: hsl(0, 0%, 95%);
+    --black: hsl(0, 0%, 25%);
 
     --ff1: 'Instrument Serif';
     --ff2: 'Zen Kaku Gothic New';
@@ -68,10 +71,9 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: #FAF9F6;
     font: var(--p);
-    background-color: var(--light-green);
-    color: var(--medium-green);
+    background-color: var(--green-light);
+    color: var(--green-medium);
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -104,7 +106,7 @@ a {
 }
 
 .big-button {
-    background-color: var(--dark-green);
+    background-color: var(--green-dark);
     border-radius: 1em;
     color: white;
     padding: 0.5em 0.5em;
@@ -123,8 +125,8 @@ a {
     padding: .75rem 1.375rem;
     cursor: pointer;
     transition: transform .1s ease-in-out;
-    border: 1px solid var(--medium-green);
-    color: var(--medium-green);
+    border: 1px solid var(--green-medium);
+    color: var(--green-medium);
     font: var(--h3);
     border-radius: 1em;
 }
@@ -183,7 +185,7 @@ header {
 }
 
 .site-logo {
-    color: var(--dark-green);
+    color: var(--green-dark);
     margin-right: auto;
     font: var(--logo);
     text-shadow: 3px 3px var(--purple-muddy);
@@ -191,7 +193,7 @@ header {
 
 header a {
     text-decoration: none;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
     font: var(--nav);
     padding: 5px 20px;
 }
@@ -242,7 +244,7 @@ header nav {
 /*** FOOTER ***/
 
 footer {
-    background-color: var(--light-green);
+    background-color: var(--green-light);
     color: white;
     display: flex;
     flex-direction: column;
@@ -264,7 +266,7 @@ footer {
 .footer-donate-button {
     background-color: white;
     border-radius: 1em;
-    color: black;
+    color: var(--black);
     font-size: 1.5em;
     font-weight: bold;
     padding: 0.5em 0.5em;
@@ -347,7 +349,7 @@ footer {
 }
 
 /*** HOME PAGE ***/
-.home-hero-container {
+.hero-container {
     display: flex;
 }
 
@@ -358,10 +360,9 @@ footer {
     justify-content: center;
     padding: 3rem 2rem;
     align-items: flex-start;
-    color: var(--medium-green);
 }
 
-.hero-h1-highlight {
+.home-hero-h1-highlight {
     color: var(--purple)
 }
 
@@ -372,7 +373,7 @@ footer {
 }
 
 .hero-text .big-button:hover {
-    background-color: var(--medium-green);
+    background-color: var(--green-medium);
 }
 
 .hero-image {
@@ -398,14 +399,14 @@ footer {
 
 .home-stats-container {
     color: white;
-    background: var(--dark-green);
+    background: var(--green-dark);
     text-align: center;
 }
 
 .home-stats-container > h2 {
     margin: 0;
     padding: 3em;
-    color: var(--light-green)
+    color: var(--green-light)
 }
 
 .home-stats-flex-wrapper>div>div:first-child {
@@ -487,11 +488,11 @@ footer {
 }
 
 .home-spotlight-left {
-    background-color: var(--purple);
+    background-color: var(--red-dark);
     padding: 1em 2em;
     width: 50%;
     box-sizing: border-box;
-    color: var(--purple-light)
+    color: var(--white)
 }
 
 .home-spotlight-left p {
@@ -524,36 +525,30 @@ footer {
 }
 
 /*** ABOUT PAGE ***/
-.about-hero-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 30%), url("./assets/images/about-hero.jpg") no-repeat center 15% / cover;
-    background-size: cover;
-    min-height: 430px;
+
+.about-hero-container{
+    background-color: var(--brown);
+    color: var(--white);
+    text-align: start;
+}
+
+.about-hero-h1-highlight{
+    color: var(--purple)
 }
 
 .about-page-content {
     padding-inline: 23px;
-    color: #161616;
     margin-bottom: 55px;
 }
 
-.about-page-content h1 {
-    line-height: 38px;
-}
-
-.about-page-content p {
-    line-height: 22px;
-}
-
 .about-page-cta {
-    background-color: #FFCC8D;
-    color: #161616;
+    background-color: var(--green-dark);
+    color: var(--white);
     padding-inline: 32px;
     padding-bottom: 32px;
     margin-inline: 27px;
     border-radius: 5px;
+    box-shadow: 0.5em 0.5em var(--orange)
 }
 
 .about-page-cta h2 {
@@ -561,9 +556,9 @@ footer {
     padding-block: 37px;
 }
 
-.about-page-cta .hollow-button {
-    background-color: #161616;
-    color: white;
+.about-page-cta .big-button {
+    background-color: var(--green-medium);
+    color: var(--white);
     border-radius: 10px;
 }
 

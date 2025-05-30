@@ -7,11 +7,12 @@ import GiveIcon from '../assets/icons/give.svg?react';
 export default function Home() {
     return (
         <div className="home-page-wrapper">
-            <section className="home-hero-container">
+
+            <section className="hero-container home-hero-container">
                 <div className="hero-text">
                     <h1 className="hero-h1">
                         Every tail deserves a  
-                        <span className="hero-h1-highlight"> tomorrow.</span>
+                        <span className="home-hero-h1-highlight"> tomorrow.</span>
                     </h1>
                     <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
                     <Link className="big-button" to="animals">Find your new best friend</Link>
@@ -20,11 +21,13 @@ export default function Home() {
                     <img src={heroImage} alt="Foster puppy being petted" />
                 </div>
             </section>
+
             <section className="home-about-container">
                 <h1>Caring for animals since 2025</h1>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
                 <Link className="hollow-button">LEARN MORE</Link>
             </section>
+
             <section className="home-stats-container">
                 <h2>2024 U.S. Adoption Statistics</h2>
                 <div className="home-stats-flex-wrapper">
@@ -42,6 +45,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
             <section className="home-donation-container">
                 <div className="home-donation-flex-wrapper">
                     <div>
@@ -54,6 +58,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
             <section className="home-spotlight">
                 <img src="../../../assets/images/about-hero.jpg" alt="Girl holding puppy" height="500"/>
                 <div className="home-spotlight-left">
@@ -62,6 +67,7 @@ export default function Home() {
                     <Link className="underline-button">MEET JOY →</Link>
                 </div>
             </section>
+
         </div>
     )
 };
