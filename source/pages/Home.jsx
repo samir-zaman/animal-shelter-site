@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import heroImage from '/assets/images/home-hero.jpg';
+import GiveIcon from '../assets/icons/give.svg?react';
 
 
 export default function Home() {
@@ -22,45 +23,44 @@ export default function Home() {
             <section className="home-about-container">
                 <h1>Caring for animals since 2025</h1>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
-                <Link className="link-button">LEARN MORE</Link>
+                <Link className="hollow-button">LEARN MORE</Link>
             </section>
             <section className="home-stats-container">
                 <h2>2024 U.S. Adoption Statistics</h2>
                 <div className="home-stats-flex-wrapper">
                     <div>
-                        <div>607k</div>
-                        <div>animals euthanized</div>
+                        <div className="statistic">607k</div>
+                        <div className="statistic-description">animals euthanized</div>
                     </div>
                     <div>
-                        <div>5 years</div>
-                        <div>average shelter stay</div>
+                        <div className="statistic">5 years</div>
+                        <div className="statistic-description">average shelter stay</div>
                     </div>
                     <div>
-                        <div>5.8M</div>
-                        <div>animals admitted to shelters</div>
+                        <div className="statistic">5.8M</div>
+                        <div className="statistic-description">animals admitted to shelters</div>
                     </div>
                 </div>
             </section>
             <section className="home-donation-container">
                 <div className="home-donation-flex-wrapper">
                     <div>
-                        <img src="../../assets/icons/give.png"></img>
+                        <GiveIcon id='give-icon'/>
                     </div>
                     <div>
                         <h1>Support Our Mission</h1>
                         <p>Your contribution helps cover food, housing, and veterinary costs for all animals under our care.</p>
-                        <Link>Donate &gt;</Link>
+                        <Link className="underline-button">Donate &gt;</Link>
                     </div>
                 </div>
             </section>
             <section className="home-spotlight">
+                <img src="../../../assets/images/about-hero.jpg" alt="Girl holding puppy" height="500"/>
                 <div className="home-spotlight-left">
                     <h1>Adoption Spotlight</h1>
-                    <hr className="home-spotlight-divider"></hr>
                     <p>Joy is a 1.5-year-old Doberman Pinscher mix with a heart full of love waiting to shine. Once she is comfortable, Joy’s happy, tail-wagging spirit shines through, and she’ll eagerly seek out love and playtime. Joy is looking for a home that will help build her confidence with kindness, patience, and plenty of encouragement. If you’re ready to help Joy blossom into the loyal and loving companion she’s meant to be, come meet her today!</p>
-                    <Link>MEET JOY →</Link>
-                    </div>
-                <img src="../../../assets/images/about-hero.jpg" alt="Girl holding puppy" height="500"/>
+                    <Link className="underline-button">MEET JOY →</Link>
+                </div>
             </section>
         </div>
     )

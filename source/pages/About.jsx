@@ -19,7 +19,7 @@ export default function About() {
             </div>
             <div className="about-page-cta">
                 <h2>Your new best friend is waiting.<br /> Start your rescue story now.</h2>
-                <Link className="link-button" to="/animals">Find your rescue</Link>
+                <Link className="hollow-button" to="/animals">Find your rescue</Link>
             </div>
             <EmblaCarousel slides={SLIDES} options={OPTIONS} />
         </div>
