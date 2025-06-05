@@ -31,7 +31,7 @@ export default function Animals() {
                     <h3>{animal.name}</h3>
                     <p>{animal.age} years old</p>
                 </div>
-                <i className={`animal-type ${animal.type} selected`}>{animal.type}</i>
+                <i className={`square-button ${animal.type} selected`}>{animal.type}</i>
             </Link>
         </div>
     ))
@@ -51,29 +51,30 @@ export default function Animals() {
         <div className="animal-list-container">
             <h1>Meet our animals</h1>
             <div className="animal-list-filter-buttons">
-            <button
+                <p className="filter-label">Filter: </p>
+                <button
                     onClick={() => handleFilterChange("type", "cuddly")}
                     className={
-                        `animal-type cuddly ${typeFilter === "cuddly" ? "selected" : ""}`
+                        `square-button cuddly ${typeFilter === "cuddly" ? "selected" : ""}`
                     }
                 >Cuddly</button>
                 <button
                     onClick={() => handleFilterChange("type", "adventurous")}
                     className={
-                        `animal-type adventurous ${typeFilter === "adventurous" ? "selected" : ""}`
+                        `square-button adventurous ${typeFilter === "adventurous" ? "selected" : ""}`
                     }
                 >Adventurous</button>
                 <button
                     onClick={() => handleFilterChange("type", "hardworking")}
                     className={
-                        `animal-type hardworking ${typeFilter === "hardworking" ? "selected" : ""}`
+                        `square-button hardworking ${typeFilter === "hardworking" ? "selected" : ""}`
                     }
                 >Hard working</button>
 
                 {typeFilter ? (
                     <button
                         onClick={() => handleFilterChange("type", null)}
-                        className="animal-type clear-filters"
+                        className="underline-button clear-filters"
                     >Clear filter</button>
                 ) : null}
             </div>

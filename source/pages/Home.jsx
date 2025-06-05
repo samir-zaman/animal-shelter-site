@@ -12,7 +12,7 @@ export default function Home() {
                 <div className="hero-text">
                     <h1 className="hero-h1">
                         Every tail deserves a  
-                        <span className="home-hero-h1-highlight"> tomorrow.</span>
+                        <span className="purple-highlight"> tomorrow.</span>
                     </h1>
                     <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
                     <Link className="big-button" to="animals">Find your new best friend</Link>

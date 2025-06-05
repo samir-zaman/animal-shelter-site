@@ -12,10 +12,9 @@ export default function AnimalDetail() {
     }, [params.id])
 
     const activeStyle = {
-        fontSize: "1.5em",
         fontWeight: "bold",
-        color: "rgb(1, 81, 60)",
-        borderBottom: "5px solid rgb(1, 81, 60)"
+        color: "var(--purple)",
+        borderBottom: "solid var(--purple)"
     }
 
     return(
@@ -23,10 +22,10 @@ export default function AnimalDetail() {
                 {animal ? (
                 <>
                     <section className="animal-details-hero">
-                        <img src={animal.imageUrl} width={600} />
+                        <h2>Meet {animal.name}</h2>
+                        <img src={animal.imageUrl} width={400} />
                     </section>
                     <section className="animal-details-info">
-                    <h1 className="animal-details-header">Meet {animal.name}</h1>
                         <nav>
                             <NavLink 
                                 to="."

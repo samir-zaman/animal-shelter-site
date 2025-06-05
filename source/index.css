@@ -20,6 +20,13 @@
 }
 
 @font-face {
+    font-family: 'Zen Kaku Gothic New';
+    src: url('./assets/Fonts/ZenKakuGothicNew-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Magic Retro';
     src: url('./assets/Fonts/Magic Retro.ttf') format('truetype');
     font-weight: 400;
@@ -33,7 +40,12 @@
     font-style: normal;
 }
 
-
+@font-face {
+    font-family: 'Rosarivo';
+    src: url('./assets/Fonts/Rosarivo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 * {
     box-sizing: border-box;
@@ -45,21 +57,24 @@
     --green-dark: hsl(164, 98%, 16%);
     --orange: hsl(27, 97%, 65%);
     --orange-light: hsl(27, 97%, 70%);
-    --brown: hsl(15, 27%, 20%);
+    --brown: hsl(15, 27%, 25%);
     --purple: hsl(241, 30%, 65%);
     --purple-light: hsl(241, 30%, 88%);
     --purple-muddy: hsl(284, 16%, 66%);
     --red: hsl(11, 100%, 35%);
     --white: hsl(0, 0%, 95%);
+    --cream: hsl(34, 51%, 92%);
     --black: hsl(0, 0%, 25%);
 
     --ff1: 'Instrument Serif';
     --ff2: 'Zen Kaku Gothic New';
     --ff3: 'Magic Retro';
     --ff4: 'Bright';
+    --ff5: 'Rosarivo';
 
     --h1: 600 clamp(2rem, 4vw, 2.5rem)/1.2 sans-serif;
     --hero-h1: 600 clamp(3rem, 5vw, 5rem)/1.2 sans-serif;
+    --h2: 400 2rem var(--ff5);
     --h3: 600 1.2rem sans-serif;
     --p: 400 1.1rem/normal var(--ff2);
     --logo: 600 clamp(1rem, 2.5vw, 3rem)/1.2 var(--ff3);
@@ -93,7 +108,20 @@ h1 {
     font: var(--hero-h1);
 }
 
+h2 {
+    font: var(--h2);
+}
+
 /* buttons and links */
+button,
+input,
+select,
+textarea {
+  font: inherit; /* Inherit font-family, size, line-height, weight, etc. */
+  color: inherit;
+}
+
+
 a {
     text-decoration: unset;
     color: unset;
@@ -135,10 +163,17 @@ a {
 }
 
 .underline-button {
+    background: none;
     text-decoration: underline;
     text-underline-offset: 0.5em;
 }
 
+.square-button {
+    padding: 0.3em 0.6em;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 1em;
+}
 /* end of buttons and links */
 
 /* icons */
@@ -152,7 +187,14 @@ a {
     height: 2.5rem;
     margin-right: 1em;
 }
+
 /* end of icons */
+
+/* highlights */
+.purple-highlight{
+    color: var(--purple);
+}
+/* end of highlights */
 
 .health-stat-container {
     display: flex;
@@ -200,7 +242,7 @@ header a {
 
 
 header a:hover {
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
 }
 
 header nav {
@@ -298,7 +340,7 @@ footer {
 
 #footer-newsletter-form input {
     border: 5px solid orange;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
 }
 
 #footer-newsletter-form button {
@@ -362,10 +404,6 @@ footer {
     align-items: flex-start;
 }
 
-.home-hero-h1-highlight {
-    color: var(--purple)
-}
-
 .hero-text .big-button {
     align-self: center;
     background-color: var(--purple);
@@ -406,12 +444,16 @@ footer {
 .home-stats-container > h2 {
     margin: 0;
     padding: 3em;
-    color: var(--green-light)
+    color: var(--cream);
 }
 
 .home-stats-flex-wrapper>div>div:first-child {
     font-size: 4rem;
     line-height: 5rem;
+}
+
+.statistic-description{
+    color: var(--green-light);
 }
 
 
@@ -532,10 +574,6 @@ footer {
     text-align: start;
 }
 
-.about-hero-h1-highlight{
-    color: var(--purple)
-}
-
 .about-page-content {
     padding-inline: 23px;
     margin-bottom: 55px;
@@ -548,7 +586,7 @@ footer {
     padding-bottom: 32px;
     margin-inline: 27px;
     border-radius: 5px;
-    box-shadow: 0.5em 0.5em var(--orange)
+    box-shadow: 0.5em 0.5em var(--brown)
 }
 
 .about-page-cta h2 {
@@ -579,34 +617,35 @@ footer {
     grid-auto-flow: dense;
 }
 
-
-
-
-
 .animal-list-filter-buttons {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 2em;
 }
 
+.filter-label {
+    align-self: center;
+    margin: 0 1em 0 0;
+}
+
 .animal-list-filter-buttons button {
     margin-right: 1em;
-    font-size: 1em;
-    padding: .5em 1em;
-    cursor: pointer;
-    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animal-type {
-    padding: 0.3em 0.6em;
-    font-style: normal;
-    font-weight: 500;
-
-    border-radius: 5px;
-    background-color: #FFEAD0;
-    color: #4D4D4D;
+.cuddly {
+    background-color: var(--purple);
+    color: var(--cream);
 }
 
+.adventurous {
+    background-color: var(--brown);
+    color: var(--cream);
+}
+
+.hardworking {
+    background-color: var(--cream);
+    color: var(--brown);
+}
 
 .animal-tile img {
     max-width: 100%;
@@ -615,103 +654,34 @@ footer {
 /*** ANIMAL DETAILS PAGE ***/
 /*Option 1*/
 
-.animal-details-wrapper {
+.animal-details-hero {
     display: flex;
-    justify-content: start;
-    gap: 3em;
-    background-color: rgb(252, 209, 216);
-    color: rgb(255, 255, 255);
-    padding: 5em 2.5em;
-    margin: 1em 1.25em;
-    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animal-details-hero h2 {
+    color: var(--green-dark);
 }
 
 .animal-details-hero img {
-    border-radius: 15px;
+    border-radius: 4px;
 }
 
 .animal-details-info {
-    max-width: 750px;
-}
-
-.animal-details-info h1 {
-    margin-top: 0;
-    font-size: 2em;
-    text-shadow: 3px 3px rgb(1, 81, 60);
+    background-color: var(--cream);
+    border-radius: 5px;
 }
 
 .animal-details-info nav {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 1em;
+    font: var(--nav);
+    color: var(--green-dark);
 }
 
 .animal-details-info nav a {
-    margin-right: 0.5em;
+    margin-right: 1em;
 }
 
-.animal-details-info p {
-    line-height: 1.5;
-    font-size: 1.2em;
-}
-
-.animal-details-info button {
-    font-size: 1em;
-    background-color: rgb(150, 143, 44);
-
-    border-radius: 1em;
-    color: white;
-    padding: 0.5em;
-    box-shadow: 5px 5px rgb(1, 81, 60);
-}
-
-
-/*Option 2*/
-/*
-.animal-details-wrapper{
-    display: flex;
-    justify-content: start;
-    gap: 3em;
-    color: rgb(1, 81, 60);
-    padding: 2.5em 2.5em;
-    margin: 1em 2em;
-    border: 2px solid rgb(1, 81, 60);
-    background-color: white;
-    border-radius: 1em;
-    box-shadow: 1em 1em rgb(1, 81, 60);
-}
-
-.animal-details-header{
-    flex-direction: row;
-    font-size: 2em;
-}
-
-.animal-details-hero img{
-    border-radius: 5px;
-    border: 1px solid rgb(1, 81, 60);
-    border-radius: 1em;
-}
-
-.animal-details-info nav{
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 1em;
-    border-bottom: 0.1em solid rgb(1, 81, 60);
-}
-
-.animal-details-info nav a{
-    margin-right: 2.5em;
-}
-
-.animal-details-info button{
-    font-size: 1em;
-    background-color: rgb(1, 81, 60);
-     
-    border-radius: 1em;
-    color: white;
-    padding: 0.5em;
-}
-*/
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
 .login-page-container {
@@ -734,7 +704,7 @@ footer {
 
 .login-page-left h1 {
     font-size: 4em;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
     margin-bottom: 0;
 }
 
@@ -745,11 +715,11 @@ footer {
 .login-form {
     display: flex;
     flex-direction: column;
-    border: 2px solid rgb(1, 81, 60);
-    background-color: white;
+    border: 2px solid var(--green-dark);
+    background-color: var(--cream);
     padding: 8em 5em;
     border-radius: 1em;
-    box-shadow: 1em 1em rgb(1, 81, 60);
+    box-shadow: 1em 1em var(--green-dark);
 }
 
 .login-form h1 {
@@ -757,12 +727,12 @@ footer {
     justify-content: center;
     margin-bottom: 2em;
     font-size: 2em;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
 }
 
 .login-form label {
     display: block;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
     font-weight: bold;
 }
 
@@ -771,8 +741,8 @@ footer {
     margin-bottom: 2em;
     border-radius: 2px;
     font-size: 1em;
-    color: rgb(1, 81, 60);
-    border: solid rgb(1, 81, 60);
+    color: var(--green-dark);
+    border: solid var(--green-dark);
     width: 30em;
     padding: 0.25em;
 }
@@ -781,7 +751,7 @@ footer {
     font-size: 1em;
     width: 33%;
     padding: 0.5em;
-    background-color: rgb(1, 81, 60);
+    background-color: var(--green-dark);
     color: white;
     border-radius: 1em;
 
@@ -882,7 +852,7 @@ footer {
 .donate-page-header {
 
     font-size: 3em;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
     margin: 0 auto 0.25em;
     font-weight: 900;
 }
@@ -896,7 +866,7 @@ footer {
 .donate-content-container h2 {
     font-size: 2em;
     margin: 0;
-    color: rgb(1, 81, 60);
+    color: var(--green-dark);
 }
 
 .donate-content-container p {
@@ -937,7 +907,7 @@ footer {
 }
 
 .frequency-toggle-container button.active {
-    background: rgb(1, 81, 60);
+    background: var(--green-dark);
 }
 
 .amount-options {
@@ -958,7 +928,7 @@ footer {
 }
 
 .amount-options button.active {
-    border: 2px solid rgb(1, 81, 60);
+    border: 2px solid var(--green-dark);
     ;
     background-color: #e0f2f1;
 }
@@ -974,7 +944,7 @@ footer {
 }
 
 .dollar-input-container:focus-within {
-    border: 2px solid rgb(1, 81, 60);
+    border: 2px solid var(--green-dark);
     ;
     background-color: #e0f2f1;
 }
@@ -1030,7 +1000,7 @@ footer {
 .donation-submit-button {
     width: 100%;
     padding: 12px;
-    background-color: rgb(1, 81, 60);
+    background-color: var(--green-dark);
     color: white;
 
     border-radius: 6px;
