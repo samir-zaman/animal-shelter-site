@@ -49,7 +49,7 @@ export default function Login() {
                 placeholder="Enter password"
               />
             </label>
-            <button type="submit">Sign in</button>
+            <button className="main-button login-button" type="submit">Sign in</button>
           </form>
         </section>
         

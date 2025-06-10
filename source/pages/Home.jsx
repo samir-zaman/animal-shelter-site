@@ -15,7 +15,7 @@ export default function Home() {
                         <span className="purple-highlight"> tomorrow.</span>
                     </h1>
                     <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
-                    <Link className="big-button" to="animals">Find your new best friend</Link>
+                    <Link className="fancy-button" to="animals">Find your new best friend</Link>
                 </div>
                 <div className="hero-image">
                     <img src={heroImage} alt="Foster puppy being petted" />
@@ -25,11 +25,11 @@ export default function Home() {
             <section className="home-about-container">
                 <h1>Caring for animals since 2025</h1>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
-                <Link className="hollow-button">LEARN MORE</Link>
+                <Link className="main-button">LEARN MORE</Link>
             </section>
 
             <section className="home-stats-container">
-                <h2>2024 U.S. Adoption Statistics</h2>
+                <h1>2024 U.S. Adoption Statistics</h1>
                 <div className="home-stats-flex-wrapper">
                     <div>
                         <div className="statistic">607k</div>
@@ -66,6 +66,17 @@ export default function Home() {
                     <p>Joy is a 1.5-year-old Doberman Pinscher mix with a heart full of love waiting to shine. Once she is comfortable, Joy’s happy, tail-wagging spirit shines through, and she’ll eagerly seek out love and playtime. Joy is looking for a home that will help build her confidence with kindness, patience, and plenty of encouragement. If you’re ready to help Joy blossom into the loyal and loving companion she’s meant to be, come meet her today!</p>
                     <Link className="underline-button">MEET JOY →</Link>
                 </div>
+            </section>
+
+            <section className="fonts">
+                <h1 className="hero-h1">--hero-h1: Caring for animals since 2025</h1>
+                <h2 className="hero-h2">--hero-h2: Caring for animals since 2025</h2>
+                <h1>--h1: Caring for animals since 2025</h1>
+                <h2>--h2: Caring for animals since 2025</h2>
+                <h3>--h3: Caring for animals since 2025</h3>
+                <p>--p: Caring for animals since 2025</p>
+                <p className="logo">--logo: Caring for animals since 2025</p>
+                <nav>--nav: Caring for animals since 2025</nav>
             </section>
 
         </div>

@@ -22,7 +22,7 @@ export default function AnimalDetail() {
                 {animal ? (
                 <>
                     <section className="animal-details-hero">
-                        <h2>Meet {animal.name}</h2>
+                        <h2 className="hero-h2">Meet <span className="text-color-animation">{animal.name}</span></h2>
                         <img src={animal.imageUrl} width={400} />
                     </section>
                     <section className="animal-details-info">
@@ -42,7 +42,7 @@ export default function AnimalDetail() {
                             </NavLink>
                         </nav>
                         <Outlet context={{animal}}/>
-                        <button>Meet me</button>
+                        <button className="button-color-animation fancy-button">Meet me</button>
                     </section>
                 </>
             ) : <h2>Loading...</h2>}

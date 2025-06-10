@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Instrument Serif';
     src: url('./assets/Fonts/InstrumentSerif-Regular.ttf') format('truetype');
@@ -61,6 +63,7 @@
     --purple: hsl(241, 30%, 65%);
     --purple-light: hsl(241, 30%, 88%);
     --purple-muddy: hsl(284, 16%, 66%);
+    --purple-bold: hsl(256.7, 30.5%, 46.3%);
     --red: hsl(11, 100%, 35%);
     --white: hsl(0, 0%, 95%);
     --cream: hsl(34, 51%, 92%);
@@ -69,16 +72,17 @@
     --ff1: 'Instrument Serif';
     --ff2: 'Zen Kaku Gothic New';
     --ff3: 'Magic Retro';
-    --ff4: 'Bright';
+    --ff4: 'Bright', 'Instrument Serif';
     --ff5: 'Rosarivo';
 
-    --h1: 600 clamp(2rem, 4vw, 2.5rem)/1.2 sans-serif;
     --hero-h1: 600 clamp(3rem, 5vw, 5rem)/1.2 sans-serif;
-    --h2: 400 2rem var(--ff5);
-    --h3: 600 1.2rem sans-serif;
+    --h1: 600 clamp(2rem, 4vw, 2.5rem)/1.2 var(--ff1);
+    --hero-h2: 600 3.25rem/1.2 var(--ff4);
+    --h2: 600 2rem/1.3 var(--ff4);
+    --h3: 600 1.2rem/1.3 sans-serif;
     --p: 400 1.1rem/normal var(--ff2);
     --logo: 600 clamp(1rem, 2.5vw, 3rem)/1.2 var(--ff3);
-    --nav: 400 clamp(1.25rem, 2vw, 1.75rem)/1.2 var(--ff4);
+    --nav: 400 1.75rem/1.2 var(--ff4);
 }
 
 
@@ -98,7 +102,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-
+/* font classes */
 h1 {
     font: var(--h1);
     letter-spacing: 1px;
@@ -111,6 +115,23 @@ h1 {
 h2 {
     font: var(--h2);
 }
+
+.hero-h2 {
+    font: var(--hero-h2);
+}
+
+h3 {
+    font: var(--h3);
+}
+
+.logo {
+    font: var(--logo);
+}
+
+nav {
+    font: var(--nav);
+}
+/* end of fonts */
 
 /* buttons and links */
 button,
@@ -133,21 +154,21 @@ a {
     border: none;
 }
 
-.big-button {
+.fancy-button {
     background-color: var(--green-dark);
     border-radius: 1em;
     color: white;
     padding: 0.5em 0.5em;
     font: var(--nav);
 }
-.big-button:hover {
+.fancy-button:hover {
     display: inline-block;
     text-decoration: unset;
     color: white;
-    background-color: #66529A;
+    background-color: var(--purple-bold);
 }
 
-.hollow-button {
+.main-button {
     display: inline-block;
     text-align: center;
     padding: .75rem 1.375rem;
@@ -158,7 +179,7 @@ a {
     font: var(--h3);
     border-radius: 1em;
 }
-.hollow-button:hover {
+.main-button:hover {
     transform: translate(1px, 1px);
 }
 
@@ -174,6 +195,31 @@ a {
     font-weight: 500;
     border-radius: 1em;
 }
+
+.button-color-animation {
+    background: linear-gradient(
+      270deg,
+      var(--green-dark),
+      var(--purple),
+      var(--purple-bold)
+    );
+    background-size: 1400% 1400%;
+    color: var(--white);
+    animation: buttonGradientShift 24s ease infinite;
+  }
+  
+  @keyframes buttonGradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
 /* end of buttons and links */
 
 /* icons */
@@ -194,6 +240,40 @@ a {
 .purple-highlight{
     color: var(--purple);
 }
+
+.p-bold {
+    font-weight: bold;
+}
+
+.text-color-animation {
+    background: linear-gradient(
+      270deg,
+      var(--orange),
+      var(--orange-light),
+      var(--purple-muddy),
+      var(--purple-bold),
+      var(--purple),
+      var(--orange)
+    );
+    background-size: 1400% 1400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 12s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
 /* end of highlights */
 
 .health-stat-container {
@@ -404,13 +484,13 @@ footer {
     align-items: flex-start;
 }
 
-.hero-text .big-button {
+.hero-text .fancy-button {
     align-self: center;
     background-color: var(--purple);
     margin-top: 0.5em;
 }
 
-.hero-text .big-button:hover {
+.hero-text .fancy-button:hover {
     background-color: var(--green-medium);
 }
 
@@ -448,7 +528,7 @@ footer {
 }
 
 .home-stats-flex-wrapper>div>div:first-child {
-    font-size: 4rem;
+    font: var(--hero-h2);
     line-height: 5rem;
 }
 
@@ -594,7 +674,7 @@ footer {
     padding-block: 37px;
 }
 
-.about-page-cta .big-button {
+.about-page-cta .fancy-button {
     background-color: var(--green-medium);
     color: var(--white);
     border-radius: 10px;
@@ -654,6 +734,26 @@ footer {
 /*** ANIMAL DETAILS PAGE ***/
 /*Option 1*/
 
+.animal-details-wrapper {
+    background-color: var(--cream);
+    margin-inline: 1rem;
+    padding-inline: clamp(1rem, 8vw, 10rem);
+    padding-block: clamp(2rem, 5vh, 6rem);
+    color: var(--dark-green);
+}
+
+@media (min-width: 768px) {
+    .animal-details-wrapper {
+      margin-inline: 5rem;
+    }
+}
+  
+  @media (min-width: 1024px) {
+    .animal-details-wrapper {
+      margin-inline: 10rem;
+    }
+}
+
 .animal-details-hero {
     display: flex;
     flex-direction: column;
@@ -669,47 +769,46 @@ footer {
 }
 
 .animal-details-info {
-    background-color: var(--cream);
     border-radius: 5px;
 }
 
 .animal-details-info nav {
     font: var(--nav);
     color: var(--green-dark);
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
 }
 
 .animal-details-info nav a {
     margin-right: 1em;
 }
 
+.animal-details-info button {
+    display: block;
+    margin: 0 auto;
+}
+
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
 .login-page-container {
     display: flex;
-    /*border: solid red;*/
-    max-width: 1400px;
+    padding: 0 2em;
 }
 
 .login-page-left,
 .login-page-right {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    width: 50%;
-}
-
-.login-page-left {
-    padding-left: 8em;
+    flex: 1;
 }
 
 .login-page-left h1 {
-    font-size: 4em;
+    font: var(--hero-h1);
     color: var(--green-dark);
     margin-bottom: 0;
-}
-
-.login-page-right {
-    align-items: center;
 }
 
 .login-form {
@@ -726,7 +825,6 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
-    font-size: 2em;
     color: var(--green-dark);
 }
 
@@ -740,21 +838,18 @@ footer {
     display: block;
     margin-bottom: 2em;
     border-radius: 2px;
-    font-size: 1em;
     color: var(--green-dark);
     border: solid var(--green-dark);
+    border-radius: 5px;
     width: 30em;
     padding: 0.25em;
+    font-weight: normal;
 }
 
-.login-form button {
-    font-size: 1em;
+.login-button {
     width: 33%;
-    padding: 0.5em;
     background-color: var(--green-dark);
     color: white;
-    border-radius: 1em;
-
 }
 
 /*foster parents portal*/
@@ -784,8 +879,9 @@ footer {
     display: flex;
     padding: 1.25em 2em;
     margin-bottom: 2em;
-    background-color: rgb(233, 215, 215);
+    background-color: var(--green-medium);
     border-radius: 5px;
+    color: var(--green-light);
 }
 
 .adoptees-tile img {
