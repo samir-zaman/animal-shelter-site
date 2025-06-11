@@ -18,7 +18,7 @@ export default function Adoptees() {
             <div className="adoptees-tile">
                 <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} width={200}/>
                 <div className='adoptees-tile-text'>
-                    <h3>{adoptee.name}</h3>
+                    <h2 className='hero-h2'>{adoptee.name}</h2>
                     <p>{adoptee.age} years old</p>
                 </div>
             </div>

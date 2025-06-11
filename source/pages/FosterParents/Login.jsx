@@ -24,8 +24,8 @@ export default function Login() {
       <main className="login-page-container">
 
         <section className="login-page-left">
-          <h1>Welcome back</h1>
-          <h2>Sign in to view your portal.</h2>
+          <h1 className='hero-h1'>Welcome back</h1>
+          <h3>Sign in to view your portal.</h3>
         </section>
 
         <section className="login-page-right">
@@ -49,7 +49,7 @@ export default function Login() {
                 placeholder="Enter password"
               />
             </label>
-            <button className="main-button login-button" type="submit">Sign in</button>
+            <button className="fancy-button login-button" type="submit">Sign in</button>
           </form>
         </section>
         

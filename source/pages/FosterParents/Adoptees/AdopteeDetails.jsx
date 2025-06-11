@@ -12,9 +12,7 @@ export default function AdopteeDetails() {
     }, [params.id])
 
     const activeStyle = {
-        fontWeight: "bold",
         textDecoration: "underline",
-        color: "purple"
     }
 
     return (

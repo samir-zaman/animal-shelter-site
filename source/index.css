@@ -78,8 +78,8 @@
     --hero-h1: 600 clamp(3rem, 5vw, 5rem)/1.2 sans-serif;
     --h1: 600 clamp(2rem, 4vw, 2.5rem)/1.2 var(--ff1);
     --hero-h2: 600 3.25rem/1.2 var(--ff4);
-    --h2: 600 2rem/1.3 var(--ff4);
-    --h3: 600 1.2rem/1.3 sans-serif;
+    --h2: 400 2rem/1.3 var(--ff4);
+    --h3: 600 1.5rem/1.3 sans-serif;
     --p: 400 1.1rem/normal var(--ff2);
     --logo: 600 clamp(1rem, 2.5vw, 3rem)/1.2 var(--ff3);
     --nav: 400 1.75rem/1.2 var(--ff4);
@@ -157,30 +157,15 @@ a {
 .fancy-button {
     background-color: var(--green-dark);
     border-radius: 1em;
+    font: var(--nav);
     color: white;
     padding: 0.5em 0.5em;
-    font: var(--nav);
 }
 .fancy-button:hover {
     display: inline-block;
     text-decoration: unset;
     color: white;
     background-color: var(--purple-bold);
-}
-
-.main-button {
-    display: inline-block;
-    text-align: center;
-    padding: .75rem 1.375rem;
-    cursor: pointer;
-    transition: transform .1s ease-in-out;
-    border: 1px solid var(--green-medium);
-    color: var(--green-medium);
-    font: var(--h3);
-    border-radius: 1em;
-}
-.main-button:hover {
-    transform: translate(1px, 1px);
 }
 
 .underline-button {
@@ -192,32 +177,9 @@ a {
 .square-button {
     padding: 0.3em 0.6em;
     font-style: normal;
-    font-weight: 500;
-    border-radius: 1em;
-}
-
-.button-color-animation {
-    background: linear-gradient(
-      270deg,
-      var(--green-dark),
-      var(--purple),
-      var(--purple-bold)
-    );
-    background-size: 1400% 1400%;
-    color: var(--white);
-    animation: buttonGradientShift 24s ease infinite;
-  }
-  
-  @keyframes buttonGradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    border-radius: 5px;
+    background-color: var(--green-medium);
+    color: var(--cream);
 }
   
 /* end of buttons and links */
@@ -249,9 +211,8 @@ a {
     background: linear-gradient(
       270deg,
       var(--orange),
-      var(--orange-light),
-      var(--purple-muddy),
       var(--purple-bold),
+      var(--green-dark),
       var(--purple),
       var(--orange)
     );
@@ -706,6 +667,7 @@ footer {
 .filter-label {
     align-self: center;
     margin: 0 1em 0 0;
+    font-weight: bold;
 }
 
 .animal-list-filter-buttons button {
@@ -727,6 +689,14 @@ footer {
     color: var(--brown);
 }
 
+.animal-tile {
+    transition: transform 0.2s ease;
+}
+
+.animal-tile:hover {
+    transform: translateY(-5px);
+  }
+
 .animal-tile img {
     max-width: 100%;
 }
@@ -740,6 +710,7 @@ footer {
     padding-inline: clamp(1rem, 8vw, 10rem);
     padding-block: clamp(2rem, 5vh, 6rem);
     color: var(--dark-green);
+    border-radius: 5px;
 }
 
 @media (min-width: 768px) {
@@ -768,8 +739,8 @@ footer {
     border-radius: 4px;
 }
 
-.animal-details-info {
-    border-radius: 5px;
+.animal-details-info p {
+    color: var(--green-dark);
 }
 
 .animal-details-info nav {
@@ -784,16 +755,18 @@ footer {
     margin-right: 1em;
 }
 
-.animal-details-info button {
+.animal-details-wrapper > .fancy-button {
     display: block;
-    margin: 0 auto;
-}
+    margin: 4rem auto 0 auto;
+  }
+  
 
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
 .login-page-container {
     display: flex;
     padding: 0 2em;
+    color: var(--green-dark);
 }
 
 .login-page-left,
@@ -806,8 +779,6 @@ footer {
 }
 
 .login-page-left h1 {
-    font: var(--hero-h1);
-    color: var(--green-dark);
     margin-bottom: 0;
 }
 
@@ -825,12 +796,10 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
-    color: var(--green-dark);
 }
 
 .login-form label {
     display: block;
-    color: var(--green-dark);
     font-weight: bold;
 }
 
@@ -838,7 +807,6 @@ footer {
     display: block;
     margin-bottom: 2em;
     border-radius: 2px;
-    color: var(--green-dark);
     border: solid var(--green-dark);
     border-radius: 5px;
     width: 30em;
@@ -848,28 +816,19 @@ footer {
 
 .login-button {
     width: 33%;
-    background-color: var(--green-dark);
-    color: white;
 }
 
 /*foster parents portal*/
 .portal-nav {
     display: flex;
     margin-bottom: 0.5em;
+    color: var(--green-medium)
 }
 
 .portal-nav a {
-    text-decoration: none;
-    color: #4D4D4D;
-    font-weight: 500;
     padding: 0.3em 1.25em;
 }
 
-.portal-nav a:hover {
-    color: #161616;
-    text-decoration: underline;
-    font-weight: 600;
-}
 
 .adoptees-wrapper {
     padding-inline: 1.5em;
@@ -881,7 +840,7 @@ footer {
     margin-bottom: 2em;
     background-color: var(--green-medium);
     border-radius: 5px;
-    color: var(--green-light);
+    color: var(--cream);
 }
 
 .adoptees-tile img {
@@ -899,7 +858,8 @@ footer {
 }
 
 .adoptee-details-wrapper {
-    background-color: rgba(55, 53, 53, 0.29);
+    background-color: var(--green-medium);
+    color: var(--cream);
     padding: 2em;
     margin: 1em 1.25em;
     border-radius: 5px;
@@ -924,10 +884,6 @@ footer {
 .adoptee-details-wrapper a {
     display: inline-block;
     padding: 1.5em 1em 0 0;
-}
-
-.outlet-container {
-    background-color: #ff416c;
 }
 
 

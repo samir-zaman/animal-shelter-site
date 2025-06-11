@@ -5,9 +5,7 @@ export default function FosterParentLayout() {
     const navigate = useNavigate();
 
     const activeStyle = {
-        fontWeight: "bold",
-        textDecoration: "underline",
-        color: "purple"
+        color: "var(--brown)"
     }
 
     const handleLogout = () => {
@@ -32,7 +30,7 @@ export default function FosterParentLayout() {
                 >
                     Adoptees
                 </NavLink>
-                <button onClick={handleLogout}>
+                <button className='square-button' onClick={handleLogout}>
                     Logout
                 </button>
             </nav>

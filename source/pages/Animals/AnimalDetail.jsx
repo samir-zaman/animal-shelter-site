@@ -42,8 +42,8 @@ export default function AnimalDetail() {
                             </NavLink>
                         </nav>
                         <Outlet context={{animal}}/>
-                        <button className="button-color-animation fancy-button">Meet me</button>
                     </section>
+                    <button className="fancy-button">Meet me</button>
                 </>
             ) : <h2>Loading...</h2>}
             </div>
