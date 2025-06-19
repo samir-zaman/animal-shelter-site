@@ -9,7 +9,7 @@ export default function Home() {
         <div className="home-page-wrapper">
 
             <section className="hero-container home-hero-container">
-                <div className="hero-text">
+                <div className="home-hero-text">
                     <h1 className="hero-h1">
                         Every tail deserves a  
                         <span className="purple-highlight"> tomorrow.</span>
@@ -23,13 +23,13 @@ export default function Home() {
             </section>
 
             <section className="home-about-container">
-                <h1>Caring for animals since 2025</h1>
+                <h1 className="hero-h2">Caring for animals since 2025</h1>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
                 <Link className="main-button">LEARN MORE</Link>
             </section>
 
             <section className="home-stats-container">
-                <h1>2024 U.S. Adoption Statistics</h1>
+                <h1><span className="logo">2024</span> U.S. Adoption Statistics</h1>
                 <div className="home-stats-flex-wrapper">
                     <div>
                         <div className="statistic">607k</div>
@@ -48,13 +48,13 @@ export default function Home() {
 
             <section className="home-donation-container">
                 <div className="home-donation-flex-wrapper">
-                    <div>
-                        <GiveIcon id='give-icon'/>
+                    <div className="home-donation-left">
+                        <GiveIcon className='give-icon'/>
                     </div>
-                    <div>
-                        <h1>Support Our Mission</h1>
+                    <div className="home-donation-right">
+                        <h1 className="hero-h1">Support Our Mission</h1>
                         <p>Your contribution helps cover food, housing, and veterinary costs for all animals under our care.</p>
-                        <Link className="underline-button">Donate &gt;</Link>
+                        <Link className="underline-button home-donation-button">Donate &gt;</Link>
                     </div>
                 </div>
             </section>

@@ -6,24 +6,24 @@ export default function Health() {
     return(
         <>
             <div className="health-stat-container">
-                <img className="icon" src={"../../assets/icons/vaccine.png"} alt="Syringe icon" />
-                <p>{animal.vaccines}</p>
+                <img className="icon" src={"../../assets/icons/vaccine.svg"} alt="Syringe icon" />
+                <p>Vaccinations: {animal.vaccines}</p>
             </div>
             <div className="health-stat-container">
-                <img className="icon" src={"../../assets/icons/surgery.png"} alt="Surgery icon" />
-                <p>{animal.reproductive}</p>
+                <img className="icon" src={"../../assets/icons/surgery.svg"} alt="Surgery icon" />
+                <p>Spayed/neutered: {animal.reproductive}</p>
             </div>
             <div className="health-stat-container">
-                <img className="icon" src={"../../assets/icons/bark.png"} alt="Aggression icon" />
-                <p>{animal.behavior}</p>
+                <img className="icon" src={"../../assets/icons/bark.svg"} alt="Aggression icon" />
+                <p>Obedience training: {animal.behavior}</p>
             </div>
             <div className="health-stat-container">
-                <img className="icon" src={"../../assets/icons/toilet.png"} alt="Aggression icon" />
-                <p>{animal.houseTrained}</p>
+                <img className="icon" src={"../../assets/icons/toilet.svg"} alt="Aggression icon" />
+                <p>House training: {animal.houseTrained}</p>
             </div>
             <div className="health-stat-container">
-                <img className="icon" src={"../../assets/icons/other.png"} alt="Aggression icon" />
-                <p>{animal.other}</p>
+                <img className="icon" src={"../../assets/icons/other.svg"} alt="Aggression icon" />
+                <p>Other: {animal.other}</p>
             </div>
         </>
     )

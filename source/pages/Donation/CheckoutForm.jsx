@@ -80,19 +80,19 @@ export default function CheckoutForm() {
           <button
             key={amt}
             type="button"
-            className={selectedAmount === amt ? 'active' : ''}
+            className={`amount-button ${selectedAmount === amt ? 'active' : ''}`}
             onClick={() => handleAmountClick(amt)}
           >
             ${amt}
           </button>
         ))}
         {/*Other Amount input field*/}
-        <div className="dollar-input-container">
-            <span className="dollar-sign">$</span>
+        <div className="dollar-input-container amount-button">
+            <span>$</span>
             <input
             className="other-amount-input"
             type="number"
-            placeholder="Other amount"
+            placeholder="other"
             value={customAmount}
             onChange={(e) => {
                 setCustomAmount(e.target.value)
@@ -104,10 +104,8 @@ export default function CheckoutForm() {
         </div>
       </div>
 
-      <div className="border"></div>
-
       <input
-        className="input"
+        className="donate-input"
         type="text"
         name="name"
         placeholder="First name"
@@ -117,7 +115,7 @@ export default function CheckoutForm() {
       />
 
     <input
-        className="input"
+        className="donate-input"
         type="text"
         name="name"
         placeholder="Last name"
@@ -129,7 +127,7 @@ export default function CheckoutForm() {
       
 
       <input
-        className="input"
+        className="donate-input"
         type="email"
         name="email"
         placeholder="Email"
@@ -139,7 +137,7 @@ export default function CheckoutForm() {
       />
 
       <input
-        className="input"
+        className="donate-input"
         type="text"
         name="zip"
         placeholder="ZIP Code"
@@ -147,11 +145,11 @@ export default function CheckoutForm() {
         onChange={handleInputChange}
       />
 
-      <div className="card-element-wrapper">
+      <div className="card-element-wrapper donate-input">
         <CardElement />
       </div>
 
-      <button className="donation-submit-button" type="submit" disabled={!stripe}>
+      <button className="donation-submit-button square-button" type="submit" disabled={!stripe}>
         Donate ${Intl.NumberFormat("en-US").format(getFinalAmount())} {isMonthly ? 'monthly' : ''}
       </button>
 

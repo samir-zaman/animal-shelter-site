@@ -22,7 +22,7 @@ export default function AnimalDetail() {
                 {animal ? (
                 <>
                     <section className="animal-details-hero">
-                        <h2 className="hero-h2">Meet <span className="text-color-animation">{animal.name}</span></h2>
+                        <h2 className="animal-details-header hero-h2">Meet <span className="text-color-animation">{animal.name}</span></h2>
                         <img src={animal.imageUrl} width={400} />
                     </section>
                     <section className="animal-details-info">

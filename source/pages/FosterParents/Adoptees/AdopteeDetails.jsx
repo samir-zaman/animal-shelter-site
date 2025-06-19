@@ -48,7 +48,7 @@ export default function AdopteeDetails() {
                         Hobbies
                     </NavLink>
                 </nav>
-                <Outlet context={{animal}} className="outlet-container"/>
+                <Outlet context={{animal}}/>
             </div>
         </>
     )
