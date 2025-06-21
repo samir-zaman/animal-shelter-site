@@ -59,13 +59,13 @@
     --green-dark: hsl(164, 98%, 16%);
     --orange: hsl(27, 97%, 65%);
     --orange-light: hsl(27, 97%, 70%);
-    --brown: hsl(15, 27%, 25%);
+    --brown: hsl(15, 27%, 20%);
     --purple: hsl(241, 30%, 65%);
     --purple-light: hsl(241, 30%, 88%);
     --purple-muddy: hsl(284, 16%, 66%);
     --purple-bold: hsl(256.7, 30.5%, 46.3%);
     --red: hsl(3, 50%, 50%);
-    --white: hsl(0, 0%, 95%);
+    --white: hsl(10, 10%, 88%);
     --cream: hsl(34, 51%, 92%);
     --black: hsl(0, 0%, 25%);
 
@@ -76,7 +76,7 @@
     --ff5: 'Rosarivo';
 
     --hero-h1: 600 clamp(3rem, 5vw, 5rem)/1.2 sans-serif;
-    --h1: 600 clamp(2rem, 6vw, 3rem)/1.2 var(--ff4);
+    --h1: 600 clamp(2rem, 6vw, 3.5rem)/1.2 var(--ff4);
     --hero-h2: 600 clamp(1.75rem, 4vw, 3.5rem)/1.2 sans-serif;
     --h2: 400 2rem/1.3 var(--ff4);
     --h3: 600 1.5rem/1.3 sans-serif;
@@ -162,6 +162,7 @@ textarea {
 a {
     text-decoration: unset;
     color: unset;
+    margin-top: var(--space-sm);
 }
 
 button,
@@ -185,7 +186,8 @@ a {
 .underline-button {
     background: none;
     text-decoration: underline;
-    text-underline-offset: 0.5em;
+    text-underline-offset: 0.25em;
+    font: var(--nav);
 }
 
 .square-button {
@@ -255,7 +257,9 @@ svg {
     }
   }
   
-  
+  .h1-shadow{
+    text-shadow: 2px 2px var(--green-dark);
+}
 /* end of highlights */
 
 .site-wrapper {
@@ -269,6 +273,7 @@ header {
     display: flex;
     align-items: center;
     margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 header a {
@@ -327,7 +332,6 @@ header nav {
 /*** HOME PAGE ***/
 .hero-container {
     display: flex;
-    margin-top: var(--space-xl);
 }
 
 .home-hero-text {
@@ -343,7 +347,6 @@ header nav {
 .home-hero-text .fancy-button {
     align-self: center;
     background-color: var(--purple);
-    margin-top: var(--space-sm);
 }
 
 .home-hero-container .fancy-button:hover {
@@ -368,14 +371,13 @@ header nav {
     text-align: center;
     background: linear-gradient(360deg, 
                 hsla(97, 18%, 81%, 1) 0%, 
-                hsla(97, 18%, 81%, 1) 5%, 
                 hsla(97, 18%, 81%, 1) 85%, 
-                hsla(97, 18%, 83%, 1) 100%);
+                hsla(97, 18%, 84%, 1) 100%);
 }
 
 
 .home-stats-container {
-    color: white;
+    color: var(--cream);
     background: var(--green-dark);
     text-align: center;
     padding-block: var(--section-vert-space);
@@ -442,6 +444,7 @@ header nav {
         display: flex;
         text-align: center;
         margin: 0;
+        gap: var(--gutter);
     }
 
     .home-donation-left {
@@ -449,7 +452,7 @@ header nav {
         background-color: var(--red);
         justify-content: center;
         align-items: center;
-        width: 50vw;
+        flex: 1;
     }
 
     .give-icon {
@@ -463,6 +466,8 @@ header nav {
         justify-content: center;
         align-items: center;
         padding-block: var(--section-vert-space);
+        padding-right: var(--gutter);
+        flex: 1;
     }
 
     .home-donation-right h1{
@@ -473,84 +478,87 @@ header nav {
 
     .home-donation-button {
         display: inline-block;
-        margin-top: var(--space-sm);
     }
 }
 
 
-.home-spotlight {
-    display: flex;
+.home-adoption-spotlight-container{
+    background-color: var(--green-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: var(--section-vert-space) var(--gutter);
 }
 
-.home-spotlight-left {
-    background-color: var(--red-dark);
-    padding: 1em 2em;
-    width: 50%;
-    box-sizing: border-box;
-    color: var(--white)
+.home-adoption-spotlight-left{
+    padding-bottom: var(--section-vert-space)
 }
 
-.home-spotlight-left p {
-    line-height: 1.5;
-}
-
-.home-spotlight-divider {
-    display: block;
-    border-style: solid;
-    border-width: 3px;
-    width: 50%;
-    color: white;
-}
-
-.home-spotlight img {
-    width: 66%;
-    /* Make image take exactly half */
-    height: 100%;
-    /* Make image fill full height */
-    object-fit: cover;
-    /* This is key - maintains aspect ratio while filling space */
-    object-position: center;
-    /* Centers the image in its container */
-    margin: 0;
-    /* Remove any margin */
-    padding: 0;
-    /* Remove any padding */
-    display: block;
-    /* Removes any default inline spacing */
-}
-
-/*** ABOUT PAGE ***/
-
-.about-hero-container{
-    background-color: var(--brown);
-    color: var(--white);
+.home-adoption-spotlight-container p{
     text-align: start;
 }
 
+.home-adoption-spotlight-right img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media (min-width: 1024px) {
+    .home-adoption-spotlight-container{
+        display: flex;
+        align-items: center;
+        gap: var(--gutter);
+    }
+
+    .home-adoption-spotlight-left{
+        padding-bottom: 0;
+        flex: 1;
+    }
+
+    .home-adoption-spotlight-right {
+        flex: 1;
+    }
+}
+
+
+/*** ABOUT PAGE ***/
+.about-hero-container{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--brown);
+    color: var(--cream);
+}
+
+.about-hero-text{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding-left: var(--gutter);
+}
+
 .about-page-content {
-    padding-inline: 23px;
-    margin-bottom: 55px;
+    margin: var(--section-vert-space) var(--gutter);
 }
 
 .about-page-cta {
     background-color: var(--green-dark);
     color: var(--white);
-    padding-inline: 32px;
-    padding-bottom: 32px;
-    margin-inline: 27px;
+    margin-inline: var(--gutter);
+    padding-inline: var(--gutter);
+    padding-bottom: var(--space-lg);
     border-radius: 5px;
     box-shadow: 0.5em 0.5em var(--brown)
 }
 
 .about-page-cta h2 {
     margin: 0;
-    padding-block: 37px;
+    padding-block: var(--space-lg);
 }
 
 .about-page-cta .fancy-button {
     background-color: var(--green-medium);
     color: var(--white);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /*** ANIMALS PAGE ***/

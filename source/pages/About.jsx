@@ -11,8 +11,8 @@ export default function About() {
     
     return (
         <div className="about-page-wrapper">
-            <section className='hero-container about-hero-container'>
-                <div className="hero-text">
+            <section className='about-hero-container'>
+                <div className="about-hero-text">
                     <h1 className="hero-h1">Every rescue shelter has a <span className="purple-highlight">story</span> - here's ours.</h1>
                 </div>
                 <div className="hero-image">
@@ -20,7 +20,7 @@ export default function About() {
                 </div>
             </section>
             <div className="about-page-content">
-                <h2>Who we are</h2>
+                <h1>Who we are</h1>
                 <p>Our mission is to match every pet with the perfect forever home. We rescue, rehabilitate, and rehome—so you can adopt with confidence and give a furry friend their happily ever after. 🐾</p>
                 <p>Our team is made up of passionate animal lovers who know firsthand the joy of giving rescues a second chance.</p>
             </div>

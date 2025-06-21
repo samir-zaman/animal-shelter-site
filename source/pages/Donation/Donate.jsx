@@ -23,6 +23,18 @@ export default function Donate() {
                 </Elements>
             </section>
         </main>
+
+        <section className="fonts">
+                <h1 className="hero-h1">--hero-h1: Caring for animals since 2025</h1>
+                <h2 className="hero-h2">--hero-h2: Caring for animals since 2025</h2>
+                <h1>--h1: Caring for animals since 2025</h1>
+                <h2>--h2: Caring for animals since 2025</h2>
+                <h3>--h3: Caring for animals since 2025</h3>
+                <p>--p: Caring for animals since 2025</p>
+                <p className="logo">--logo: Caring for animals since 2025</p>
+                <nav>--nav: Caring for animals since 2025</nav>
+            </section>
+
         </div>
     )
 }
