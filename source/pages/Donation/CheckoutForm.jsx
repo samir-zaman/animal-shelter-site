@@ -64,7 +64,7 @@ export default function CheckoutForm() {
           className={isMonthly ? 'active' : ''}
           onClick={() => setIsMonthly(true)}
         >
-          Give monthly 
+          Give monthly ❤️
         </button>
         <button
           type="button"
@@ -75,7 +75,7 @@ export default function CheckoutForm() {
         </button>
       </div>
 
-      <div className="amount-options">
+      <div className="amount-options-container">
         {presetAmounts.map((amt) => (
           <button
             key={amt}
@@ -92,7 +92,7 @@ export default function CheckoutForm() {
             <input
             className="other-amount-input"
             type="number"
-            placeholder="other"
+            placeholder="custom"
             value={customAmount}
             onChange={(e) => {
                 setCustomAmount(e.target.value)

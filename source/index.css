@@ -64,7 +64,7 @@
     --purple-light: hsl(241, 30%, 88%);
     --purple-muddy: hsl(284, 16%, 66%);
     --purple-bold: hsl(256.7, 30.5%, 46.3%);
-    --red: hsl(3, 50%, 50%);
+    --red: hsl(3, 45%, 57%);
     --white: hsl(10, 10%, 88%);
     --cream: hsl(34, 51%, 92%);
     --black: hsl(0, 0%, 25%);
@@ -76,9 +76,9 @@
     --ff5: 'Rosarivo';
 
     --hero-h1: 600 clamp(3rem, 5vw, 5rem)/1.2 sans-serif;
-    --h1: 600 clamp(2rem, 6vw, 3.5rem)/1.2 var(--ff4);
+    --h1: 600 clamp(2.75rem, 6vw, 3.5rem)/1.2 var(--ff4);
     --hero-h2: 600 clamp(1.75rem, 4vw, 3.5rem)/1.2 sans-serif;
-    --h2: 400 2rem/1.3 var(--ff4);
+    --h2: 400 2.75rem/1.3 var(--ff4);
     --h3: 600 1.5rem/1.3 sans-serif;
     --p: 400 1.1rem/normal var(--ff2);
     --logo: 600 clamp(1.75rem, 2.5vw, 3rem)/1.2 var(--ff3);
@@ -203,8 +203,8 @@ a {
 /* icons */
 .give-icon{
     color: var(--red);
-    width: 15dvh;
-    height: 15dvh;
+    width: 20dvw;
+    height: 20dvh;
     display: block;
     margin: var(--space-md) auto;
 }
@@ -434,6 +434,10 @@ header nav {
     }
 }
 
+.home-donation-container {
+    margin-block: var(--space-xl);
+}
+
 .home-donation-flex-wrapper {
     text-align: center;
     margin: var(--section-vert-space) var(--gutter);
@@ -444,7 +448,6 @@ header nav {
         display: flex;
         text-align: center;
         margin: 0;
-        gap: var(--gutter);
     }
 
     .home-donation-left {
@@ -466,8 +469,13 @@ header nav {
         justify-content: center;
         align-items: center;
         padding-block: var(--section-vert-space);
-        padding-right: var(--gutter);
+        padding-inline: var(--gutter);
         flex: 1;
+        background: linear-gradient(360deg, 
+                hsla(97, 18%, 84%, 1) 0%, 
+                hsla(97, 18%, 81%, 1) 15%, 
+                hsla(97, 18%, 81%, 1) 85%, 
+                hsla(97, 18%, 84%, 1) 100%);
     }
 
     .home-donation-right h1{
@@ -563,35 +571,32 @@ header nav {
 
 /*** ANIMALS PAGE ***/
 .animal-list-container {
-    padding-inline: 1.5em;
-    padding-bottom: 2em;
+    margin-inline: var(--gutter);
 }
 
-.animal-list-container img {
-    border-radius: 5px;
+.animal-list-container h1 {
+    margin-block: var(--space-lg);
+    color: var(--green-dark);
 }
 
 .animal-list {
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: var(--space-lg);
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-flow: dense;
+}
+
+.filter-label {
+    align-self: center;
+    margin: 0;
+    font-weight: bold;
 }
 
 .animal-list-filter-buttons {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 2em;
-}
-
-.filter-label {
-    align-self: center;
-    margin: 0 1em 0 0;
-    font-weight: bold;
-}
-
-.animal-list-filter-buttons button {
-    margin-right: 1em;
+    margin-bottom: var(--space-lg);
+    gap: var(--space-xs);
 }
 
 .cuddly {
@@ -619,6 +624,16 @@ header nav {
 
 .animal-tile img {
     max-width: 100%;
+    border-radius: 5px;
+}
+
+.animal-info h3{
+    margin-bottom: 0;
+}
+
+.animal-info p{
+    margin-top: var(--space-sm);
+    line-height: var(--space-xs);
 }
 
 /*** ANIMAL DETAILS PAGE ***/
@@ -626,22 +641,21 @@ header nav {
 
 .animal-details-wrapper {
     background-color: var(--cream);
-    margin-inline: 1rem;
-    padding-inline: clamp(1rem, 8vw, 10rem);
-    padding-block: clamp(2rem, 5vh, 6rem);
+    margin-inline: var(--space-sm);
+    padding: clamp(var(--gutter), var(--space-xl), var(--space-xxl));
     color: var(--dark-green);
     border-radius: 5px;
 }
 
 @media (min-width: 768px) {
     .animal-details-wrapper {
-      margin-inline: 5rem;
+      margin-inline: var(--space-xl);
     }
 }
   
   @media (min-width: 1024px) {
     .animal-details-wrapper {
-      margin-inline: 10rem;
+      margin-inline: var(--space-xxl);
     }
 }
 
@@ -653,10 +667,11 @@ header nav {
 
 .animal-details-header {
     color: var(--green-dark);
+    margin: 0;
 }
 
 .animal-details-hero img {
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .animal-details-info p {
@@ -668,27 +683,21 @@ header nav {
     color: var(--green-dark);
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: var(--space-md);
 }
 
-.animal-details-info nav a {
-    margin-right: 1em;
+.animal-details-info nav a:not(:last-child) {
+    margin-right: var(--space-lg);
 }
 
 .animal-details-wrapper > .fancy-button {
     display: block;
-    margin: 4rem auto 0 auto;
+    margin: var(--space-md) auto 0 auto;
   }
   
 
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
-.login-page-container {
-    display: flex;
-    padding: 0 2em;
-    color: var(--green-dark);
-}
-
 .login-page-left,
 .login-page-right {
     display: flex;
@@ -698,6 +707,26 @@ header nav {
     flex: 1;
 }
 
+.login-page-container {
+    margin-inline: var(--gutter);
+    color: var(--green-dark);
+}
+
+.login-page-left {
+    margin-bottom: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+    .login-page-container {
+        display: flex;
+        gap: var(--gutter)
+    }
+
+    .login-page-left {
+        margin-bottom: 0;
+    }
+}
+
 .login-page-left h1 {
     margin-bottom: 0;
 }
@@ -705,32 +734,34 @@ header nav {
 .login-form {
     display: flex;
     flex-direction: column;
+    padding-block: var(--section-vert-space);
     border: 2px solid var(--green-dark);
     background-color: var(--cream);
-    padding: 8em 5em;
     border-radius: 1em;
     box-shadow: 1em 1em var(--green-dark);
+    width: 100%
 }
 
 .login-form h1 {
+    text-align: center;
+}
+
+.login-form-inputs-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 2em;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login-form label {
-    display: block;
     font-weight: bold;
 }
 
 .login-form input {
     display: block;
-    margin-bottom: 2em;
-    border-radius: 2px;
+    margin-bottom: var(--space-md);
+    padding: var(--space-xxs);
     border: solid var(--green-dark);
     border-radius: 5px;
-    width: 30em;
-    padding: 0.25em;
     font-weight: normal;
 }
 
@@ -741,23 +772,19 @@ header nav {
 /*foster parents portal*/
 .portal-nav {
     display: flex;
-    margin-bottom: 0.5em;
-    color: var(--green-medium)
+    gap: var(--space-lg);
+    margin: var(--gutter);
 }
 
-.portal-nav a {
-    padding: 0.3em 1.25em;
-}
-
-
+.foster-parent-dashboard,
 .adoptees-wrapper {
-    padding-inline: 1.5em;
+    margin-inline: var(--gutter);
 }
 
 .adoptees-tile {
     display: flex;
-    padding: 1.25em 2em;
-    margin-bottom: 2em;
+    padding: var(--gutter);
+    margin-bottom: var(--gutter);
     background-color: var(--green-medium);
     border-radius: 5px;
     color: var(--cream);
@@ -765,23 +792,21 @@ header nav {
 
 .adoptees-tile img {
     border-radius: 5px;
+    object-fit: cover;
+    margin-right: var(--space-md)
 }
 
-.adoptees-tile-text {
-    padding-inline: 1.5em;
-}
-
-#adoptee-details-back-button {
+.adoptee-details-back-button {
     display: block;
-    margin-left: 1.25em;
-    padding-top: 2em;
+    margin-inline: var(--gutter);
+    margin-bottom: var(--space-md);
 }
 
 .adoptee-details-wrapper {
     background-color: var(--green-medium);
     color: var(--cream);
-    padding: 2em;
-    margin: 1em 1.25em;
+    padding: var(--gutter);
+    margin-inline: var(--gutter);
     border-radius: 5px;
 }
 
@@ -794,7 +819,7 @@ header nav {
 }
 
 .adoptee-details-hero div {
-    padding-inline: 1.25em;
+    padding-inline: var(--space-md);
 }
 
 .adoptee-details-hero h2 {
@@ -803,35 +828,33 @@ header nav {
 
 .adoptee-details-wrapper a {
     display: inline-block;
-    padding: 1.5em 1em 0 0;
+    margin-top: var(--space-xl);
+    padding-right: var(--space-lg);
 }
 
 .health-stat-container {
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    padding-inline: 0.5em;
+    gap: var(--space-xs);
+    padding-inline: var(--space-sm);
 }
 
 
 /*** DONATION PAGE ***/
 .donate-page-wrapper {
-    margin-inline: 2em;
+    margin-inline: var(--gutter);
 }
 
-.donate-page-header {
-    color: var(--green-dark);
-}
-
-.donate-page-flex-container {
-    display: flex;
-    gap: 2rem;
+@media (min-width: 1024px) {
+    .donate-page-flex-container {
+        display: flex;
+        gap: var(--gutter);
+    }
 }
 
 .donate-content-container,
 .donate-form-container {
   flex: 1; 
-  min-width: 0; 
 }
 
 .donate-content-container img {
@@ -841,45 +864,54 @@ header nav {
 
 .donate-content-container h2 {
     color: var(--green-dark);
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+}
+
+.donate-form-container {
+    display: flex;
+    justify-content: center;
 }
 
 .donation-form {
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
     border: 2px solid var(--green-medium);
     border-radius: 5px;
     background-color: var(--cream);
-    max-width: 500px;
+    max-width: 750px;
+    justify-content: center;
 }
 
 .frequency-toggle-container {
     display: flex;
-    gap: 1em;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
 }
 
 .frequency-toggle-container button {
     flex: 1;
-    padding: 12px;
+    padding: var(--space-sm);
     color: white;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.5em;
-    margin-bottom: 1rem;
 }
 
 .frequency-toggle-container button.active {
     background: var(--green-dark);
 }
 
-.amount-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    margin-bottom: 2em;
+.amount-options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
 }
 
 .amount-button {
-    flex: 0 0 30%;
-    padding: 12px;
+    padding: var(--space-sm);
     border-radius: 5px;
     border: 1px solid var(--green-light);
     background-color: white;
@@ -896,6 +928,10 @@ header nav {
 .dollar-input-container {
     display: flex;
     overflow: hidden;
+}
+
+.dollar-input-container span {
+    margin-right: var(--space-xxs);
 }
 
 .dollar-input-container:focus-within {
@@ -925,15 +961,15 @@ header nav {
     width: 100%;
     border: 1px solid var(--green-light);
     border-radius: 5px;
-    padding: 12px;
-    margin-bottom: 1.5em;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-lg);
     background-color: white;
 }
 
 
 .donation-submit-button {
     width: 100%;
-    padding: 12px;
+    padding: var(--space-sm);
     background-color: var(--green-dark);
     color: white;
     cursor: pointer;
@@ -947,115 +983,99 @@ header nav {
 
 .status-message {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: var(--space-md);
     color: red;
 }
 
 /*** FOOTER ***/
 
 footer {
-    background-color: var(--green-light);
-    color: white;
     display: flex;
     flex-direction: column;
-    /* stacks child elements vertically */
-    align-items: center;
-    /* centers child elements horizontally */
     text-align: center;
-    /* centers inline text content */
-    padding: 2rem;
+    align-items: center;
 }
 
-.footer-media-container {
+.footer-box-one {
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    /* Adjust this value to control spacing */
 }
 
-.footer-donate-button {
-    background-color: white;
-    border-radius: 1em;
-    color: var(--black);
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 0.5em 0.5em;
-    box-shadow: 10px 7px orange;
-    align-self: center;
-    max-width: 110px;
-}
-
-#footer-logo {
-    color: white;
-    text-shadow: 3px 3px orange;
-}
-
-#footer-newsletter-form label {
+.footer-newsletter-form label {
     display: block;
     font-weight: bold;
-    font-size: 1.2em;
-    margin-bottom: 0.25em;
 }
 
-#footer-newsletter-form input,
-#footer-newsletter-form button {
-    height: 40px;
-    font-size: 1em;
-    box-sizing: border-box;
+.footer-newsletter-form input,
+.footer-newsletter-form button {
     vertical-align: middle;
 }
 
+.newsletter-form {
+    display: flex;
+}
 
-#footer-newsletter-form input {
-    border: 5px solid orange;
+.footer-newsletter-form input {
+    border: 3px solid var(--purple);
+    border-radius: 5px;
     color: var(--green-dark);
 }
 
-#footer-newsletter-form button {
-    background-color: orange;
+.footer-newsletter-form button {
+    background-color: var(--purple);
     color: white;
     cursor: pointer;
-    padding: 0 15px;
-    /* optional for spacing inside button */
+    border-radius: 5px;
 }
+
+.footer-donate-button {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 
 .social-media-icon {
     margin-right: 1em;
 }
 
-.footer-contact-info-container h3 {
-    color: orange;
-    text-shadow: 1px 1px white;
-}
+.footer-box-three > * {
+    margin: 0;
+  }
+  
+  .footer-box-three > * + * {
+    margin-top: var(--space-xxs);
+  }
+  /*adds consistent small spacing between children — but not before the first child.*/
+  
 
 @media (min-width: 1024px) {
     footer {
         display: grid;
-        gap: .5em;
         grid-template-columns: 1fr 1fr 1fr;
+        align-items: start;
     }
 
-    .footer-media-container {
+    .footer-box-one {
         text-align: left;
     }
 
     .footer-donate-button {
-        align-self: unset;
+        margin-left: 0;
     }
 
-    .footer-logo-container {
-        display: flex;
-        justify-content: center;
-        /* center horizontally */
-        align-self: start;
-    }
-
-    .footer-contact-info-container {
-        display: flex;
-        flex-direction: column;
+    .footer-box-three {
         text-align: right;
-        align-self: start;
     }
+
+    .newsletter-form {
+        display: flex;
+        width: 80%;
+      }
+      
+      .newsletter-form input {
+        /* no flex: 1 */
+        width: 100%;
+      }
 }
 
 

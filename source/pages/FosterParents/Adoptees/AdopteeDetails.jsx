@@ -18,7 +18,7 @@ export default function AdopteeDetails() {
     return (
         <>
             <Link 
-                id="adoptee-details-back-button"
+                className="adoptee-details-back-button"
                 to=".."
                 relative="path" //this prop tells the computer to take us back one "path" (e.g. from /foster-parent/adoptees/:id to /foster-parent/adoptees) instead of back one route (which would be the adoptees/:id route back to the parent foster-parent route)
             >&larr; Back to all adoptees

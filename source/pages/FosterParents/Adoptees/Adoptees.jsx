@@ -28,7 +28,7 @@ export default function Adoptees() {
 
     return(
         <section className="adoptees-wrapper">
-            <h1>Your foster animals</h1>
+            <h2>Your foster animals</h2>
             <div>
                 {
                     adoptees.length > 0 ? (

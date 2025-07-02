@@ -31,25 +31,27 @@ export default function Login() {
         <section className="login-page-right">
           <form className="login-form" onSubmit={handleSubmit}>
             <h1>Sign in</h1>
-            <label>
-              Email
-              <input
-                type="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email"
-              />
-            </label>
-            <label>
-              Password
-              <input
-                type="password" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-              />
-            </label>
-            <button className="fancy-button login-button" type="submit">Sign in</button>
+            <div className='login-form-inputs-container'>
+              <label>
+                Email
+                <input
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter email"
+                />
+              </label>
+              <label>
+                Password
+                <input
+                  type="password" 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter password"
+                />
+              </label>
+              <button className="fancy-button login-button" type="submit">Sign in</button>
+            </div>
           </form>
         </section>
         

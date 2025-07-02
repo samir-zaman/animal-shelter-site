@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import facebookIcon from '../../source/assets/icons/SocialMedia/facebook.png';
 import instagramIcon from '../../source/assets/icons/SocialMedia/instagram.png';
 import twitterIcon from '../../source/assets/icons/SocialMedia/twitter.png';
@@ -22,22 +22,26 @@ export default function Footer() {
 
     return(
         <footer>
-            <div className="footer-media-container">
-                <form onSubmit={handleSubmit} id="footer-newsletter-form">
+            <div className="footer-box-one">
+                <form onSubmit={handleSubmit} className="footer-newsletter-form">
                     <label htmlFor="newsletter">Sign up for our newsletter</label>
-                    <input 
-                        id="newsletter"
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <button type="submit">Subscribe</button>
+                    <div className='newsletter-form'>
+                        <input 
+                            className="newsletter"
+                            type="email"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button type="submit">Subscribe</button>
+                    </div>
                 </form>
-                <button className="footer-donate-button">Donate</button>
-            </div>
-            <div className='footer-logo-container'>
-                <p><span className="site-logo" id="footer-logo">Furry Futures</span> &#169; 2025</p>
+                <NavLink
+                    to="/donate"
+                    className="fancy-button footer-donate-button"
+                >
+                    Donate
+                </NavLink>
                 <div className='social-media-icons'>
                     {socialLinks.map((social) => (
                         <Link 
@@ -50,12 +54,15 @@ export default function Footer() {
                     ))}
                 </div>
             </div>
-            <div className='footer-contact-info-container'>
-                <h3>Contact Information</h3>
+            <div className='footer-box-two'>
+                <p><span className="site-logo" id="footer-logo"> Furry Futures </span>&#169; 2025</p>
+            </div>
+            <div className='footer-box-three'>
+                <h3>Contact us</h3>
                 <p>123 Mission St, San Francisco CA 94114</p>
-                <p>&#40;123&#41;456-7890</p>
                 <p>contact@furryfutures.org</p>
-                <p>Hours: 6am - 10pm, every day</p>
+                <p>Hours: 6am - 10pm</p>
+                <p>&#40;123&#41;456-7890</p>
             </div>
         </footer>
     )
