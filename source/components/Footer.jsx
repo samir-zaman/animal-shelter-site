@@ -20,9 +20,67 @@ export default function Footer() {
         setEmail('');
     };
 
+    return (
+        <footer>
+            <div className='newsletter-div'>
+                <form onSubmit={handleSubmit} className="footer-newsletter-form">
+                    <label htmlFor="newsletter">Sign up for our newsletter</label>
+                    <div className='newsletter-form'>
+                        <input 
+                            className="newsletter"
+                            type="email"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form> 
+            </div>
+            <div className='footer-bottom-section'>
+                <div className='footer-logo-div'>
+                    <p className='site-logo'>Furry Futures</p>
+                </div>
+                <div className='footer-links'>
+                    <p>Terms</p>
+                    <p>Privacy</p>
+                    <p>Cookies</p>
+                </div>
+                
+                <div className='social-media-icons'>
+                    {socialLinks.map((social) => (
+                        <Link 
+                        to= {social.url}
+                        aria-label = {social.name}
+                        className='social-media-icon'
+                        >
+                            <img src={social.icon} />
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </footer>
+    )
+}
+
+    /*
     return(
         <footer>
             <div className="footer-box-one">
+                <p>Contact us</p>
+                <p>123 Mission St, San Francisco CA 94114</p>
+                <p>contact@furryfutures.org</p>
+                <p>Hours: 6am - 10pm</p>
+                <p>&#40;123&#41;456-7890</p>
+            </div>
+
+
+            <div className='footer-box-two'>
+                <p><span className="site-logo" id="footer-logo"> Furry Futures </span>&#169; 2025</p>
+            </div>
+
+
+            <div className='footer-box-three'>
                 <form onSubmit={handleSubmit} className="footer-newsletter-form">
                     <label htmlFor="newsletter">Sign up for our newsletter</label>
                     <div className='newsletter-form'>
@@ -36,12 +94,6 @@ export default function Footer() {
                         <button type="submit">Subscribe</button>
                     </div>
                 </form>
-                <NavLink
-                    to="/donate"
-                    className="fancy-button footer-donate-button"
-                >
-                    Donate
-                </NavLink>
                 <div className='social-media-icons'>
                     {socialLinks.map((social) => (
                         <Link 
@@ -53,20 +105,13 @@ export default function Footer() {
                         </Link>
                     ))}
                 </div>
-            </div>
-            <div className='footer-box-two'>
-                <p><span className="site-logo" id="footer-logo"> Furry Futures </span>&#169; 2025</p>
-            </div>
-            <div className='footer-box-three'>
-                <h3>Contact us</h3>
-                <p>123 Mission St, San Francisco CA 94114</p>
-                <p>contact@furryfutures.org</p>
-                <p>Hours: 6am - 10pm</p>
-                <p>&#40;123&#41;456-7890</p>
+                <NavLink
+                to="/donate"
+                className="fancy-button footer-donate-button"
+                >
+                    Donate
+                </NavLink>
             </div>
         </footer>
     )
-}
-
-/*Left to right: newsletter signup, Logo with donate button under, contact info*/
-/*row2: left: copyright tag, social media icons*/
+}*/

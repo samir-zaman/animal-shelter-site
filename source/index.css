@@ -776,9 +776,80 @@ header nav {
     margin: var(--gutter);
 }
 
-.foster-parent-dashboard,
+.dashboard-container,
 .adoptees-wrapper {
     margin-inline: var(--gutter);
+}
+
+.dashboard {
+    background: hsl(36, 100%, 99%);
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    gap: 1.5vw;
+    padding: 1vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "hero hero hero hero aside2 aside2"
+        "hero hero hero hero aside2 aside2"
+        "hero hero hero hero aside2 aside2"
+        "hero hero hero hero aside2 aside2"
+        "aside3 aside3 aside4 aside4 aside5 aside5 ";
+}
+
+@media screen and (max-width: 1000px) {
+    .dashboard {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "hero   hero   hero   hero"
+            "hero   hero   hero   hero"
+            "aside2 aside2 aside2 aside3"
+            "aside4 aside4 aside5 aside5";
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .dashboard {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "hero   hero   hero"
+            "hero   hero   hero"
+            "aside2 aside2 aside2"
+            "aside3 aside3 aside3"
+            "aside4 aside4 aside4"
+            "aside5 aside5 aside5";
+    }
+}
+
+.dashboard > div {
+    border: 2px solid #464545;
+    border-radius: 5px;
+}
+
+.dashboard-item-1 {
+    grid-area: hero;
+    background-color: red;
+}
+
+.dashboard-item-2 {
+    grid-area: aside2;
+    background-color: orange;
+}
+
+.dashboard-item-3 {
+    grid-area: aside3;
+    background-color: yellow;
+}
+
+.dashboard-item-4 {
+    grid-area: aside4;
+    background-color: green;
+}
+
+.dashboard-item-5 {
+    grid-area: aside5;
+    background-color: blue;
 }
 
 .adoptees-tile {
@@ -988,94 +1059,55 @@ header nav {
 }
 
 /*** FOOTER ***/
-
 footer {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    align-items: center;
+    margin-top: var(--space-xl);
 }
 
-.footer-box-one {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-newsletter-form label {
-    display: block;
-    font-weight: bold;
-}
-
-.footer-newsletter-form input,
-.footer-newsletter-form button {
-    vertical-align: middle;
-}
-
-.newsletter-form {
-    display: flex;
-}
-
-.footer-newsletter-form input {
-    border: 3px solid var(--purple);
-    border-radius: 5px;
-    color: var(--green-dark);
-}
-
-.footer-newsletter-form button {
-    background-color: var(--purple);
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.footer-donate-button {
-    width: fit-content;
+.newsletter-div {
+    text-align: center;
+    width: 100%;
     margin: 0 auto;
+    padding-block: var(--section-vert-space);
+    background-color: var(--green-medium);
+    color: var(--cream);
 }
 
-
-.social-media-icon {
-    margin-right: 1em;
+footer .site-logo {
+    margin: var(--space-md) auto auto;
 }
 
-.footer-box-three > * {
-    margin: 0;
-  }
-  
-  .footer-box-three > * + * {
-    margin-top: var(--space-xxs);
-  }
-  /*adds consistent small spacing between children — but not before the first child.*/
-  
+.footer-links{
+    display: flex;
+    gap: var(--space-sm);
+    font-size: 0.85em;
+    justify-content: center;
+}
+
 
 @media (min-width: 1024px) {
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: start;
+    .footer-bottom-section {
+        display: flex;
+        margin-inline: var(--gutter);
+        margin-bottom: var(--space-lg);
     }
 
-    .footer-box-one {
+    .footer-logo-div{
+        flex: 1;
+    }
+
+    .footer-logo-div .site-logo{
         text-align: left;
     }
 
-    .footer-donate-button {
-        margin-left: 0;
+    .footer-links {
+        flex: 1;
     }
 
-    .footer-box-three {
-        text-align: right;
+    .social-media-icons {
+        flex: 1;
+        text-align: end;
     }
-
-    .newsletter-form {
-        display: flex;
-        width: 80%;
-      }
-      
-      .newsletter-form input {
-        /* no flex: 1 */
-        width: 100%;
-      }
 }
 
 
