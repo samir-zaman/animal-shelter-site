@@ -804,7 +804,7 @@ header nav {
         grid-template-areas:
             "hero   hero   hero   hero"
             "hero   hero   hero   hero"
-            "aside2 aside2 aside2 aside3"
+            "aside2 aside2 aside3 aside3"
             "aside4 aside4 aside5 aside5";
     }
 }
@@ -829,27 +829,27 @@ header nav {
 
 .dashboard-item-1 {
     grid-area: hero;
-    background-color: red;
+    background-color: hsl(162, 95%, 34%);
 }
 
 .dashboard-item-2 {
     grid-area: aside2;
-    background-color: orange;
+    background-color: hsl(190, 84%, 29%);
 }
 
 .dashboard-item-3 {
     grid-area: aside3;
-    background-color: yellow;
+    background-color: hsl(44, 86%, 70%);
 }
 
 .dashboard-item-4 {
     grid-area: aside4;
-    background-color: green;
+    background-color: hsl(246, 25%, 85%);
 }
 
 .dashboard-item-5 {
     grid-area: aside5;
-    background-color: blue;
+    background-color: hsl(351, 100%, 92%);
 }
 
 .adoptees-tile {

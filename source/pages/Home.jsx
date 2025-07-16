@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import heroImage from '/assets/images/home-hero.jpg';
-import GiveIcon from '../assets/icons/give.svg?react';
+import GiveIcon from '../assets/icons/Health/give.svg?react';
 
 
 export default function Home() {
