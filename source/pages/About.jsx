@@ -3,9 +3,24 @@ import { Link } from "react-router-dom"
 import heroImage from '/assets/images/about-hero.jpg';
 import EmblaCarousel from '../components/EmblaCarousel/EmblaCarousel'
 
-const OPTIONS = { loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+const OPTIONS = { loop: true, duration: 20 };
+const SLIDES = [
+  {
+    id: 1,
+    title: "Rescue & Rehabilitate",
+    text: "We take in animals from shelters, streets, and surrenders, providing medical care, training, and lots of love to prepare them for their forever homes."
+  },
+  {
+    id: 2,
+    title: "Match & Adopt",
+    text: "Our experienced team carefully matches each pet's personality and needs with the perfect family, ensuring lifelong happiness for both."
+  },
+  {
+    id: 3,
+    title: "Support & Follow-up",
+    text: "We don't just say goodbye at adoption. We provide ongoing support, training resources, and check-ins to ensure every adoption is a success story."
+  }
+]
 
 export default function About() {
     

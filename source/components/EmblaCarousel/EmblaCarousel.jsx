@@ -6,36 +6,38 @@ import useEmblaCarousel from 'embla-carousel-react'
 const EmblaCarousel = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
-
+  
   const onNavButtonClick = useCallback((emblaApi) => {
     const autoplay = emblaApi?.plugins()?.autoplay
     if (!autoplay) return
-
     const resetOrStop =
       autoplay.options.stopOnInteraction === false
         ? autoplay.reset
         : autoplay.stop
-
     resetOrStop()
   }, [])
-
+  
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     emblaApi,
     onNavButtonClick
   )
-
+  
   return (
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
+          {slides.map((slide) => (
+            <div className="embla__slide" key={slide.id}>
+              <div className="embla__slide__textbox">
+                <h2>{slide.title}</h2>
+                <p>{slide.text}</p>
+                <img>{slide.img}</img>
+              </div>
             </div>
           ))}
         </div>
       </div>
-
+      
       <div className="embla__controls theme-light">
         <div className="embla__dots">
           {scrollSnaps.map((_, index) => (

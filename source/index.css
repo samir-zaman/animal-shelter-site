@@ -68,6 +68,7 @@
     --white: hsl(10, 10%, 88%);
     --cream: hsl(34, 51%, 92%);
     --black: hsl(0, 0%, 25%);
+    --beige: hsl(36,15%,87%);
 
     --ff1: 'Instrument Serif';
     --ff2: 'Zen Kaku Gothic New';
@@ -79,8 +80,8 @@
     --h1: 600 clamp(2.75rem, 6vw, 3.5rem)/1.2 var(--ff4);
     --hero-h2: 600 clamp(1.75rem, 4vw, 3.5rem)/1.2 sans-serif;
     --h2: 400 2.75rem/1.3 var(--ff4);
-    --h3: 600 1.5rem/1.3 sans-serif;
-    --p: 400 1.1rem/normal var(--ff2);
+    --h3: 600 2rem/1.3 sans-serif;
+    --p: 400 1.2rem/normal var(--ff2);
     --logo: 600 clamp(1.75rem, 2.5vw, 3rem)/1.2 var(--ff3);
     --nav: 400 1.75rem/1.2 var(--ff4);
 
@@ -782,17 +783,17 @@ header nav {
 }
 
 .dashboard {
-    background: hsl(36, 100%, 99%);
+    background: black;
     height: 90vh;
     width: 100%;
     display: grid;
     gap: 1.5vw;
     padding: 1vw;
+      overflow-y: auto; /* Add vertical scrolling */
+
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-        "hero hero hero hero aside2 aside2"
-        "hero hero hero hero aside2 aside2"
         "hero hero hero hero aside2 aside2"
         "hero hero hero hero aside2 aside2"
         "aside3 aside3 aside4 aside4 aside5 aside5 ";
@@ -823,33 +824,60 @@ header nav {
 }
 
 .dashboard > div {
-    border: 2px solid #464545;
-    border-radius: 5px;
+    border-radius: 1em;
+    display: flex;
+    font-family: sans-serif;
+    color: black;
+    padding: var(--space-md);
 }
 
 .dashboard-item-1 {
     grid-area: hero;
-    background-color: hsl(162, 95%, 34%);
+    background-color: hsl(168, 99%, 34%);
+    align-items: center;
 }
 
 .dashboard-item-2 {
     grid-area: aside2;
-    background-color: hsl(190, 84%, 29%);
+    background-color: hsl(76, 83%, 58%);
+    padding: var(--space-md);
+    flex-direction: column;
+}
+
+.dashboard-item-2 p {
+    margin-top: 0;
 }
 
 .dashboard-item-3 {
     grid-area: aside3;
-    background-color: hsl(44, 86%, 70%);
+    background-color: hsl(238, 42%, 77%);
 }
 
 .dashboard-item-4 {
     grid-area: aside4;
-    background-color: hsl(246, 25%, 85%);
+    background-color: hsl(36, 96%, 90%);
+    flex-direction: column;
 }
+
+.dashboard-item-4 p {
+    margin: 0;
+}
+
 
 .dashboard-item-5 {
     grid-area: aside5;
-    background-color: hsl(351, 100%, 92%);
+    background-color: hsl(4, 96%, 90%);
+    flex-direction: column;
+}
+
+.person-icon{
+    width: 30%;
+    height: 30%;
+}
+
+.dashboard-icon {
+    width: clamp(1.75rem, 3.5vw, 2.5rem);
+    height: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 .adoptees-tile {
@@ -1062,6 +1090,7 @@ header nav {
 footer {
     text-align: center;
     margin-top: var(--space-xl);
+    display: none;
 }
 
 .newsletter-div {
@@ -1113,11 +1142,29 @@ footer .site-logo {
 
 /***EMBLA LIBRARY CAROUSEL COMPONENT***/
 .embla {
-    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
-    --slide-size: 33%;
+    --slide-size: 100%;
+    margin-block: var(--section-vert-space);
+    background-color: var(--beige);
+    color: black;
+    padding-block: calc(1.25 * var(--space-xxl));
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .embla {
+        padding-inline: calc(1.25 * var(--space-xxl));
+    }
+}
+
+.embla h2 {
+    color: var(--green-dark);
 }
 
 .embla__viewport {
@@ -1163,6 +1210,7 @@ footer .site-logo {
     justify-content: flex-end;
     align-items: center;
     margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+    border-radius: 1em;
 }
 
 .embla__dot {
