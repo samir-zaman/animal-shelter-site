@@ -5,7 +5,7 @@ export default function FosterParentLayout() {
     const navigate = useNavigate();
 
     const activeStyle = {
-        color: "var(--brown)"
+        color: "var(--green)"
     }
 
     const handleLogout = () => {

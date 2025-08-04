@@ -12,7 +12,7 @@ export default function Home() {
                 <div className="home-hero-text">
                     <h1 className="hero-h1">
                         Every tail deserves a  
-                        <span className="purple-highlight"> tomorrow.</span>
+                        <span className="blue-highlight"> tomorrow.</span>
                     </h1>
                     <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
                     <Link className="fancy-button" to="animals">Find your new best friend</Link>
@@ -23,9 +23,9 @@ export default function Home() {
             </section>
 
             <section className="home-about-container">
-                <h1 className="h1-shadow">Caring for animals since 2025</h1>
+                <h2 className="hero-h2">Caring for animals since 2025</h2>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
-                <Link className="main-button">LEARN MORE</Link>
+                <Link className="square-button">LEARN MORE</Link>
             </section>
 
             <section className="home-stats-container">

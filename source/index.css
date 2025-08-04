@@ -54,21 +54,14 @@
 }
 
 :root {
-    --green-light: hsl(97, 18%, 81%);
-    --green-medium: hsl(97, 18%, 40%);
-    --green-dark: hsl(164, 98%, 16%);
-    --orange: hsl(27, 97%, 65%);
-    --orange-light: hsl(27, 97%, 70%);
-    --brown: hsl(15, 27%, 20%);
-    --purple: hsl(241, 30%, 65%);
-    --purple-light: hsl(241, 30%, 88%);
-    --purple-muddy: hsl(284, 16%, 66%);
-    --purple-bold: hsl(256.7, 30.5%, 46.3%);
-    --red: hsl(3, 45%, 57%);
-    --white: hsl(10, 10%, 88%);
-    --cream: hsl(34, 51%, 92%);
     --black: hsl(0, 0%, 25%);
-    --beige: hsl(36,15%,87%);
+    --beige: hsl(34, 21%, 93%);
+    --white: hsl(10, 10%, 97%);
+    --green: hsl(163, 35%, 21%);
+    --yellow: hsl(73, 70%, 71%);
+    --blue: hsl(182, 21%, 46%);
+    --purple: hsl(264, 72%, 68%);
+    
 
     --ff1: 'Instrument Serif';
     --ff2: 'Zen Kaku Gothic New';
@@ -104,8 +97,8 @@ body {
     margin: 0;
     padding: 0;
     font: var(--p);
-    background-color: var(--green-light);
-    color: var(--green-medium);
+    background-color: var(--beige);
+    color: var(--black);
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -173,7 +166,7 @@ a {
 }
 
 .fancy-button {
-    background-color: var(--green-dark);
+    background-color: var(--green);
     border-radius: 1em;
     font: var(--nav);
     color: white;
@@ -181,7 +174,7 @@ a {
 }
 .fancy-button:hover {
     color: white;
-    background-color: var(--purple-bold);
+    background-color: var(--purple);
 }
 
 .underline-button {
@@ -195,15 +188,12 @@ a {
     padding: 0.3em 0.6em;
     font-style: normal;
     border-radius: 5px;
-    background-color: var(--green-medium);
-    color: var(--cream);
 }
   
 /* end of buttons and links */
 
 /* icons */
 .give-icon{
-    color: var(--red);
     width: 20dvw;
     height: 20dvh;
     display: block;
@@ -223,8 +213,8 @@ svg {
 /* end of icons */
 
 /* highlights */
-.purple-highlight{
-    color: var(--purple);
+.blue-highlight{
+    color: var(--blue);
 }
 
 .p-bold {
@@ -234,16 +224,16 @@ svg {
 .text-color-animation {
     background: linear-gradient(
       270deg,
-      var(--orange),
-      var(--purple-bold),
-      var(--green-dark),
+      var(--green),
       var(--purple),
-      var(--orange)
+      var(--blue),
+      var(--purple),
+      var(--blue)
     );
     background-size: 1400% 1400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientShift 12s ease infinite;
+    animation: gradientShift 30s ease infinite;
   }
   
   @keyframes gradientShift {
@@ -257,10 +247,6 @@ svg {
       background-position: 0% 50%;
     }
   }
-  
-  .h1-shadow{
-    text-shadow: 2px 2px var(--green-dark);
-}
 /* end of highlights */
 
 .site-wrapper {
@@ -279,7 +265,7 @@ header {
 
 header a {
     text-decoration: none;
-    color: var(--green-dark);
+    color: var(--green);
     font: var(--nav);
     padding-inline: var(--space-md);
 }
@@ -288,9 +274,9 @@ header a {
     padding-inline: 0; /*remove header a{} padding*/
     margin-left: var(--gutter);
     margin-right: auto;
-    color: var(--green-dark);
+    color: var(--green);
     font: var(--logo);
-    text-shadow: 3px 3px var(--purple-muddy);
+    text-shadow: 3px 3px var(--purple);
 }
 
 header nav {
@@ -345,13 +331,17 @@ header nav {
     align-items: flex-start;
 }
 
+.home-hero-text > h1 {
+    color: var(--green);
+}
+
 .home-hero-text .fancy-button {
     align-self: center;
-    background-color: var(--purple);
+    background-color: var(--green);
 }
 
 .home-hero-container .fancy-button:hover {
-    background-color: var(--green-medium);
+    background-color: var(--blue);
 }
 
 .hero-image {
@@ -371,21 +361,53 @@ header nav {
     padding-inline: var(--gutter);
     text-align: center;
     background: linear-gradient(360deg, 
-                hsla(97, 18%, 81%, 1) 0%, 
-                hsla(97, 18%, 81%, 1) 85%, 
-                hsla(97, 18%, 84%, 1) 100%);
+                var(--beige) 0%, 
+                var(--beige) 85%, 
+                hsla(34, 21%, 91%, 1) 100%);
+}
+
+.home-about-container h2 {
+    color: var(--green);
+}
+
+.home-about-container p {
+    color: var(--black);
+    max-width: 850px;
+    text-align: center;
+    margin: 0 auto var(--space-xl);
+}
+
+.home-about-container > .square-button {
+    border: 3px var(--green) solid;
+    background-color: hsl(182, 21%, 60%);
+    color: var(--green);
+}
+
+.home-about-container > .square-button:hover {
+    background-color: var(--green);
+    color: var(--white);
 }
 
 
 .home-stats-container {
-    color: var(--cream);
-    background: var(--green-dark);
+    color: var(--white);
     text-align: center;
     padding-block: var(--section-vert-space);
+    background-color:hsla(163,35%,30%,1);
+    background-image:
+        radial-gradient(at 100% 54%, hsla(163,96%,16%,1) 0px, transparent 50%),
+        /*noise pattern*/
+        url(data:image/png;base64,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),
+        radial-gradient(at 99% 100%, hsla(260,87%,68%,1) 0px, transparent 50%),
+        radial-gradient(at 52% 0%, hsla(260,87%,68%,1) 0px, transparent 50%),
+        radial-gradient(at 100% 10%, hsla(163,35%,21%,1) 0px, transparent 50%),
+        radial-gradient(at 66% 72%, hsla(75,74%,69%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(75,74%,69%,1) 0px, transparent 50%),
+        radial-gradient(at 10% 87%, hsla(182,20%,46%,1) 0px, transparent 50%);
 }
 
 .home-stats-container > h1 {
-    color: var(--cream);
+    color: var(--white);
     margin-bottom: var(--space-xxl)
 }
 
@@ -395,7 +417,7 @@ header nav {
 }
 
 .statistic-description{
-    color: var(--green-light);
+    color: var(--yellow);
     margin-bottom: var(--space-md);
 }
 
@@ -442,25 +464,28 @@ header nav {
 .home-donation-flex-wrapper {
     text-align: center;
     margin: var(--section-vert-space) var(--gutter);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 1em 1em var(--blue);
 }
 
 @media (min-width:1024px) {
     .home-donation-flex-wrapper {
         display: flex;
         text-align: center;
-        margin: 0;
+        margin: var(--gutter);
     }
 
     .home-donation-left {
         display: flex;
-        background-color: var(--red);
+        background-color: var(--yellow);
         justify-content: center;
         align-items: center;
         flex: 1;
     }
 
     .give-icon {
-        color: var(--white);
+        color: var(--green);
     }
 
     .home-donation-right {
@@ -472,34 +497,34 @@ header nav {
         padding-block: var(--section-vert-space);
         padding-inline: var(--gutter);
         flex: 1;
-        background: linear-gradient(360deg, 
-                hsla(97, 18%, 84%, 1) 0%, 
-                hsla(97, 18%, 81%, 1) 15%, 
-                hsla(97, 18%, 81%, 1) 85%, 
-                hsla(97, 18%, 84%, 1) 100%);
+        background: var(--green);
+        color: var(--white);
     }
 
     .home-donation-right h1{
         margin-bottom: var(--space-xl);
         font-family: var(--ff4);
-        text-shadow: 2px 2px var(--green-dark);
+        color: var(--white);
     }
 
     .home-donation-button {
         display: inline-block;
+        color: var(--yellow);
+
     }
 }
 
 
 .home-adoption-spotlight-container{
-    background-color: var(--green-dark);
-    color: var(--cream);
     text-align: center;
     padding: var(--section-vert-space) var(--gutter);
 }
 
 .home-adoption-spotlight-left{
-    padding-bottom: var(--section-vert-space)
+    background-color: var(--purple);
+    padding-bottom: var(--section-vert-space);
+    border-radius: 1em;
+    color: var(--black);
 }
 
 .home-adoption-spotlight-container p{
@@ -534,8 +559,8 @@ header nav {
 .about-hero-container{
     display: flex;
     flex-direction: row;
-    background-color: var(--brown);
-    color: var(--cream);
+    background-color: var(--green);
+    color: var(--white);
 }
 
 .about-hero-text{
@@ -550,13 +575,13 @@ header nav {
 }
 
 .about-page-cta {
-    background-color: var(--green-dark);
+    background-color: var(--green);
     color: var(--white);
     margin-inline: var(--gutter);
     padding-inline: var(--gutter);
     padding-bottom: var(--space-lg);
     border-radius: 5px;
-    box-shadow: 0.5em 0.5em var(--brown)
+    box-shadow: 0.5em 0.5em var(--green)
 }
 
 .about-page-cta h2 {
@@ -565,7 +590,7 @@ header nav {
 }
 
 .about-page-cta .fancy-button {
-    background-color: var(--green-medium);
+    background-color: var(--yellow);
     color: var(--white);
     border-radius: 5px;
 }
@@ -577,7 +602,7 @@ header nav {
 
 .animal-list-container h1 {
     margin-block: var(--space-lg);
-    color: var(--green-dark);
+    color: var(--green);
 }
 
 .animal-list {
@@ -602,17 +627,17 @@ header nav {
 
 .cuddly {
     background-color: var(--purple);
-    color: var(--cream);
+    color: var(--white);
 }
 
 .adventurous {
-    background-color: var(--brown);
-    color: var(--cream);
+    background-color: var(--green);
+    color: var(--white);
 }
 
 .hardworking {
-    background-color: var(--cream);
-    color: var(--brown);
+    background-color: var(--white);
+    color: var(--green);
 }
 
 .animal-tile {
@@ -641,7 +666,7 @@ header nav {
 /*Option 1*/
 
 .animal-details-wrapper {
-    background-color: var(--cream);
+    background-color: var(--white);
     margin-inline: var(--space-sm);
     padding: clamp(var(--gutter), var(--space-xl), var(--space-xxl));
     color: var(--dark-green);
@@ -667,7 +692,7 @@ header nav {
 }
 
 .animal-details-header {
-    color: var(--green-dark);
+    color: var(--green);
     margin: 0;
 }
 
@@ -676,12 +701,12 @@ header nav {
 }
 
 .animal-details-info p {
-    color: var(--green-dark);
+    color: var(--green);
 }
 
 .animal-details-info nav {
     font: var(--nav);
-    color: var(--green-dark);
+    color: var(--green);
     display: flex;
     justify-content: center;
     margin-top: var(--space-md);
@@ -710,7 +735,7 @@ header nav {
 
 .login-page-container {
     margin-inline: var(--gutter);
-    color: var(--green-dark);
+    color: var(--green);
 }
 
 .login-page-left {
@@ -736,10 +761,10 @@ header nav {
     display: flex;
     flex-direction: column;
     padding-block: var(--section-vert-space);
-    border: 2px solid var(--green-dark);
-    background-color: var(--cream);
+    border: 2px solid var(--green);
+    background-color: var(--white);
     border-radius: 1em;
-    box-shadow: 1em 1em var(--green-dark);
+    box-shadow: 1em 1em var(--green);
     width: 100%
 }
 
@@ -761,7 +786,7 @@ header nav {
     display: block;
     margin-bottom: var(--space-md);
     padding: var(--space-xxs);
-    border: solid var(--green-dark);
+    border: solid var(--green);
     border-radius: 5px;
     font-weight: normal;
 }
@@ -784,12 +809,12 @@ header nav {
 
 .dashboard {
     background: black;
-    height: 90vh;
+    height: 100%;
     width: 100%;
     display: grid;
     gap: 1.5vw;
     padding: 1vw;
-      overflow-y: auto; /* Add vertical scrolling */
+    overflow-y: auto; /* Add vertical scrolling */
 
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
@@ -834,7 +859,7 @@ header nav {
 .dashboard-item-1 {
     grid-area: hero;
     background-color: hsl(168, 99%, 34%);
-    align-items: center;
+    flex-direction: column;
 }
 
 .dashboard-item-2 {
@@ -870,9 +895,25 @@ header nav {
     flex-direction: column;
 }
 
+.dashboard-item-5 h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard-item-5 p {
+    margin: 0;
+}
+
 .person-icon{
-    width: 30%;
-    height: 30%;
+    width: 4rem;
+    height: 4rem;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
 }
 
 .dashboard-icon {
@@ -880,13 +921,17 @@ header nav {
     height: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
+#cal-ital {
+    font-style: italic
+}
+
 .adoptees-tile {
     display: flex;
     padding: var(--gutter);
     margin-bottom: var(--gutter);
-    background-color: var(--green-medium);
+    background-color: var(--yellow);
     border-radius: 5px;
-    color: var(--cream);
+    color: var(--white);
 }
 
 .adoptees-tile img {
@@ -902,8 +947,8 @@ header nav {
 }
 
 .adoptee-details-wrapper {
-    background-color: var(--green-medium);
-    color: var(--cream);
+    background-color: var(--yellow);
+    color: var(--white);
     padding: var(--gutter);
     margin-inline: var(--gutter);
     border-radius: 5px;
@@ -962,7 +1007,7 @@ header nav {
 }
 
 .donate-content-container h2 {
-    color: var(--green-dark);
+    color: var(--green);
     margin-top: var(--space-lg);
     margin-bottom: 0;
 }
@@ -976,9 +1021,9 @@ header nav {
     display: flex;
     flex-direction: column;
     padding: var(--space-md);
-    border: 2px solid var(--green-medium);
+    border: 2px solid var(--yellow);
     border-radius: 5px;
-    background-color: var(--cream);
+    background-color: var(--white);
     max-width: 750px;
     justify-content: center;
 }
@@ -999,7 +1044,7 @@ header nav {
 }
 
 .frequency-toggle-container button.active {
-    background: var(--green-dark);
+    background: var(--green);
 }
 
 .amount-options-container {
@@ -1012,16 +1057,16 @@ header nav {
 .amount-button {
     padding: var(--space-sm);
     border-radius: 5px;
-    border: 1px solid var(--green-light);
+    border: 1px solid var(--yellow);
     background-color: white;
     cursor: pointer;
     font-size: 1.25em;
 }
 
 .amount-button.active {
-    border: 2px solid var(--green-dark);
-    background-color: var(--green-light);
-    color: var(--green-dark);
+    border: 2px solid var(--green);
+    background-color: var(--yellow);
+    color: var(--green);
 }
 
 .dollar-input-container {
@@ -1034,12 +1079,12 @@ header nav {
 }
 
 .dollar-input-container:focus-within {
-    border: 2px solid var(--green-dark);
-    background-color: var(--green-light);
+    border: 2px solid var(--green);
+    background-color: var(--yellow);
 }
 
 .dollar-input-container input:focus {
-    background-color: var(--green-light);
+    background-color: var(--yellow);
 }
 
 .other-amount-input {
@@ -1058,7 +1103,7 @@ header nav {
 
 .donate-input {
     width: 100%;
-    border: 1px solid var(--green-light);
+    border: 1px solid var(--yellow);
     border-radius: 5px;
     padding: var(--space-sm);
     margin-bottom: var(--space-lg);
@@ -1069,7 +1114,7 @@ header nav {
 .donation-submit-button {
     width: 100%;
     padding: var(--space-sm);
-    background-color: var(--green-dark);
+    background-color: var(--green);
     color: white;
     cursor: pointer;
     font-size: 1.5em;
@@ -1083,7 +1128,6 @@ header nav {
 .status-message {
     text-align: center;
     margin-top: var(--space-md);
-    color: red;
 }
 
 /*** FOOTER ***/
@@ -1098,8 +1142,8 @@ footer {
     width: 100%;
     margin: 0 auto;
     padding-block: var(--section-vert-space);
-    background-color: var(--green-medium);
-    color: var(--cream);
+    background-color: var(--yellow);
+    color: var(--white);
 }
 
 footer .site-logo {
@@ -1164,7 +1208,7 @@ footer .site-logo {
 }
 
 .embla h2 {
-    color: var(--green-dark);
+    color: var(--green);
 }
 
 .embla__viewport {
