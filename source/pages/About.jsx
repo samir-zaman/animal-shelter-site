@@ -26,12 +26,12 @@ export default function About() {
     
     return (
         <div className="about-page-wrapper">
-            <section className='about-hero-container'>
+            <section className='about-hero-container hero-container'>
                 <div className="about-hero-text">
-                    <h1 className="hero-h1">Every rescue shelter has a <span className="blue-highlight">story</span> - here's ours.</h1>
+                    <h1 className="hero-h1">Every rescue shelter has a <span className="yellow-highlight">story</span>. Here's ours.</h1>
                 </div>
-                <div className="hero-image">
-                    <img src={heroImage} alt="Girl holding puppy" />
+                <div className="hero-image-container">
+                    <img className="hero-image about-hero-image" src={heroImage} alt="Girl holding puppy" />
                 </div>
             </section>
             <div className="about-page-content">
@@ -40,9 +40,10 @@ export default function About() {
                 <p>Our team is made up of passionate animal lovers who know firsthand the joy of giving rescues a second chance.</p>
             </div>
             <div className="about-page-cta">
-                <h2>Your new best friend is waiting.<br /> Start your <span className="blue-highlight">rescue story</span> now.</h2>
+                <h2>Your new best friend is waiting.<br /> Start your <span className="yellow-highlight">rescue story</span> now.</h2>
                 <Link className="fancy-button" to="/animals">Find your rescue</Link>
             </div>
+            <div class="zig-zag-line"></div>
             <EmblaCarousel slides={SLIDES} options={OPTIONS} />
         </div>
     );

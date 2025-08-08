@@ -57,19 +57,19 @@ export default function Animals() {
                     className={
                         `square-button cuddly ${typeFilter === "cuddly" ? "selected" : ""}`
                     }
-                >Cuddly</button>
+                >cuddly</button>
                 <button
                     onClick={() => handleFilterChange("type", "adventurous")}
                     className={
                         `square-button adventurous ${typeFilter === "adventurous" ? "selected" : ""}`
                     }
-                >Adventurous</button>
+                >adventurous</button>
                 <button
                     onClick={() => handleFilterChange("type", "hardworking")}
                     className={
                         `square-button hardworking ${typeFilter === "hardworking" ? "selected" : ""}`
                     }
-                >Hard working</button>
+                >hardworking</button>
 
                 {typeFilter ? (
                     <button

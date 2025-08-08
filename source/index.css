@@ -173,7 +173,6 @@ a {
     padding: 0.5em 0.5em;
 }
 .fancy-button:hover {
-    color: white;
     background-color: var(--purple);
 }
 
@@ -187,6 +186,7 @@ a {
 .square-button {
     padding: 0.3em 0.6em;
     font-style: normal;
+    font-weight: 500;
     border-radius: 5px;
 }
   
@@ -213,8 +213,16 @@ svg {
 /* end of icons */
 
 /* highlights */
-.blue-highlight{
+.blue-highlight {
     color: var(--blue);
+}
+
+.yellow-highlight {
+    color: var(--yellow);
+}
+
+.purple-highlight {
+    color: var(--purple);
 }
 
 .p-bold {
@@ -276,7 +284,7 @@ header a {
     margin-right: auto;
     color: var(--green);
     font: var(--logo);
-    text-shadow: 3px 3px var(--purple);
+    text-shadow: 2px 2px var(--blue);
 }
 
 header nav {
@@ -344,14 +352,37 @@ header nav {
     background-color: var(--blue);
 }
 
-.hero-image {
+.hero-image-container {
     flex: 1;
 }
 
-.hero-image img {
+.hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center; 
+    }
+
+    .hero-image {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        width: 60vw;
+        max-width: 600px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        border: 10px double purple;
+        padding: 4px;
+    }
+
+    .home-hero-text {
+        margin-top: 0;
+    }
 }
 
 
@@ -385,7 +416,7 @@ header nav {
 
 .home-about-container > .square-button:hover {
     background-color: var(--green);
-    color: var(--white);
+    color: white;
 }
 
 
@@ -462,11 +493,23 @@ header nav {
 }
 
 .home-donation-flex-wrapper {
+    background-color: var(--green);
+    color: var(--white);
     text-align: center;
     margin: var(--section-vert-space) var(--gutter);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 1em 1em var(--blue);
+    margin-inline: var(--space-sm);
+}
+
+.give-icon {
+    color: var(--yellow);
+}
+
+.home-donation-button {
+    display: inline-block;
+    color: var(--yellow);
+    margin-bottom: var(--space-lg);
 }
 
 @media (min-width:1024px) {
@@ -474,6 +517,7 @@ header nav {
         display: flex;
         text-align: center;
         margin: var(--gutter);
+        box-shadow: 1em 1em var(--blue);
     }
 
     .home-donation-left {
@@ -508,66 +552,106 @@ header nav {
     }
 
     .home-donation-button {
-        display: inline-block;
-        color: var(--yellow);
-
+        margin-bottom: 0;
     }
 }
 
+.home-adoption-spotlight-left h1 {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--purple);
+}
 
 .home-adoption-spotlight-container{
     text-align: center;
     padding: var(--section-vert-space) var(--gutter);
 }
 
-.home-adoption-spotlight-left{
-    background-color: var(--purple);
-    padding-bottom: var(--section-vert-space);
-    border-radius: 1em;
-    color: var(--black);
-}
-
 .home-adoption-spotlight-container p{
     text-align: start;
+}
+
+.home-adoption-spotlight-left {
+    margin-bottom: var(--space-md);
+}
+
+.home-adoption-spotlight-left .square-button {
+    border: 3px var(--purple) solid;
+    background-color: hsl(264, 72%, 87%);
+    color: hsl(264, 72%, 60%);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.home-adoption-spotlight-left > .square-button:hover {
+    background-color: var(--purple);
+    color: white;
 }
 
 .home-adoption-spotlight-right img {
     max-width: 100%;
     height: auto;
+    border-radius: 1em;
 }
 
 
 @media (min-width: 1024px) {
     .home-adoption-spotlight-container{
         display: flex;
-        align-items: center;
+        align-items: stretch;
         gap: var(--gutter);
     }
 
     .home-adoption-spotlight-left{
-        padding-bottom: 0;
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        margin-bottom: 0;
     }
 
     .home-adoption-spotlight-right {
         flex: 1;
+    }
+
+    .home-adoption-spotlight-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
     }
 }
 
 
 /*** ABOUT PAGE ***/
 .about-hero-container{
-    display: flex;
-    flex-direction: row;
     background-color: var(--green);
     color: var(--white);
 }
 
-.about-hero-text{
-    display: flex;
-    flex: 1;
-    align-items: center;
-    padding-left: var(--gutter);
+.about-hero-image{
+    border: 10px double var(--yellow);
+    object-position: 5% center; 
+    margin-block: var(--gutter);
+}
+
+@media (min-width: 768px) {
+    .about-hero-container{
+        display: flex;
+        flex-direction: row;
+        background-color: var(--green);
+        color: var(--white);
+    }
+
+    .about-hero-text{
+        margin: auto;
+        flex: 1;
+        padding-left: var(--gutter);
+    }
+
+    .about-hero-image {
+        border: none;
+        margin-block: 0;
+    }
 }
 
 .about-page-content {
@@ -581,7 +665,7 @@ header nav {
     padding-inline: var(--gutter);
     padding-bottom: var(--space-lg);
     border-radius: 5px;
-    box-shadow: 0.5em 0.5em var(--green)
+    box-shadow: 0.5em 0.5em var(--yellow)
 }
 
 .about-page-cta h2 {
@@ -590,9 +674,29 @@ header nav {
 }
 
 .about-page-cta .fancy-button {
-    background-color: var(--yellow);
-    color: var(--white);
+    background-color: var(--purple);
+    color: yellow;
     border-radius: 5px;
+}
+
+.about-page-cta .fancy-button:hover{
+    background-color: var(--yellow);
+    color: var(--green);
+}
+
+.zig-zag-line {
+  --a: 90deg; /* control the angle */
+  --s: 50px; /* size of the zig-zag */
+  --b: 25px;  /* control the thickness */
+  
+  background: var(--purple);
+  height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
+  width: 100%;
+  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
+    #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
+  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
+  width: calc(33% - var(--gutter));
+  margin: var(--section-vert-space) auto 0;
 }
 
 /*** ANIMALS PAGE ***/
@@ -631,12 +735,12 @@ header nav {
 }
 
 .adventurous {
-    background-color: var(--green);
+    background-color: var(--blue);
     color: var(--white);
 }
 
 .hardworking {
-    background-color: var(--white);
+    background-color: var(--yellow);
     color: var(--green);
 }
 
@@ -1194,10 +1298,9 @@ footer .site-logo {
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
-    margin-block: var(--section-vert-space);
     background-color: var(--beige);
     color: black;
-    padding-block: calc(1.25 * var(--space-xxl));
+    padding-block: var(--space-xl);
     width: 100%;
 }
 
@@ -1209,6 +1312,10 @@ footer .site-logo {
 
 .embla h2 {
     color: var(--green);
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
+    text-decoration-thickness: 8px;
+    text-underline-offset: 4px;
 }
 
 .embla__viewport {

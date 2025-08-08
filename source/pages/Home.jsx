@@ -5,6 +5,14 @@ import GiveIcon from '../assets/icons/Health/give.svg?react';
 
 
 export default function Home() {
+    const [spotlightAnimal, setSpotlightAnimal] = React.useState(null)
+
+    React.useEffect(() => {
+    fetch("/api/animals")
+        .then(res => res.json())
+        .then(data => setSpotlightAnimal(data.animals[8]))
+    }, [])
+
     return (
         <div className="home-page-wrapper">
 
@@ -17,15 +25,15 @@ export default function Home() {
                     <p>Every rescue has a story waiting for a happy ending. Adopt today and be the hero of their next chapter.</p>
                     <Link className="fancy-button" to="animals">Find your new best friend</Link>
                 </div>
-                <div className="hero-image">
-                    <img src={heroImage} alt="Foster puppy being petted" />
+                <div className="hero-image-container">
+                    <img className="hero-image" src={heroImage} alt="Foster puppy being petted" />
                 </div>
             </section>
 
             <section className="home-about-container">
                 <h2 className="hero-h2">Caring for animals since 2025</h2>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
-                <Link className="square-button">LEARN MORE</Link>
+                <Link className="square-button" aria-label="learn more about our story">LEARN MORE</Link>
             </section>
 
             <section className="home-stats-container">
@@ -62,11 +70,18 @@ export default function Home() {
             <section className="home-adoption-spotlight-container">
                 <div className="home-adoption-spotlight-left">
                     <h1>Adoption Spotlight</h1>
-                    <p>Joy is a 1.5-year-old Doberman Pinscher mix with a heart full of love waiting to shine. Once she is comfortable, Joy’s happy, tail-wagging spirit shines through, and she’ll eagerly seek out love and playtime. Joy is looking for a home that will help build her confidence with kindness, patience, and plenty of encouragement. If you’re ready to help Joy blossom into the loyal and loving companion she’s meant to be, come meet her today!</p>
-                    <Link className="underline-button">MEET JOY →</Link>
+                    <p>{spotlightAnimal ? spotlightAnimal.bio : "Loading..."}</p>
+                    <Link className="square-button" to={`/animals/${spotlightAnimal?.id}`}>
+                        MEET {spotlightAnimal?.name?.toUpperCase()}
+                    </Link>
                 </div>
                 <div className="home-adoption-spotlight-right">
-                    <img src="../../../assets/images/about-hero.jpg" alt="Girl holding puppy" height="500"/>
+                    {spotlightAnimal && (
+                        <img 
+                            src={spotlightAnimal.imageUrl} 
+                            alt={`${spotlightAnimal.name}, a ${spotlightAnimal.breed} looking for a home`} 
+                        />
+                        )}
                 </div>
             </section>
         </div>
