@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import facebookIcon from '../../source/assets/icons/SocialMedia/facebook.png';
-import instagramIcon from '../../source/assets/icons/SocialMedia/instagram.png';
-import twitterIcon from '../../source/assets/icons/SocialMedia/twitter.png';
+import FacebookIcon from '../../source/assets/icons/SocialMedia/facebook.svg?react';
+import InstagramIcon from '../../source/assets/icons/SocialMedia/instagram.svg?react';
+import TwitterIcon from '../../source/assets/icons/SocialMedia/twitter.svg?react';
+import YoutubeIcon from '../../source/assets/icons/SocialMedia/youtube.svg?react';
 
 export default function Footer() {
     const [email, setEmail] = useState('');
@@ -10,13 +11,15 @@ export default function Footer() {
     const [lastName, setLastName] = useState('');
 
     const socialLinks = [
-        { name: 'Facebook', icon: facebookIcon, url: 'https://facebook.com' },
-        { name: 'Instagram', icon: instagramIcon, url: 'https://instagram.com' },
-        { name: 'Twitter', icon: twitterIcon, url: 'https://twitter.com' }
+        { name: 'Facebook', icon: FacebookIcon, url: 'https://facebook.com' },
+        { name: 'Instagram', icon: InstagramIcon, url: 'https://instagram.com' },
+        { name: 'Twitter', icon: TwitterIcon, url: 'https://twitter.com' },
+        { name: 'Youtube', icon: YoutubeIcon, url: 'https://youtube.com' }
       ];
 
     /*newsletter signup is UI only. I'm including the state variable and
-    handleSubmit function to demonstrate proper React implementation practices*/   
+    handleSubmit function to demonstrate proper React implementation practices*/ 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setEmail('');
@@ -24,6 +27,8 @@ export default function Footer() {
 
     return(
         <footer>
+            <Link className="site-logo footer-logo" to="/">Furry Futures</Link>
+            <hr className='footer-divider'></hr>
             <div className='footer-wrapper'>
                 <div className="footer-box-one">
                     <h3>Shelter</h3>
@@ -41,18 +46,17 @@ export default function Footer() {
                             <Link 
                             to= {social.url}
                             aria-label = {social.name}
-                            className='social-media-icon'
                             >
-                                <img src={social.icon} />
+                                <social.icon className='social-media-icon' width="1.75em" height="1.75em" />
                             </Link>
                         ))}
                     </div>
 
                     <NavLink
-                    to="/donate"
-                    className="footer-donate-button"
+                        to="/donate"
+                        className="footer-donate-link"
                     >
-                        Donate
+                        Donate >
                     </NavLink>
                 </div>
 

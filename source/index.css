@@ -1277,6 +1277,24 @@ footer {
     padding-block: var(--section-vert-space)
 }
 
+.footer-wrapper {
+    padding-inline: var(--gutter);
+}
+
+.footer-logo {
+    display: none;
+}
+
+.footer-divider {
+    display: none;
+}
+
+.footer-logo {
+    font-size: 3em;
+    color: white;
+    text-shadow: 5px 5px var(--blue);
+}
+
 footer h3{
     font-size: 1.25em;
     color: var(--yellow);
@@ -1288,23 +1306,53 @@ footer h3{
 
 .social-media-icon {
     margin-right: var(--space-sm);
+    fill: white;
+    width: 1.25em;
+    height: 1.25em;
 }
 
-.footer-donate-button {
-    border: 1px solid var(--yellow);
-    border-radius: 5px;
-    padding: 5px;
+.social-media-icon:hover{
+    fill: var(--yellow);
+}
+
+.footer-donate-link {
     font-size: 1.1em;
+    border-bottom: 1px solid white;
+
+}
+
+.footer-donate-link:hover {
+    color: var(--yellow);
+    border-bottom: 1px solid var(--yellow);
 }
 
 .input-fields-wrapper input {
     border-radius: 5px;
     border: none;
     padding-inline: 5px;
+    color: var(--green);
+}
+
+.footer-box-one,
+.footer-box-two {
+    margin-bottom: var(--space-lg);
 }
 
 .footer-box-three button {
     display: block;
+}
+
+.name-fields input,
+.email-input {
+    display: block;
+    margin-bottom: var(--space-xs);
+    width: 250px;
+}
+
+.get-updates-form button {
+        border-radius: 5px;
+        background-color: var(--yellow);
+        color: var(--green);
 }
 
 @media (min-width: 768px) {
@@ -1315,15 +1363,20 @@ footer h3{
         margin: 0 auto;
     }
 
-    .get-updates-form {
-        box-sizing: border-box;
-        max-width: 500px;
+    .footer-logo {
+        display: block;
+    }
+
+    .footer-divider {
+        display:block;
+        border: none;
+        border-top: 2px dotted var(--yellow);
+        margin: var(--space-lg) var(--gutter);
     }
 
     .name-fields {
         display: flex;
         gap: var(--space-xs);
-        margin-bottom: var(--space-xs);
     }
 
     .name-fields input {
@@ -1332,13 +1385,6 @@ footer h3{
 
     .email-input {
         width: calc((2 * 200px) + var(--space-xs));
-        margin-bottom: var(--space-xs);
-    }
-
-    .get-updates-form button {
-        border-radius: 5px;
-        background-color: var(--yellow);
-        color: var(--green);
     }
 }
 
