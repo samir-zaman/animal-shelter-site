@@ -13,8 +13,8 @@ export default function AnimalDetail() {
 
     const activeStyle = {
         fontWeight: "bold",
-        color: "var(--purple)",
-        borderBottom: "solid var(--purple)"
+        color: "var(--blue)",
+        borderBottom: "solid"
     }
 
     return(
@@ -23,10 +23,12 @@ export default function AnimalDetail() {
                 <>
                     <section className="animal-details-hero">
                         <h1 className="animal-details-header">Meet <span className="text-color-animation">{animal.name}</span></h1>
-                        <img src={animal.imageUrl} width={400} />
+                        <div className="animal-details-image-wrapper">
+                            <img className="animal-details-image" src={animal.imageUrl} />
+                        </div>
                     </section>
                     <section className="animal-details-info">
-                        <nav>
+                        <nav className="animal-details-nav">
                             <NavLink 
                                 to="."
                                 end
@@ -43,7 +45,7 @@ export default function AnimalDetail() {
                         </nav>
                         <Outlet context={{animal}}/>
                     </section>
-                    <button className="fancy-button">Meet me</button>
+                    <button className="square-button green-square-button">Meet me</button>
                 </>
             ) : <h2>Loading...</h2>}
             </div>

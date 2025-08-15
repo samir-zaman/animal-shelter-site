@@ -189,6 +189,17 @@ a {
     font-weight: 500;
     border-radius: 5px;
 }
+
+.green-square-button {
+    border: 3px var(--green) solid;
+    background-color: hsl(182, 21%, 60%);
+    color: var(--green);
+}
+
+.green-square-button:hover {
+    background-color: var(--green);
+    color: white;
+}
   
 /* end of buttons and links */
 
@@ -232,16 +243,16 @@ svg {
 .text-color-animation {
     background: linear-gradient(
       270deg,
-      var(--green),
       var(--purple),
       var(--blue),
-      var(--purple),
-      var(--blue)
+      var(--yellow),
+      var(--blue),
+      var(--purple)
     );
     background-size: 1400% 1400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientShift 30s ease infinite;
+    animation: gradientShift 15s ease infinite;
   }
   
   @keyframes gradientShift {
@@ -289,6 +300,12 @@ header a {
 
 header nav {
     margin-right: var(--gutter);
+}
+
+fieldset{
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -408,17 +425,6 @@ header nav {
     margin: 0 auto var(--space-xl);
 }
 
-.home-about-container > .square-button {
-    border: 3px var(--green) solid;
-    background-color: hsl(182, 21%, 60%);
-    color: var(--green);
-}
-
-.home-about-container > .square-button:hover {
-    background-color: var(--green);
-    color: white;
-}
-
 
 .home-stats-container {
     color: var(--white);
@@ -448,7 +454,6 @@ header nav {
 }
 
 .statistic-description{
-    color: var(--yellow);
     margin-bottom: var(--space-md);
 }
 
@@ -687,7 +692,7 @@ header nav {
 .zig-zag-line {
   --a: 90deg; /* control the angle */
   --s: 50px; /* size of the zig-zag */
-  --b: 25px;  /* control the thickness */
+  --b: 0.5em;  /* control the thickness */
   
   background: var(--purple);
   height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
@@ -750,12 +755,13 @@ header nav {
 
 .animal-tile:hover {
     transform: translateY(-5px);
-  }
+}
 
-.animal-tile img {
+.animal-tile-img {
     max-width: 100%;
     border-radius: 5px;
 }
+
 
 .animal-info h3{
     margin-bottom: 0;
@@ -767,26 +773,10 @@ header nav {
 }
 
 /*** ANIMAL DETAILS PAGE ***/
-/*Option 1*/
 
 .animal-details-wrapper {
-    background-color: var(--white);
-    margin-inline: var(--space-sm);
-    padding: clamp(var(--gutter), var(--space-xl), var(--space-xxl));
-    color: var(--dark-green);
     border-radius: 5px;
-}
-
-@media (min-width: 768px) {
-    .animal-details-wrapper {
-      margin-inline: var(--space-xl);
-    }
-}
-  
-  @media (min-width: 1024px) {
-    .animal-details-wrapper {
-      margin-inline: var(--space-xxl);
-    }
+    margin-inline: var(--gutter);
 }
 
 .animal-details-hero {
@@ -796,34 +786,78 @@ header nav {
 }
 
 .animal-details-header {
-    color: var(--green);
-    margin: 0;
+    margin-bottom: var(--space-md);
+    font-family: var(--ff2);
 }
 
-.animal-details-hero img {
+.animal-details-image-wrapper {
+    display: inline-block;
+    overflow: hidden;
     border-radius: 5px;
 }
 
-.animal-details-info p {
-    color: var(--green);
+.animal-details-image {
+    width: clamp(400px, 50vw, 500px);
+    transition: transform 0.3s ease;
+    border-radius: 5px;
 }
 
-.animal-details-info nav {
-    font: var(--nav);
-    color: var(--green);
+.animal-details-image:hover {
+    transform: scale(1.05);
+}
+
+.animal-details-nav {
+    font-family: sans-serif;
+}
+
+.animal-details-nav {
     display: flex;
     justify-content: center;
     margin-top: var(--space-md);
+    font: var(--p)
 }
 
-.animal-details-info nav a:not(:last-child) {
+.animal-details-nav a:not(:last-child) {
     margin-right: var(--space-lg);
 }
 
-.animal-details-wrapper > .fancy-button {
+.animal-details-wrapper > .square-button {
     display: block;
-    margin: var(--space-md) auto 0 auto;
+    margin: var(--space-lg) auto 0 auto;
   }
+
+@media (min-width: 768px) {
+    .animal-details-wrapper {
+        max-width: 1100px;
+    }
+}
+  
+@media (min-width: 1024px) {
+    .animal-details-wrapper {
+        margin: var(--space-lg) auto;
+    }
+
+    .bio-flex-container{
+        display: flex;
+        margin-top: var(--space-md);
+        gap: 1em;
+    }
+
+    .bio-flex-left {
+        flex: 1;
+        background-color: var(--yellow);
+    }
+
+    .bio-flex-right {
+        flex: 3;
+        background-color: var(--blue);
+    }
+
+    .bio-flex-left, .bio-flex-right {
+        border-radius: 1em;
+        padding: var(--space-md) var(--space-xl);
+    }
+}
   
 
 /*** FOSTER PARENTS PORTAL ***/
@@ -1100,6 +1134,7 @@ header nav {
     }
 }
 
+
 .donate-content-container,
 .donate-form-container {
   flex: 1; 
@@ -1236,54 +1271,74 @@ header nav {
 
 /*** FOOTER ***/
 footer {
-    text-align: center;
-    margin-top: var(--space-xl);
-    display: none;
+    background-color: var(--green);
+    color: white;
+    font-size: 0.75em;
+    padding-block: var(--section-vert-space)
 }
 
-.newsletter-div {
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    padding-block: var(--section-vert-space);
-    background-color: var(--yellow);
-    color: var(--white);
+footer h3{
+    font-size: 1.25em;
+    color: var(--yellow);
 }
 
-footer .site-logo {
-    margin: var(--space-md) auto auto;
+.social-media-icons {
+    margin-bottom: var(--space-md);
 }
 
-.footer-links{
-    display: flex;
-    gap: var(--space-sm);
-    font-size: 0.85em;
-    justify-content: center;
+.social-media-icon {
+    margin-right: var(--space-sm);
 }
 
+.footer-donate-button {
+    border: 1px solid var(--yellow);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1em;
+}
 
-@media (min-width: 1024px) {
-    .footer-bottom-section {
+.input-fields-wrapper input {
+    border-radius: 5px;
+    border: none;
+    padding-inline: 5px;
+}
+
+.footer-box-three button {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .footer-wrapper{
+        display: grid;
+        grid-template-columns: 4fr 3fr 3fr;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .get-updates-form {
+        box-sizing: border-box;
+        max-width: 500px;
+    }
+
+    .name-fields {
         display: flex;
-        margin-inline: var(--gutter);
-        margin-bottom: var(--space-lg);
+        gap: var(--space-xs);
+        margin-bottom: var(--space-xs);
     }
 
-    .footer-logo-div{
-        flex: 1;
+    .name-fields input {
+        width: 200px;
     }
 
-    .footer-logo-div .site-logo{
-        text-align: left;
+    .email-input {
+        width: calc((2 * 200px) + var(--space-xs));
+        margin-bottom: var(--space-xs);
     }
 
-    .footer-links {
-        flex: 1;
-    }
-
-    .social-media-icons {
-        flex: 1;
-        text-align: end;
+    .get-updates-form button {
+        border-radius: 5px;
+        background-color: var(--yellow);
+        color: var(--green);
     }
 }
 

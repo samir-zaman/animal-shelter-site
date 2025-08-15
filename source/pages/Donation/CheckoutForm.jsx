@@ -58,9 +58,10 @@ export default function CheckoutForm() {
 
   return (
     <form className="donation-form" onSubmit={handleSubmit}>
-      <div className="frequency-toggle-container">
+      <fieldset className="frequency-toggle-container">
         <button
           type="button"
+          aria-pressed={isMonthly}
           className={isMonthly ? 'active' : ''}
           onClick={() => setIsMonthly(true)}
         >
@@ -68,14 +69,15 @@ export default function CheckoutForm() {
         </button>
         <button
           type="button"
+          aria-pressed={isMonthly}
           className={!isMonthly ? 'active' : ''}
           onClick={() => setIsMonthly(false)}
         >
           Give once
         </button>
-      </div>
+      </fieldset>
 
-      <div className="amount-options-container">
+      <fieldset className="amount-options-container">
         {presetAmounts.map((amt) => (
           <button
             key={amt}
@@ -102,52 +104,58 @@ export default function CheckoutForm() {
             onInput={(e) => e.target.setCustomValidity('')} // reset message when typing
             />
         </div>
-      </div>
+      </fieldset>
+
+      <fieldset>
+        <input
+          className="donate-input"
+          type="text"
+          name="firstName"
+          aria-label = "first name"
+          placeholder="First name"
+          value={formData.firstName}
+          onChange={handleInputChange}
+          required
+        />
 
       <input
-        className="donate-input"
-        type="text"
-        name="name"
-        placeholder="First name"
-        value={formData.firstName}
-        onChange={handleInputChange}
-        required
-      />
+          className="donate-input"
+          type="text"
+          name="lastName"
+          aria-lable = "last name"
+          placeholder="Last name"
+          value={formData.lastName}
+          onChange={handleInputChange}
+          required
+        />
 
-    <input
-        className="donate-input"
-        type="text"
-        name="name"
-        placeholder="Last name"
-        value={formData.lastName}
-        onChange={handleInputChange}
-        required
-      />
+        <input
+          className="donate-input"
+          type="email"
+          name="email"
+          aria-label = "email address"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+        />
 
-      
+        <input
+          className="donate-input"
+          type="text"
+          name="zip"
+          aria-label="zip code"
+          placeholder="ZIP Code"
+          value={formData.zip}
+          onChange={handleInputChange}
+        />
+      </fieldset>
 
-      <input
-        className="donate-input"
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleInputChange}
-        required
-      />
-
-      <input
-        className="donate-input"
-        type="text"
-        name="zip"
-        placeholder="ZIP Code"
-        value={formData.zip}
-        onChange={handleInputChange}
-      />
-
-      <div className="card-element-wrapper donate-input">
-        <CardElement />
-      </div>
+      <fieldset>
+        <div className="card-element-wrapper donate-input">
+          <CardElement />
+        </div>
+      </fieldset>
 
       <button className="donation-submit-button square-button" type="submit" disabled={!stripe}>
         Donate ${Intl.NumberFormat("en-US").format(getFinalAmount())} {isMonthly ? 'monthly' : ''}

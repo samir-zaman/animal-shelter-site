@@ -6,6 +6,8 @@ import twitterIcon from '../../source/assets/icons/SocialMedia/twitter.png';
 
 export default function Footer() {
     const [email, setEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
     const socialLinks = [
         { name: 'Facebook', icon: facebookIcon, url: 'https://facebook.com' },
@@ -20,11 +22,90 @@ export default function Footer() {
         setEmail('');
     };
 
+    return(
+        <footer>
+            <div className='footer-wrapper'>
+                <div className="footer-box-one">
+                    <h3>Shelter</h3>
+                    <p>1234 Mission St <br/> San Francisco, CA 94114</p>
+                    <p>Walk-ins welcome: M-F 9am - 5pm</p>
+                    <p>&#40;123&#41;456-7890</p>
+                    <p>info@furryfutures.org</p>
+                </div>
+
+
+                <div className='footer-box-two'>
+                    <h3>Socials</h3>
+                    <div className='social-media-icons'>
+                        {socialLinks.map((social) => (
+                            <Link 
+                            to= {social.url}
+                            aria-label = {social.name}
+                            className='social-media-icon'
+                            >
+                                <img src={social.icon} />
+                            </Link>
+                        ))}
+                    </div>
+
+                    <NavLink
+                    to="/donate"
+                    className="footer-donate-button"
+                    >
+                        Donate
+                    </NavLink>
+                </div>
+
+
+                <div className='footer-box-three'>
+                    <div className='form-wrapper'>
+                    <form onSubmit={handleSubmit} className="get-updates-form">
+                        <h3 >Get Updates</h3>
+                        <div className='input-fields-wrapper'>
+                            <div className='name-fields'>
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    placeholder="First"
+                                    aria-label="First Name"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                />
+                                
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    placeholder="Last"
+                                    aria-label="Last Name"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                />
+                            </div>
+                            
+                            <input
+                                type="email"
+                                className='email-input'
+                                name="email"
+                                placeholder="Email"
+                                aria-label="Email Address"
+                                aria-describedby="newsletter-email-input"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+/*
     return (
         <footer>
             <div className='newsletter-div'>
                 <form onSubmit={handleSubmit} className="footer-newsletter-form">
-                    <label htmlFor="newsletter">Sign up for our newsletter</label>
+                    <label htmlFor="newsletter">Get Updates</label>
                     <div className='newsletter-form'>
                         <input 
                             className="newsletter"
@@ -37,81 +118,24 @@ export default function Footer() {
                     </div>
                 </form> 
             </div>
-            <div className='footer-bottom-section'>
-                <div className='footer-logo-div'>
-                    <p className='site-logo'>Furry Futures</p>
-                </div>
-                <div className='footer-links'>
-                    <p>Terms</p>
-                    <p>Privacy</p>
-                    <p>Cookies</p>
-                </div>
-                
-                <div className='social-media-icons'>
-                    {socialLinks.map((social) => (
-                        <Link 
-                        to= {social.url}
-                        aria-label = {social.name}
-                        className='social-media-icon'
-                        >
-                            <img src={social.icon} />
-                        </Link>
-                    ))}
-                </div>
+             
+            <div className='social-media-icons'>
+                {socialLinks.map((social) => (
+                    <Link 
+                    to= {social.url}
+                    aria-label = {social.name}
+                    className='social-media-icon'
+                    >
+                        <img src={social.icon} />
+                    </Link>
+                ))}
             </div>
         </footer>
     )
 }
+*/
 
-    /*
-    return(
-        <footer>
-            <div className="footer-box-one">
-                <p>Contact us</p>
-                <p>123 Mission St, San Francisco CA 94114</p>
-                <p>contact@furryfutures.org</p>
-                <p>Hours: 6am - 10pm</p>
-                <p>&#40;123&#41;456-7890</p>
-            </div>
-
-
-            <div className='footer-box-two'>
-                <p><span className="site-logo" id="footer-logo"> Furry Futures </span>&#169; 2025</p>
-            </div>
-
-
-            <div className='footer-box-three'>
-                <form onSubmit={handleSubmit} className="footer-newsletter-form">
-                    <label htmlFor="newsletter">Sign up for our newsletter</label>
-                    <div className='newsletter-form'>
-                        <input 
-                            className="newsletter"
-                            type="email"
-                            placeholder="Enter your email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </form>
-                <div className='social-media-icons'>
-                    {socialLinks.map((social) => (
-                        <Link 
-                        to= {social.url}
-                        aria-label = {social.name}
-                        className='social-media-icon'
-                        >
-                            <img src={social.icon} />
-                        </Link>
-                    ))}
-                </div>
-                <NavLink
-                to="/donate"
-                className="fancy-button footer-donate-button"
-                >
-                    Donate
-                </NavLink>
-            </div>
-        </footer>
+    
+    
     )
-}*/
+}

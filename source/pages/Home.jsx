@@ -33,7 +33,7 @@ export default function Home() {
             <section className="home-about-container">
                 <h2 className="hero-h2">Caring for animals since 2025</h2>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
-                <Link className="square-button" aria-label="learn more about our story">LEARN MORE</Link>
+                <Link className="green-square-button square-button" aria-label="learn more about our story">LEARN MORE</Link>
             </section>
 
             <section className="home-stats-container">
