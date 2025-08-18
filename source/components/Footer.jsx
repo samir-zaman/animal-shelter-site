@@ -29,7 +29,7 @@ export default function Footer() {
         <footer>
             <Link className="site-logo footer-logo" to="/">Furry Futures</Link>
             <hr className='footer-divider'></hr>
-            <div className='footer-wrapper'>
+            <div className='footer-grid-container'>
                 <div className="footer-box-one">
                     <h3>Shelter</h3>
                     <p>1234 Mission St <br/> San Francisco, CA 94114</p>
@@ -41,13 +41,13 @@ export default function Footer() {
 
                 <div className='footer-box-two'>
                     <h3>Socials</h3>
-                    <div className='social-media-icons'>
+                    <div className='social-media-icon-container'>
                         {socialLinks.map((social) => (
                             <Link 
                             to= {social.url}
                             aria-label = {social.name}
                             >
-                                <social.icon className='social-media-icon' width="1.75em" height="1.75em" />
+                                <social.icon className='social-media-icon'/>
                             </Link>
                         ))}
                     </div>
@@ -103,43 +103,6 @@ export default function Footer() {
                 </div>
             </div>
 
-        </footer>
-/*
-    return (
-        <footer>
-            <div className='newsletter-div'>
-                <form onSubmit={handleSubmit} className="footer-newsletter-form">
-                    <label htmlFor="newsletter">Get Updates</label>
-                    <div className='newsletter-form'>
-                        <input 
-                            className="newsletter"
-                            type="email"
-                            placeholder="Enter your email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </form> 
-            </div>
-             
-            <div className='social-media-icons'>
-                {socialLinks.map((social) => (
-                    <Link 
-                    to= {social.url}
-                    aria-label = {social.name}
-                    className='social-media-icon'
-                    >
-                        <img src={social.icon} />
-                    </Link>
-                ))}
-            </div>
-        </footer>
-    )
-}
-*/
-
-    
-    
+        </footer> 
     )
 }
