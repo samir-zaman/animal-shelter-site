@@ -43,7 +43,6 @@ export default function About() {
                 <h2>Your new best friend is waiting.<br /> Start your <span className="yellow-highlight">rescue story</span> now.</h2>
                 <Link className="fancy-button" to="/animals">Find your rescue</Link>
             </div>
-            <div class="zig-zag-line"></div>
             <EmblaCarousel slides={SLIDES} options={OPTIONS} />
         </div>
     );

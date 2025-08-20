@@ -13,6 +13,7 @@ export default function AdopteeDetails() {
 
     const activeStyle = {
         textDecoration: "underline",
+        color: "var(--yellow)"
     }
 
     return (

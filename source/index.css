@@ -88,7 +88,7 @@
     --space-xxl:  calc(5.25 * var(--space-unit));/*84px*/
 
     --gutter: var(--space-lg); 
-    --section-vert-space: var(--space-xxl);
+    --section-vert-space: calc(2 * var(--space-xxl));
 }
 
 
@@ -192,7 +192,7 @@ a {
 
 .green-square-button {
     border: 3px var(--green) solid;
-    background-color: hsl(182, 21%, 60%);
+    background-color: hsl(182, 21%, 80%);
     color: var(--green);
 }
 
@@ -351,7 +351,7 @@ fieldset{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: var(--section-vert-space);
+    margin-top: var(--space-xxl);
     padding: var(--space-xl) var(--gutter);
     align-items: flex-start;
 }
@@ -501,7 +501,7 @@ fieldset{
     background-color: var(--green);
     color: var(--white);
     text-align: center;
-    margin: var(--section-vert-space) var(--gutter);
+    margin: var(--space-xxl) var(--gutter);
     border-radius: 20px;
     overflow: hidden;
     margin-inline: var(--space-sm);
@@ -521,8 +521,8 @@ fieldset{
     .home-donation-flex-wrapper {
         display: flex;
         text-align: center;
-        margin: var(--gutter);
-        box-shadow: 1em 1em var(--blue);
+        margin: var(--space-xxl);
+        box-shadow: 1.5em 1.5em var(--purple);
     }
 
     .home-donation-left {
@@ -543,7 +543,7 @@ fieldset{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-block: var(--section-vert-space);
+        padding-block: var(--space-xxl);
         padding-inline: var(--gutter);
         flex: 1;
         background: var(--green);
@@ -569,7 +569,7 @@ fieldset{
 
 .home-adoption-spotlight-container{
     text-align: center;
-    padding: var(--section-vert-space) var(--gutter);
+    padding: var(--space-xxl) var(--gutter) var(--section-vert-space);
 }
 
 .home-adoption-spotlight-container p{
@@ -582,7 +582,7 @@ fieldset{
 
 .home-adoption-spotlight-left .square-button {
     border: 3px var(--purple) solid;
-    background-color: hsl(264, 72%, 87%);
+    background-color: hsl(264, 72%, 93%);
     color: hsl(264, 72%, 60%);
     max-width: 200px;
     margin: 0 auto;
@@ -660,7 +660,7 @@ fieldset{
 }
 
 .about-page-content {
-    margin: var(--section-vert-space) var(--gutter);
+    margin: var(--space-xxl) var(--gutter);
 }
 
 .about-page-cta {
@@ -668,14 +668,15 @@ fieldset{
     color: var(--white);
     margin-inline: var(--gutter);
     padding-inline: var(--gutter);
-    padding-bottom: var(--space-lg);
+    padding-block: var(--space-xxl);
     border-radius: 5px;
-    box-shadow: 0.5em 0.5em var(--yellow)
+    box-shadow: 0.5em 0.5em var(--yellow);
+    margin-bottom: var(--space-xxl)
 }
 
 .about-page-cta h2 {
     margin: 0;
-    padding-block: var(--space-lg);
+    padding-bottom: var(--space-lg);
 }
 
 .about-page-cta .fancy-button {
@@ -689,24 +690,12 @@ fieldset{
     color: var(--green);
 }
 
-.zig-zag-line {
-  --a: 90deg; /* control the angle */
-  --s: 50px; /* size of the zig-zag */
-  --b: 0.5em;  /* control the thickness */
-  
-  background: var(--purple);
-  height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
-  width: 100%;
-  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
-    #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
-  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
-  width: calc(33% - var(--gutter));
-  margin: var(--section-vert-space) auto 0;
-}
+
 
 /*** ANIMALS PAGE ***/
 .animal-list-container {
     margin-inline: var(--gutter);
+    margin-bottom: var(--space-xxl);
 }
 
 .animal-list-container h1 {
@@ -823,7 +812,7 @@ fieldset{
 
 .animal-details-wrapper > .square-button {
     display: block;
-    margin: var(--space-lg) auto 0 auto;
+    margin: var(--space-lg) auto;
   }
 
 @media (min-width: 768px) {
@@ -873,6 +862,7 @@ fieldset{
 
 .login-page-container {
     margin-inline: var(--gutter);
+    margin-bottom: var(--section-vert-space);
     color: var(--green);
 }
 
@@ -898,7 +888,7 @@ fieldset{
 .login-form {
     display: flex;
     flex-direction: column;
-    padding-block: var(--section-vert-space);
+    padding-block: var(--space-xxl);
     border: 2px solid var(--green);
     background-color: var(--white);
     border-radius: 1em;
@@ -938,21 +928,32 @@ fieldset{
     display: flex;
     gap: var(--space-lg);
     margin: var(--gutter);
+    vertical-align: middle;
 }
+
+.portal-nav .square-button {
+    background-color: var(--black);
+    color: white;
+    margin-left: auto;
+    padding: 4px;
+}
+
 
 .dashboard-container,
 .adoptees-wrapper {
     margin-inline: var(--gutter);
+    margin-bottom: var(--space-xxl);
 }
 
 .dashboard {
-    background: black;
+    background: var(--green);
     height: 100%;
     width: 100%;
     display: grid;
     gap: 1.5vw;
     padding: 1vw;
     overflow-y: auto; /* Add vertical scrolling */
+    border-radius: 1em;
 
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
@@ -996,13 +997,13 @@ fieldset{
 
 .dashboard-item-1 {
     grid-area: hero;
-    background-color: hsl(168, 99%, 34%);
+    background-color: hsl(163, 25%, 50%);
     flex-direction: column;
 }
 
 .dashboard-item-2 {
     grid-area: aside2;
-    background-color: hsl(76, 83%, 58%);
+    background-color: hsl(182, 21%, 65%);
     padding: var(--space-md);
     flex-direction: column;
 }
@@ -1013,12 +1014,12 @@ fieldset{
 
 .dashboard-item-3 {
     grid-area: aside3;
-    background-color: hsl(238, 42%, 77%);
+    background-color: hsl(238, 50%, 65%);
 }
 
 .dashboard-item-4 {
     grid-area: aside4;
-    background-color: hsl(36, 96%, 90%);
+    background-color: hsl(223, 50%, 75%);
     flex-direction: column;
 }
 
@@ -1029,7 +1030,7 @@ fieldset{
 
 .dashboard-item-5 {
     grid-area: aside5;
-    background-color: hsl(4, 96%, 90%);
+    background-color: hsl(73, 50%, 60%);
     flex-direction: column;
 }
 
@@ -1067,7 +1068,7 @@ fieldset{
     display: flex;
     padding: var(--gutter);
     margin-bottom: var(--gutter);
-    background-color: var(--yellow);
+    background-color: var(--green);
     border-radius: 5px;
     color: var(--white);
 }
@@ -1085,10 +1086,11 @@ fieldset{
 }
 
 .adoptee-details-wrapper {
-    background-color: var(--yellow);
+    background-color: var(--green);
     color: var(--white);
     padding: var(--gutter);
     margin-inline: var(--gutter);
+    margin-bottom: var(--space-xxl);
     border-radius: 5px;
 }
 
@@ -1117,14 +1119,17 @@ fieldset{
 .health-stat-container {
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
+    gap: var(--gutter);
     padding-inline: var(--space-sm);
+    font-size: 0.85em;
+    line-height: 0.8em;
 }
 
 
 /*** DONATION PAGE ***/
 .donate-page-wrapper {
     margin-inline: var(--gutter);
+    margin-bottom: var(--space-xxl);
 }
 
 @media (min-width: 1024px) {
@@ -1274,7 +1279,7 @@ footer {
     background-color: var(--green);
     color: white;
     font-size: 0.75em;
-    padding-block: var(--section-vert-space)
+    padding-block: var(--space-xxl);
 }
 
 .footer-wrapper {
