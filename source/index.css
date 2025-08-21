@@ -61,6 +61,12 @@
     --yellow: hsl(73, 70%, 71%);
     --blue: hsl(182, 21%, 46%);
     --purple: hsl(264, 72%, 68%);
+
+
+    --beige-gradient: linear-gradient(360deg, 
+                        var(--beige) 0%, 
+                        var(--beige) 85%, 
+                        hsla(34, 21%, 91%, 1) 100%);
     
 
     --ff1: 'Instrument Serif';
@@ -408,10 +414,7 @@ fieldset{
     padding-block: var(--section-vert-space);
     padding-inline: var(--gutter);
     text-align: center;
-    background: linear-gradient(360deg, 
-                var(--beige) 0%, 
-                var(--beige) 85%, 
-                hsla(34, 21%, 91%, 1) 100%);
+    background: var(--beige-gradient);
 }
 
 .home-about-container h2 {
@@ -429,7 +432,7 @@ fieldset{
 .home-stats-container {
     color: var(--white);
     text-align: center;
-    padding-block: var(--section-vert-space);
+    padding-block: var(--space-xxl);
     background-color:hsla(163,35%,30%,1);
     background-image:
         radial-gradient(at 100% 54%, hsla(163,96%,16%,1) 0px, transparent 50%),
@@ -445,7 +448,8 @@ fieldset{
 
 .home-stats-container > h1 {
     color: var(--white);
-    margin-bottom: var(--space-xxl)
+    margin-bottom: var(--space-md);
+    padding-inline: var(--gutter);
 }
 
 .home-stats-flex-wrapper>div>div:first-child {
@@ -458,8 +462,12 @@ fieldset{
 }
 
 @media (min-width: 1024px) {
+    .home-stats-container {
+        padding-block: var(--section-vert-space)
+    }
+
     .home-stats-container > h1 {
-        padding-bottom: var(--space-lg);
+        padding-bottom: var(--space-xxl);
     }
 
     .home-stats-flex-wrapper {
@@ -485,7 +493,6 @@ fieldset{
         height: 80%;
         width: 1px;
         background-color: white;
-        /* Light gray divider */
     }
 
     .statistic-description{
@@ -501,10 +508,9 @@ fieldset{
     background-color: var(--green);
     color: var(--white);
     text-align: center;
-    margin: var(--space-xxl) var(--gutter);
+    margin: var(--space-xxl) var(--space-sm);
     border-radius: 20px;
     overflow: hidden;
-    margin-inline: var(--space-sm);
 }
 
 .give-icon {
@@ -521,7 +527,7 @@ fieldset{
     .home-donation-flex-wrapper {
         display: flex;
         text-align: center;
-        margin: var(--space-xxl);
+        margin: var(--space-xxl) var(--space-xxl) calc(var(--space-xxl) + 1.5em); /*add 1.5em accounting for box-shadow*/
         box-shadow: 1.5em 1.5em var(--purple);
     }
 
@@ -561,6 +567,10 @@ fieldset{
     }
 }
 
+.home-adoption-spotlight-container {
+    background: var(--beige-gradient);
+}
+
 .home-adoption-spotlight-left h1 {
     text-decoration-line: underline;
     text-decoration-style: wavy;
@@ -569,7 +579,7 @@ fieldset{
 
 .home-adoption-spotlight-container{
     text-align: center;
-    padding: var(--space-xxl) var(--gutter) var(--section-vert-space);
+    padding: var(--section-vert-space) var(--gutter);
 }
 
 .home-adoption-spotlight-container p{
