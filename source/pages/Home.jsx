@@ -68,20 +68,22 @@ export default function Home() {
             </section>
 
             <section className="home-adoption-spotlight-container">
-                <div className="home-adoption-spotlight-left">
-                    <h1>Adoption Spotlight</h1>
-                    <p>{spotlightAnimal ? spotlightAnimal.bio : "Loading..."}</p>
-                    <Link className="square-button" to={`/animals/${spotlightAnimal?.id}`}>
-                        MEET {spotlightAnimal?.name?.toUpperCase()}
-                    </Link>
-                </div>
-                <div className="home-adoption-spotlight-right">
-                    {spotlightAnimal && (
+                <div className="home-adoption-spotlight-wrapper">
+                    <div className="home-adoption-spotlight-left">
+                        {spotlightAnimal && (
                         <img 
                             src={spotlightAnimal.imageUrl} 
                             alt={`${spotlightAnimal.name}, a ${spotlightAnimal.breed} looking for a home`} 
                         />
                         )}
+                    </div>
+                    <div className="home-adoption-spotlight-right">
+                        <h1>Adoption Spotlight</h1>
+                        <p>{spotlightAnimal ? spotlightAnimal.bio : "Loading..."}</p>
+                        <Link className="square-button" to={`/animals/${spotlightAnimal?.id}`}>
+                            MEET {spotlightAnimal?.name?.toUpperCase()}
+                        </Link>
+                    </div>
                 </div>
             </section>
         </div>
