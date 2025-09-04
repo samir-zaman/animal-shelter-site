@@ -33,7 +33,7 @@ export default function Home() {
             <section className="home-about-container">
                 <h2 className="hero-h2">Caring for animals since 2025</h2>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
-                <Link className="green-square-button square-button" aria-label="learn more about our story">LEARN MORE</Link>
+                <Link className="green-square-button square-button" aria-label="learn more about our story" to="about" onClick={() => window.scrollTo(0, 0)}>LEARN MORE</Link>
             </section>
 
             <section className="home-stats-container">
@@ -62,7 +62,7 @@ export default function Home() {
                     <div className="home-donation-right">
                         <h1 className="hero-h1">Support Our Mission</h1>
                         <p>Your contribution helps cover food, housing, and veterinary costs for all animals under our care.</p>
-                        <Link className="underline-button home-donation-button">Donate →</Link>
+                        <Link className="underline-button home-donation-button" to="donate" onClick={() => window.scrollTo(0, 0)}>Donate →</Link>
                     </div>
                 </div>
             </section>
