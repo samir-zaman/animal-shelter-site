@@ -37,10 +37,10 @@ export default function AnimalDetail() {
                                 Bio
                             </NavLink>
                             <NavLink 
-                                to="health"
+                                to="hobbies"
                                 style={({isActive}) => isActive ? activeStyle : null}
                             >
-                                Pictures
+                                Hobbies
                             </NavLink>
                         </nav>
                         <Outlet context={{animal}}/>

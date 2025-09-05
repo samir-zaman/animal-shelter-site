@@ -74,7 +74,7 @@ export default function Animals() {
                 {typeFilter ? (
                     <button
                         onClick={() => handleFilterChange("type", null)}
-                        className="underline-button clear-filters"
+                        className="underline-button clear-filter-button"
                     >Clear filter</button>
                 ) : null}
             </div>

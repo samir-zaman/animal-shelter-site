@@ -177,6 +177,7 @@ a {
     font: var(--nav);
     color: white;
     padding: 0.5em 0.5em;
+    text-align: center;
 }
 .fancy-button:hover {
     background-color: var(--purple);
@@ -777,6 +778,10 @@ fieldset{
     color: var(--green);
 }
 
+.clear-filter-button {
+    font: var(--ff1);
+}
+
 .animal-tile {
     transition: transform 0.2s ease;
 }
@@ -884,6 +889,14 @@ fieldset{
     .bio-flex-left, .bio-flex-right {
         border-radius: 1em;
         padding: var(--space-md) var(--space-xl);
+    }
+
+    .animal-details-wrapper .hobbies-container {
+        border-radius: 1em;
+        background-color: var(--purple);
+        color: var(--white);
+        padding: var(--space-md) var(--space-xl);
+        margin-top: var(--space-md);
     }
 }
   
@@ -1224,10 +1237,30 @@ fieldset{
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.5em;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; 
+    overflow: visible;
+    }
+
 
 .frequency-toggle-container button.active {
     background: var(--green);
+}
+
+@media (max-width: 786px) {
+    .frequency-toggle-container button {
+        gap: 0;
+    }
+}
+
+.heart-icon {
+    color: var(--purple);
+    width: 1em;
+    height: 1em;
+    min-height: 32px;
+    min-width: 32px;
 }
 
 .amount-options-container {

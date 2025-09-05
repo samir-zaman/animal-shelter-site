@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import HeartIcon from '../../assets/icons/heart.svg?react';
 
 const stripePromise = loadStripe('pk_test_51REzCLQB66owRwDgF1Vj8rsbnUd7tHd4U5QYDUTqTuDViUk9HbUW1IAjQ35VEwrMFTiO6o4ELToyYJkmncBc5rhq003pLwRgEg'); // publishable stripe key
 
@@ -65,7 +66,7 @@ export default function CheckoutForm() {
           className={isMonthly ? 'active' : ''}
           onClick={() => setIsMonthly(true)}
         >
-          Give monthly ❤️
+          Give monthly <HeartIcon className='heart-icon'/>
         </button>
         <button
           type="button"

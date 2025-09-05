@@ -1,12 +1,15 @@
 import React from 'react'
 import { useOutletContext } from 'react-router-dom'
 
-export default function Bio() {
+export default function Hobbies() {
     const {animal} = useOutletContext()
     return(
-        <>
-            <h1>Hobbies go here</h1>
-            <p>{animal.bio}</p>
-        </>
+        <div className='hobbies-container'>
+            <ul>
+                {animal.hobbies.split(', ').map((hobby, index) => (
+                    <li key={index}>{hobby.trim()}</li>
+                ))}
+            </ul>
+        </div>
     )
 }
