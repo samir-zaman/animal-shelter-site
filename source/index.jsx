@@ -6,6 +6,7 @@ import About from "./pages/About"
 import Animals from "./pages/Animals/Animals"
 import "./server"
 import AnimalDetail from './pages/Animals/AnimalDetail';
+import MeetUp from './pages/Animals/MeetUp';
 import Donate from "./pages/Donation/Donate"
 import Layout from "./components/Layout"
 import Dashboard from "./pages/FosterParents/Dashboard";
@@ -27,9 +28,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="animals" element={<Animals />} />
+            <Route path="schedule" element={<MeetUp />} />
             <Route path="animals/:id" element={<AnimalDetail />}>
                 <Route index element={<Bio />}/>
-                <Route path="health" element={<Health/>} />
                 <Route path="hobbies" element={<Hobbies/>} />
             </Route>
             <Route path="donate" element={<Donate />} />

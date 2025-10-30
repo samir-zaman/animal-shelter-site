@@ -24,9 +24,13 @@ export default function Animals() {
         <div key={animal.id} className="animal-tile">
             <Link 
             to={`/animals/${animal.id}`} 
-            aria-label = {`View details for ${animal.name}`}
+            aria-label = {`View details for ${animal.name} the ${animal.breed}`}
             >
-                <img src={animal.imageUrl} alt={`Photo of ${animal.name}`} className="animal-tile-img"/>
+                <img 
+                    src={animal.imageUrl} 
+                    alt={`Photo of ${animal.name}`} 
+                    className="animal-tile-img"
+                />
                 <div className="animal-info">
                     <h3>{animal.name}</h3>
                     <p>{animal.age} years old</p>

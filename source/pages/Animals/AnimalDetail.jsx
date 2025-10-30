@@ -17,6 +17,17 @@ export default function AnimalDetail() {
         borderBottom: "solid"
     }
 
+    const handleMeetMeClick = (animal) => {
+        const existing = JSON.parse(localStorage.getItem("selectedAnimals")) || []
+        
+        const exists = existing.some(a => a.id === animal.id)
+        if (!exists) {
+            existing.push(animal)
+            localStorage.setItem("selectedAnimals", JSON.stringify(existing))
+        }
+    }
+
+
     return(
             <div className="animal-details-wrapper">
                 {animal ? (
@@ -24,7 +35,11 @@ export default function AnimalDetail() {
                     <section className="animal-details-hero">
                         <h1 className="animal-details-header">Meet <span className="text-color-animation">{animal.name}</span></h1>
                         <div className="animal-details-image-wrapper">
-                            <img className="animal-details-image" src={animal.imageUrl} />
+                            <img 
+                                className="animal-details-image" 
+                                src={animal.imageUrl}
+                                alt = {`Photo of ${animal.name}`} 
+                            />
                         </div>
                     </section>
                     <section className="animal-details-info">
@@ -45,7 +60,13 @@ export default function AnimalDetail() {
                         </nav>
                         <Outlet context={{animal}}/>
                     </section>
-                    <button className="square-button green-square-button">Meet me</button>
+                    <Link
+                        to="/schedule"
+                        onClick = {() => handleMeetMeClick(animal)} 
+                        className="square-button green-square-button"
+                    >
+                        Meet me
+                    </Link>
                 </>
             ) : <h2>Loading...</h2>}
             </div>

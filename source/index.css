@@ -201,6 +201,7 @@ a {
     border: 3px var(--green) solid;
     background-color: hsl(182, 21%, 80%);
     color: var(--green);
+    text-align: center;
 }
 
 .green-square-button:hover {
@@ -1249,7 +1250,7 @@ fieldset{
     background: var(--green);
 }
 
-@media (max-width: 786px) {
+@media (max-width: 768px) {
     .frequency-toggle-container button {
         gap: 0;
     }
