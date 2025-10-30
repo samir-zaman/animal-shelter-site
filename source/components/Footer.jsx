@@ -57,7 +57,7 @@ export default function Footer() {
                         className="footer-donate-link"
                         onClick={() => window.scrollTo(0, 0)}
                     >
-                        Donate &gt;
+                        Donate test &gt;
                     </NavLink>
                 </div>
 
