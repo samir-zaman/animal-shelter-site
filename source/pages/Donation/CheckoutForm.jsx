@@ -123,7 +123,7 @@ export default function CheckoutForm() {
           className="donate-input"
           type="text"
           name="lastName"
-          aria-lable = "last name"
+          aria-label = "last name"
           placeholder="Last name"
           value={formData.lastName}
           onChange={handleInputChange}

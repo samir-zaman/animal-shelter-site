@@ -900,6 +900,20 @@ fieldset{
         margin-top: var(--space-md);
     }
 }
+
+/*** APPOINTMENT PAGE ***/
+.appointment-form-section {
+    margin-left: var(--gutter);
+    margin-bottom: var(--space-xxl);
+}
+
+.appointment-form-section h2 {
+    margin-block: var(--space-md);
+}
+
+.appointment-form-group {
+    margin-bottom: var(--space-md);
+}
   
 
 /*** FOSTER PARENTS PORTAL ***/
