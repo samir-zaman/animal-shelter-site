@@ -44,13 +44,12 @@ export default function MeetUp() {
     };
 
     const meetupTiles = selectedAnimals.map((adoptee) => (
-        <div key={adoptee.id} className="adoptees-tile">
-            <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} width={200} />
+        <div key={adoptee.id} className="appointment-tile">
+            <img src={adoptee.imageUrl} alt={`Photo of ${adoptee.name}`} width={75} height={75} />
             <div className="adoptees-tile-text">
-                <h2 className="hero-h2">{adoptee.name}</h2>
-                <p>{adoptee.age} years old</p>
+                <p>{adoptee.name}</p>
             </div>
-            <button onClick={() => handleDelete(adoptee.id)}>Remove</button>
+            <button onClick={() => handleDelete(adoptee.id)}>remove</button>
         </div>
     ));
 

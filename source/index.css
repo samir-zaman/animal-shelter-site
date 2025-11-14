@@ -914,7 +914,20 @@ fieldset{
 .appointment-form-group {
     margin-bottom: var(--space-md);
 }
-  
+
+.appointment-tile {
+    display: flex;
+    margin-inline: var(--gutter);
+    padding-block: var(--space-sm);
+    padding-inline: var(--space-md);
+    background-color: var(--yellow);
+    color: var(--green);
+}
+
+.appointment-tile button {
+    margin-left: auto;
+}
+
 
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
