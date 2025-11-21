@@ -902,8 +902,12 @@ fieldset{
 }
 
 /*** APPOINTMENT PAGE ***/
+.appointment-page {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
 .appointment-form-section {
-    margin-left: var(--gutter);
     margin-bottom: var(--space-xxl);
 }
 
@@ -917,17 +921,41 @@ fieldset{
 
 .appointment-tile {
     display: flex;
-    margin-inline: var(--gutter);
+    margin-inline: auto;
     padding-block: var(--space-sm);
     padding-inline: var(--space-md);
-    background-color: var(--yellow);
+    background-color: var(--blue);
     color: var(--green);
+    border-bottom: 0.25em solid var(--green);
+    border-left: 0.25em solid var(--green);
+    border-right: 0.25em solid var(--green);
+}
+
+.appointment-tile:first-child {
+  border-top: 0.25em solid var(--green);
+  border-radius: 0.25em 0.25em 0 0;
+}
+
+.appointment-tile:last-child {
+  border-radius: 0 0 0.25em 0.25em;
+}
+
+.animal-name{
+    font-weight: bold;
 }
 
 .appointment-tile button {
     margin-left: auto;
+    background-color: var(--blue);
+    text-decoration: underline;
 }
 
+.animal-thumb {
+  width: 75px;
+  height: 75px;
+  object-fit: cover; 
+  margin-right: var(--gutter);
+}
 
 /*** FOSTER PARENTS PORTAL ***/
 /*login page*/
