@@ -276,6 +276,21 @@ svg {
   }
 /* end of highlights */
 
+/* scroll-triggered fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* end of scroll-triggered animation */
+
 .site-wrapper {
     min-height: 100vh;
     display: flex;
@@ -530,7 +545,7 @@ fieldset{
         display: flex;
         text-align: center;
         margin: var(--space-xxl) var(--space-xxl) calc(var(--space-xxl) + 1.5em); /*add 1.5em accounting for box-shadow*/
-        box-shadow: 1.5em 1.5em var(--purple);
+        box-shadow: 1.5em 1.5em 1em var(--blue);
     }
 
     .home-donation-left {
@@ -594,7 +609,6 @@ fieldset{
 }
 
 .home-adoption-spotlight-right .square-button {
-    border: 3px var(--purple) solid;
     background-color: hsl(264, 72%, 93%);
     color: hsl(264, 72%, 60%);
     max-width: 200px;
@@ -640,29 +654,34 @@ fieldset{
     .home-adoption-spotlight-right {
         position: absolute;
         left: 275px;
-        border-radius: 5px;
+        border-radius: 1em;
         top: 0;
         width: 800px;
         height: 550px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: var(--purple);
-        color: white;
+        border: 6px solid var(--green);
+        background-color: hsl(182, 21%, 80%);
+        color: var(--green);
         padding-left: 250px;
         padding-right: var(--gutter);
         z-index: 0;
     }
 
+    .home-adoption-spotlight-right h1 {
+        text-decoration: unset;
+    }
+
     .home-adoption-spotlight-right .square-button {
         margin: var(--space-xs) 0;
-        border: 3px white solid;
         background-color: var(--purple);
-        color: white;
+        color: hsl(264, 72%, 95%);
+        border: 3px solid var(--purple);
     }
 
     .home-adoption-spotlight-right .square-button:hover {
-        background-color: white;
+        background-color: hsl(264, 72%, 95%);
         color: var(--purple);
     }
 }

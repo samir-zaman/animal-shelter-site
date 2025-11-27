@@ -5,8 +5,7 @@ export default function Header(){
     const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
     const activeStyle = {
-        fontWeight: "bold",
-        color: "var(--purple)",
+        color: "var(--purple)"
     }
 
     function toggleMenu() {

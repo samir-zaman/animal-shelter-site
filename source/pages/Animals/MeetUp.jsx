@@ -61,7 +61,7 @@ export default function MeetUp() {
                 ) : (
                     <div>
                         <h2>No animals selected</h2>
-                        <Link to="/adopt" className="square-button green-square-button">
+                        <Link to="/animals" className="square-button green-square-button">
                             Browse Animals
                         </Link>
                     </div>

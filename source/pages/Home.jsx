@@ -2,10 +2,17 @@ import React from "react"
 import { Link } from "react-router-dom"
 import heroImage from '/assets/images/home-hero.jpg';
 import GiveIcon from '../assets/icons/Health/give.svg?react';
+import useFadeInOnScroll from "../hooks/useFadeInOnScroll";
 
 
 export default function Home() {
     const [spotlightAnimal, setSpotlightAnimal] = React.useState(null)
+
+    const fadeHero = useFadeInOnScroll();
+    const fadeAbout = useFadeInOnScroll();
+    const fadeStats = useFadeInOnScroll();
+    const fadeDonation = useFadeInOnScroll();
+    const fadeSpotlight = useFadeInOnScroll();
 
     React.useEffect(() => {
     fetch("/api/animals")
@@ -16,7 +23,10 @@ export default function Home() {
     return (
         <div className="home-page-wrapper">
 
-            <section className="hero-container home-hero-container">
+            <section 
+                ref={fadeHero.ref}
+                className={`hero-container home-hero-container fade-in ${fadeHero.isVisible ? 'visible' : ''}`}
+            >
                 <div className="home-hero-text">
                     <h1 className="hero-h1">
                         Every tail deserves a  
@@ -29,14 +39,20 @@ export default function Home() {
                     <img className="hero-image" src={heroImage} alt="Foster puppy being petted" />
                 </div>
             </section>
-
-            <section className="home-about-container">
+            
+            <section 
+                ref={fadeAbout.ref}
+                className={`home-about-container fade-in ${fadeAbout.isVisible ? 'visible' : ''}`}
+            >
                 <h2 className="hero-h2">Caring for animals since 2025</h2>
                 <p>Furry Futures is an independent nonprofit supported entirely by our community. We exist to ensure every companion animal has access to quality medical care, compassionate shelter, and a loving home. </p>
                 <Link className="green-square-button square-button" aria-label="learn more about our story" to="about" onClick={() => window.scrollTo(0, 0)}>LEARN MORE</Link>
             </section>
 
-            <section className="home-stats-container">
+            <section
+                ref={fadeStats.ref}
+                className={`home-stats-container fade-in ${fadeStats.isVisible ? 'visible' : ''}`}
+            >
                 <h1><span className="logo">2024</span> U.S. Adoption Statistics</h1>
                 <div className="home-stats-flex-wrapper">
                     <div>
@@ -54,7 +70,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="home-donation-container">
+             <section
+                ref={fadeDonation.ref}
+                className={`home-donation-container fade-in ${fadeDonation.isVisible ? 'visible' : ''}`}
+            >
                 <div className="home-donation-flex-wrapper">
                     <div className="home-donation-left">
                         <GiveIcon className='give-icon'/>
@@ -67,7 +86,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="home-adoption-spotlight-container">
+            <section
+                ref={fadeSpotlight.ref}
+                className={`home-adoption-spotlight-container fade-in ${fadeSpotlight.isVisible ? 'visible' : ''}`}
+            >
                 <div className="home-adoption-spotlight-wrapper">
                     <div className="home-adoption-spotlight-left">
                         {spotlightAnimal && (
