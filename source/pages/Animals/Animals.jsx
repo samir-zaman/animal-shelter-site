@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom"
+import useFadeInOnScroll from "../../hooks/useFadeInOnScroll";
+
 
 //import animals from api, map over them, and display as tiles. 
 
@@ -7,6 +9,8 @@ export default function Animals() {
 
     const [animals, setAnimals] = React.useState([])
     const [searchParams, setSearchParams] = useSearchParams()
+
+    const fadeAnimalsPage = useFadeInOnScroll();
 
     const typeFilter = searchParams.get("type")
 
@@ -52,7 +56,10 @@ export default function Animals() {
     }
 
     return(
-        <div className="animal-list-container">
+        <div 
+            ref = {fadeAnimalsPage.ref}
+            className={`animal-list-container fade-in ${fadeAnimalsPage.isVisible ? 'visible' : ''}`}
+        >
             <h1>Meet our animals</h1>
             <div className="animal-list-filter-buttons">
                 <p className="filter-label">Filter: </p>

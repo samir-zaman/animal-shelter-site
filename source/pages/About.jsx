@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import heroImage from '/assets/images/about-hero.jpg';
 import EmblaCarousel from '../components/EmblaCarousel/EmblaCarousel'
+import useFadeInOnScroll from "../hooks/useFadeInOnScroll";
+
 
 const OPTIONS = { loop: true, duration: 20 };
 const SLIDES = [
@@ -23,10 +25,17 @@ const SLIDES = [
 ]
 
 export default function About() {
+
+    const fadeHero = useFadeInOnScroll();
+    const fadeAbout = useFadeInOnScroll();
+    const fadeCTA = useFadeInOnScroll();
     
     return (
-        <div className="about-page-wrapper">
-            <section className='about-hero-container hero-container'>
+        <div className='about-page-wrapper'>
+            <section 
+              ref = {fadeHero.ref}
+              className={`about-hero-container hero-container fade-in ${fadeHero.isVisible ? 'visible' : ''}`}
+            >
                 <div className="about-hero-text">
                     <h1 className="hero-h1">Every rescue shelter has a <span className="yellow-highlight">story</span>. Here's ours.</h1>
                 </div>
@@ -34,16 +43,25 @@ export default function About() {
                     <img className="hero-image about-hero-image" src={heroImage} alt="Girl holding puppy" />
                 </div>
             </section>
-            <div className="about-page-content">
+            <div
+              ref = {fadeAbout.ref} 
+              className={`about-page-content fade-in ${fadeAbout.isVisible ? 'visible' : ''}`}
+            >
                 <h1>Who we are</h1>
                 <p>Our mission is to match every pet with the perfect forever home. We rescue, rehabilitate, and rehome—so you can adopt with confidence and give a furry friend their happily ever after. 🐾</p>
                 <p>Our team is made up of passionate animal lovers who know firsthand the joy of giving rescues a second chance.</p>
             </div>
-            <div className="about-page-cta">
+            <div 
+              ref = {fadeCTA.ref}
+              className={`about-page-cta fade-in ${fadeCTA.isVisible ? 'visible' : ''}`}
+            >
                 <h2>Your new best friend is waiting.<br /> Start your <span className="yellow-highlight">rescue story</span> now.</h2>
                 <Link className="fancy-button" to="/animals">Find your rescue</Link>
             </div>
-            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+            <EmblaCarousel 
+              slides={SLIDES} 
+              options={OPTIONS} 
+            />
         </div>
     );
 }

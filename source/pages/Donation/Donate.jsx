@@ -3,14 +3,21 @@ import CheckoutForm from "./CheckoutForm"
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import donateHero from '/assets/images/donate-hero.jpg'
+import useFadeInOnScroll from "../../hooks/useFadeInOnScroll";
 
 
 const stripePromise = loadStripe('pk_test_51REzCLQB66owRwDgF1Vj8rsbnUd7tHd4U5QYDUTqTuDViUk9HbUW1IAjQ35VEwrMFTiO6o4ELToyYJkmncBc5rhq003pLwRgEg');
 
 export default function Donate() {
+
+    const fadeDonatePage = useFadeInOnScroll();
+
     return (
         <div className="donate-page-wrapper">
-            <main className="donate-page-flex-container">
+            <main 
+                ref={fadeDonatePage.ref}
+                className={`donate-page-flex-container fade-in ${fadeDonatePage.isVisible ? 'visible' : ''}`}
+            >
                 <section className="donate-content-container">
                     <img src={donateHero} alt="lonely shelter puppy" />
                     <h2>Make a difference.</h2>
