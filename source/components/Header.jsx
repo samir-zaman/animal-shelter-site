@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {NavLink, Link} from 'react-router-dom'
 
 export default function Header(){
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const activeStyle = {
         color: "var(--purple)"

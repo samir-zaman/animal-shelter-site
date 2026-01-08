@@ -30,6 +30,6 @@
     "globals": "^15.15.0",
     "miragejs": "^0.1.48",
     "vite": "^6.2.0",
-    "vite-plugin-svgr": "^4.3.0"
+    "vite-plugin-svgr": "^4.5.0"
   }
 }

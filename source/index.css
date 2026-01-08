@@ -259,6 +259,7 @@ svg {
     );
     background-size: 1400% 1400%;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 15s ease infinite;
   }
@@ -1392,6 +1393,7 @@ fieldset{
 
 .other-amount-input[type="number"] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .donate-input {
