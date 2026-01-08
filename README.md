@@ -1,10 +1,8 @@
 # 🐾 Furry Futures - Pet Adoption Website
 
-A modern, responsive web application for pet adoption and animal shelter management. Built with React and Vite, featuring a comprehensive foster parent portal and donation system.
+A responsive web application for pet adoption and animal shelter management. Built with React and Vite, featuring a foster parent portal and donation system.
 
-![React](https://img.shields.io/badge/React-19.0.0-61DAFB?logo=react)
-![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF?logo=vite)
-![React Router](https://img.shields.io/badge/React%20Router-7.3.0-CA4245?logo=react-router)
+**Built With:** React · Vite · React Router
 
 ## ✨ Features
 
@@ -139,13 +137,6 @@ This project uses [MirageJS](https://miragejs.com/) to mock API responses during
 ### `useFadeInOnScroll`
 Custom hook for scroll-triggered fade-in animations using Intersection Observer API.
 
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
 ## 🔐 Security Notes
 
 ⚠️ **Important**: This is a demonstration application. For production use:
@@ -157,31 +148,5 @@ Custom hook for scroll-triggered fade-in animations using Intersection Observer 
 - Implement proper error handling and logging
 - Add rate limiting and security headers
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is private and proprietary. All rights reserved.
-
-## 👤 Author
-
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-
-## 🙏 Acknowledgments
-
-- Animal images and data are for demonstration purposes only
-- Design inspired by modern animal welfare organizations
-- Built with love for animals 🐕🐈
-
----
-
-Made with ❤️ for animals in need of a loving home
